@@ -3,12 +3,14 @@ import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/components/index.dart';
 
 class EventListItem extends StatelessWidget {
+  final Icon eventIcon;
   final String title;
   final String subtitle;
 
   EventListItem({
     this.title,
     this.subtitle,
+    this.eventIcon,
   });
 
   @override
@@ -28,7 +30,7 @@ class EventListItem extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              iconContainer(Icons.alarm),
+              iconContainer(eventIcon),
               Column(children: <Widget>[
                 Text(
                   title,

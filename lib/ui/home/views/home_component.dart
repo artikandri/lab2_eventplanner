@@ -125,11 +125,11 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                             child: ListView(
                               scrollDirection: Axis.vertical,
                               children: <Widget>[
-                                EventListItem(title: "Test", subtitle: "Test deskripsi"),
+                                EventListItem(title: "Test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                 SizedBox(width: 15),
-                                EventListItem(title: "Test", subtitle: "Test deskripsi"),
+                                EventListItem(title: "Test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                 SizedBox(width: 15),
-                                EventListItem(title: "Test", subtitle: "Test deskripsi"),
+                                EventListItem(title: "Test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                               ],
                             ),
                           ),
