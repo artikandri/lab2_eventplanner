@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:eventplanner/theme/index.dart';
-import 'package:eventplanner/ui/home/presenter/home_presenter.dart';
-import 'package:eventplanner/ui/home/views/home_component.dart';
+
+import 'package:eventplanner/ui/home/home_presenter.dart';
+import 'package:eventplanner/ui/home/home_component.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
