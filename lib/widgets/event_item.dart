@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eventplanner/theme/index.dart';
 
 class EventItem extends StatelessWidget {
   String _label;
@@ -11,7 +12,7 @@ class EventItem extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white),
         borderRadius: BorderRadius.circular(20.0),
-        color: UIHelper.getColorFromHex("#303876"),
+        color: AppColors.kLightYellow,
       ),
       child: Text(
         this._label,
