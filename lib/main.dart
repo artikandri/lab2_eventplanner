@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:eventplanner/theme/colors/light_colors.dart';
+import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/ui/home/presenter/home_presenter.dart';
 import 'package:eventplanner/ui/home/views/home_component.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: LightColors.kLightYellow,
+    systemNavigationBarColor: AppColors.kLightYellow,
     statusBarColor: Color(0xffffb969),
   ));
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Event Planner',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        textTheme: Theme.of(context).textTheme.apply(bodyColor: LightColors.kDarkBlue, displayColor: LightColors.kDarkBlue, fontFamily: 'Poppins'),
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: AppColors.kDarkBlue, displayColor: AppColors.kDarkBlue, fontFamily: 'Poppins'),
       ),
       home: new MyHomePage(new BasicHomePresenter(), title: 'Event Planner'),
     );

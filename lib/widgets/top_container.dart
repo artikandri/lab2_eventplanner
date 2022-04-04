@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:eventplanner/theme/colors/light_colors.dart';
+import 'package:eventplanner/theme/index.dart';
 
 class TopContainer extends StatelessWidget {
   final double height;
@@ -13,7 +13,7 @@ class TopContainer extends StatelessWidget {
     return Container(
       padding: padding != null ? padding : EdgeInsets.symmetric(horizontal: 20.0),
       decoration: BoxDecoration(
-          color: LightColors.kDarkYellow,
+          color: AppColors.kDarkYellow,
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(40.0),
             bottomLeft: Radius.circular(40.0),
