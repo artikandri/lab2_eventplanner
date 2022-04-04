@@ -13,42 +13,40 @@ class EventCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10.0),
-        padding: EdgeInsets.all(15.0),
-        height: 100,
-        decoration: BoxDecoration(
-          color: cardColor,
-          borderRadius: BorderRadius.circular(30.0),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10.0),
+      padding: EdgeInsets.all(15.0),
+      height: 100,
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(30.0),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
                 ),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    color: Colors.white54,
-                    fontWeight: FontWeight.w400,
-                  ),
+              ),
+              Text(
+                subtitle,
+                style: TextStyle(
+                  fontSize: 12.0,
+                  color: Colors.white54,
+                  fontWeight: FontWeight.w400,
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
