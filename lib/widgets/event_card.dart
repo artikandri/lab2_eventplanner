@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eventplanner/theme/index.dart';
 
 class EventCard extends StatelessWidget {
   final Color cardColor;
@@ -14,13 +15,12 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.0),
-      padding: EdgeInsets.all(15.0),
+      margin: EdgeInsets.symmetric(vertical: AppSpacings.defaultSpacing),
+      padding: EdgeInsets.all(AppSpacings.defaultSpacing * 2),
       height: 100,
-      width: 100,
       decoration: BoxDecoration(
         color: cardColor,
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(AppSpacings.defaultSpacing * 4),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
