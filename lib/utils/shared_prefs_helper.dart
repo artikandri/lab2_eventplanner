@@ -1,17 +1,18 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
 
 class SharedPrefsHelper {
   SharedPrefsHelper._privateConstructor();
 
   static final SharedPrefsHelper instance = SharedPrefsHelper._privateConstructor();
 
-  setListData(String key, List<String> value) async {
+  setListData(String key, List value) async {
     SharedPreferences myPrefs = await SharedPreferences.getInstance();
-    myPrefs.setStringList(key, value);
+    myPrefs.setString(key, json.encode(value));
   }
 
-  Future<List<String>> getListData(String key) async {
+  Future<List> getListData(String key) async {
     SharedPreferences myPrefs = await SharedPreferences.getInstance();
-    return myPrefs.getStringList(key);
+    return json.decode(myPrefs.getString(key));
   }
 }

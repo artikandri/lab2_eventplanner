@@ -4,23 +4,31 @@ import 'package:eventplanner/utils/shared_prefs_helper.dart';
 
 class HomePresenter {
   void onAddButtonClick() {}
+  void getEventListData() {}
   set homeView(HomeView value) {}
 }
 
 class BasicHomePresenter implements HomePresenter {
-  HomeViewModel _HomeViewModel;
-  HomeView _HomeView;
+  HomeViewModel _homeViewModel;
+  HomeView _homeView;
+  SharedPrefsHelper _sharedPrefsHelper;
 
   BasicHomePresenter() {
-    this._HomeViewModel = new HomeViewModel();
+    this._homeViewModel = new HomeViewModel();
+    this._sharedPrefsHelper = new SharedPrefsHelper();
   }
 
   @override
   void onAddButtonClick() {}
 
   @override
+  void getEventListData() {
+    _sharedPrefsHelper.getListData('events');
+  }
+
+  @override
   set homeView(HomeView value) {
-    _HomeView = value;
-    this._HomeView.refreshHome(this._HomeViewModel);
+    _homeView = value;
+    this._homeView.refreshHome(this._homeViewModel);
   }
 }
