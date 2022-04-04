@@ -13,4 +13,5 @@ class AppColors {
   static const Color kGreen = Color(0xFF309397);
 
   static const Color kDarkBlue = Color(0xFF0D253F);
+  static const Color transparent = Color(0x00000000);
 }
