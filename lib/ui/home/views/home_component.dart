@@ -115,23 +115,6 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                         ],
                       ),
                     ),
-                    Container(
-                      color: AppColors.transparent,
-                      padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(
-                            child: ListView(
-                              children: [
-                                EventItem('Test'),
-                                EventItem('Test'),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
                   ],
                 ),
               ),
