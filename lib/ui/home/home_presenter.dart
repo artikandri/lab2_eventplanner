@@ -11,7 +11,7 @@ class BasicHomePresenter implements HomePresenter {
   HomeView _HomeView;
 
   BasicHomePresenter() {
-    this._HomeViewModel = new HomeViewModel(0);
+    this._HomeViewModel = new HomeViewModel();
   }
 
   @override
