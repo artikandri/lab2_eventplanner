@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Event Planner',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
-        fontFamily: 'Poppins',
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: LightColors.kDarkBlue, displayColor: LightColors.kDarkBlue, fontFamily: 'Poppins'),
       ),
       home: new MyHomePage(new BasicHomePresenter(), title: 'Event Planner'),
     );
