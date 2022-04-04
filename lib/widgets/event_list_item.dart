@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:eventplanner/theme/index.dart';
+import 'package:eventplanner/components/index.dart';
 
 class EventListItem extends StatelessWidget {
   final String title;
@@ -22,11 +23,12 @@ class EventListItem extends StatelessWidget {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              iconContainer(Icons.alarm),
               Text(
                 title,
                 style: TextStyle(

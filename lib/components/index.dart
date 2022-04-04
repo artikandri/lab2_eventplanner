@@ -1,4 +1,4 @@
 library components;
 
-export "calendar_icon.dart";
+export "icon_container.dart";
 export "subheading.dart";
