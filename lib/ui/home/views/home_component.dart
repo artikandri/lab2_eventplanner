@@ -100,19 +100,30 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          subheading('Events'),
+                          subheading('Events for Today'),
                           SizedBox(height: AppSpacings.defaultSpacing),
                           SizedBox(
                             height: 50,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                EventItem('Test'),
-                                EventItem('Test'),
-                                EventItem('Test'),
-                                EventItem('Test'),
-                                EventItem('Test'),
-                                EventItem('Test'),
+                                EventCard(title: "Test"),
+                                EventCard(title: "Test"),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      color: AppColors.transparent,
+                      padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          SizedBox(
+                            child: ListView(
+                              children: [
                                 EventItem('Test'),
                                 EventItem('Test'),
                               ],
