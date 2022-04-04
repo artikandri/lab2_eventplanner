@@ -122,9 +122,8 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                           SizedBox(height: AppSpacings.defaultSpacing),
                           Container(
                             height: 400,
-                            child: ListView.separated(
+                            child: ListView(
                               scrollDirection: Axis.vertical,
-                              separatorBuilder: (_, __) => Container(height: 1.5, color: Colors.grey[300]),
                               children: <Widget>[
                                 EventListItem(title: "Test", subtitle: "Test deskripsi"),
                                 SizedBox(width: 15),
