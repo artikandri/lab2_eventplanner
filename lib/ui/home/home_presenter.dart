@@ -1,5 +1,5 @@
-import 'package:eventplanner/ui/home/viewmodel/home_viewmodel.dart';
-import 'package:eventplanner/ui/home/views/home_view.dart';
+import 'package:eventplanner/ui/home/home_viewmodel.dart';
+import 'package:eventplanner/ui/home/home_view.dart';
 
 class HomePresenter {
   void onButton1Clicked() {}
