@@ -23,7 +23,7 @@ class BasicHomePresenter implements HomePresenter {
 
   @override
   void getEventListData() {
-    List _events = _sharedPrefsHelper.getListData('events');
+    var _events = _sharedPrefsHelper.getListData('events');
   }
 
   @override
