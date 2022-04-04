@@ -29,22 +29,24 @@ class EventListItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               iconContainer(Icons.alarm),
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: AppFonts.bodyFontSize,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700,
+              Column(children: <Widget>[
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: AppFonts.bodyFontSize,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
-              ),
-              Text(
-                subtitle,
-                style: TextStyle(
-                  fontSize: AppFonts.bodyFontSize * .75,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
+                Text(
+                  subtitle,
+                  style: TextStyle(
+                    fontSize: AppFonts.bodyFontSize * .75,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-              ),
+              ])
             ],
           ),
         ],
