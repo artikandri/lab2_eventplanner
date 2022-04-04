@@ -111,6 +111,10 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                                 EventItem('Test'),
                                 EventItem('Test'),
                                 EventItem('Test'),
+                                EventItem('Test'),
+                                EventItem('Test'),
+                                EventItem('Test'),
+                                EventItem('Test'),
                               ],
                             ),
                           )
