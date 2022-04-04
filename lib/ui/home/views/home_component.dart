@@ -107,8 +107,9 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kLightYellow),
-                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kLightYellow),
+                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
                               ],
                             ),
                           )
