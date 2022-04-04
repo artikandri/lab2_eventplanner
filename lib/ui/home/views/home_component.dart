@@ -114,21 +114,32 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                                       sliver: SliverList(
                                         delegate: SliverChildListDelegate(
                                           <Widget>[
-                                            EventCard(
-                                              cardColor: AppColors.kGreen,
-                                              title: 'Medical App',
-                                              subtitle: '9 hours progress',
-                                            ),
-                                            EventCard(
-                                              cardColor: AppColors.kGreen,
-                                              title: 'Medical App',
-                                              subtitle: '9 hours progress',
-                                            ),
-                                            EventCard(
-                                              cardColor: AppColors.kGreen,
-                                              title: 'Medical App',
-                                              subtitle: '9 hours progress',
-                                            ),
+                                            const Text('this horizontal'),
+                                            const Text('is horizontal'),
+                                            const Text('scroll horizontal'),
+                                            const Text('view horizontal'),
+                                            const Text('inside horizontal'),
+                                            const Text('list horizontal'),
+                                            const Text('view horizontal'),
+                                            const Text('in horizontal'),
+                                            const Text('horizontal horizontal'),
+                                            const Text('direction horizontal')
+
+                                            // EventCard(
+                                            //   cardColor: AppColors.kGreen,
+                                            //   title: 'Medical App',
+                                            //   subtitle: '9 hours progress',
+                                            // ),
+                                            // EventCard(
+                                            //   cardColor: AppColors.kGreen,
+                                            //   title: 'Medical App',
+                                            //   subtitle: '9 hours progress',
+                                            // ),
+                                            // EventCard(
+                                            //   cardColor: AppColors.kGreen,
+                                            //   title: 'Medical App',
+                                            //   subtitle: '9 hours progress',
+                                            // ),
                                           ],
                                         ),
                                       ),
