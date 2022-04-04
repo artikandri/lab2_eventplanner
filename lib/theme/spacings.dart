@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
-class Spacings {
+class AppSpacings {
   static const defaultSpacing = 8.0;
 }

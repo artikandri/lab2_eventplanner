@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
     double width = MediaQuery.of(context).size.width;
 
     return new Scaffold(
-      backgroundColor: Colors.kLightYellow,
+      backgroundColor: AppColors.kLightYellow,
       body: new Center(
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      color: Colors.transparent,
+                      color: AppColors.transparent,
                       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                       child: Column(
                         children: <Widget>[
@@ -68,10 +68,10 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                               ),
                             ],
                           ),
-                          SizedBox(height: Spacings.defaultSpacing * 2),
+                          SizedBox(height: AppSpacings.defaultSpacing * 2),
                           TaskColumn(
                             icon: Icons.alarm,
-                            iconBackgroundColor: Colors.kRed,
+                            iconBackgroundColor: AppColors.kRed,
                             title: 'To Do',
                             subtitle: '5 tasks now. 1 started',
                           ),
@@ -80,14 +80,14 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                           ),
                           TaskColumn(
                             icon: Icons.blur_circular,
-                            iconBackgroundColor: Colors.kDarkYellow,
+                            iconBackgroundColor: AppColors.kDarkYellow,
                             title: 'In Progress',
                             subtitle: '1 tasks now. 1 started',
                           ),
-                          SizedBox(height: Spacings.defaultSpacing * 2),
+                          SizedBox(height: AppSpacings.defaultSpacing * 2),
                           TaskColumn(
                             icon: Icons.check_circle_outline,
-                            iconBackgroundColor: Colors.kBlue,
+                            iconBackgroundColor: AppColors.kBlue,
                             title: 'Done',
                             subtitle: '18 tasks now. 13 started',
                           ),
@@ -95,13 +95,13 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                       ),
                     ),
                     Container(
-                      color: Colors.transparent,
-                      padding: EdgeInsets.symmetric(horizontal: Spacings.defaultSpacing * 2, vertical: Spacings.defaultSpacing),
+                      color: AppColors.transparent,
+                      padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           subheading('Events'),
-                          SizedBox(height: Spacings.defaultSpacing),
+                          SizedBox(height: AppSpacings.defaultSpacing),
                           Row(
                             children: <Widget>[
                               Flexible(
@@ -110,22 +110,22 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                                   scrollDirection: Axis.horizontal,
                                   slivers: <Widget>[
                                     SliverPadding(
-                                      padding: const EdgeInsets.all(Spacings.defaultSpacing * 2),
+                                      padding: const EdgeInsets.all(AppSpacings.defaultSpacing * 2),
                                       sliver: SliverList(
                                         delegate: SliverChildListDelegate(
                                           <Widget>[
                                             EventCard(
-                                              cardColor: Colors.kGreen,
+                                              cardColor: AppColors.kGreen,
                                               title: 'Medical App',
                                               subtitle: '9 hours progress',
                                             ),
                                             EventCard(
-                                              cardColor: Colors.kGreen,
+                                              cardColor: AppColors.kGreen,
                                               title: 'Medical App',
                                               subtitle: '9 hours progress',
                                             ),
                                             EventCard(
-                                              cardColor: Colors.kGreen,
+                                              cardColor: AppColors.kGreen,
                                               title: 'Medical App',
                                               subtitle: '9 hours progress',
                                             ),
