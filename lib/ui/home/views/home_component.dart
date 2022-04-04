@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Expanded(
+            Flexible(
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
