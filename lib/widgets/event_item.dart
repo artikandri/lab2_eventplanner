@@ -1,26 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:eventplanner/theme/index.dart';
 
-class EventItem extends StatelessWidget {
-  String _label;
+class EventListItem extends StatelessWidget {
+  final String title;
+  final String subtitle;
 
-  EventItem(this._label);
+  EventListItem({
+    this.title,
+    this.subtitle,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: AppSpacings.defaultSpacing),
+      padding: EdgeInsets.all(AppSpacings.defaultSpacing * 2),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white),
-        borderRadius: BorderRadius.circular(20.0),
-        color: AppColors.kDarkBlue,
+        borderRadius: BorderRadius.circular(AppSpacings.defaultSpacing * 4),
       ),
-      child: Text(
-        this._label,
-        style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              Text(
+                subtitle,
+                style: TextStyle(
+                  fontSize: 12.0,
+                  color: Colors.white54,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
-      padding: EdgeInsets.only(left: 16, right: 16, top: 0, bottom: 0),
-      alignment: Alignment.center,
-      margin: EdgeInsets.only(top: 8, bottom: 8, left: 4, right: 4),
     );
   }
 }

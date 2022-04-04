@@ -104,11 +104,9 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                           subheading('Events for Today'),
                           SizedBox(height: AppSpacings.defaultSpacing),
                           Container(
-                            // change your height based on preference
                             height: 80,
                             width: double.infinity,
                             child: ListView(
-                              // set the scroll direction to horizontal
                               scrollDirection: Axis.horizontal,
                               children: <Widget>[
                                 EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
