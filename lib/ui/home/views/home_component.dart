@@ -57,15 +57,6 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               subheading('Events'),
-                              GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) => CalendarPage()),
-                                  // );
-                                },
-                                child: calendarIcon(),
-                              ),
                             ],
                           ),
                           SizedBox(height: AppSpacings.defaultSpacing * 2),
@@ -76,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                             subtitle: '5 tasks now. 1 started',
                           ),
                           SizedBox(
-                            height: 15.0,
+                            height: AppSpacings.defaultSpacing * 2,
                           ),
                           TaskColumn(
                             icon: Icons.blur_circular,
@@ -114,6 +105,28 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                                 EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
                                 SizedBox(width: 15),
                                 EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      color: AppColors.transparent,
+                      padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          subheading('All Events'),
+                          SizedBox(height: AppSpacings.defaultSpacing),
+                          Container(
+                            child: ListView(
+                              children: <Widget>[
+                                EventListItem(title: "Test", subtitle: "Test"),
+                                EventListItem(title: "Test", subtitle: "Test"),
+                                EventListItem(title: "Test", subtitle: "Test"),
+                                EventListItem(title: "Test", subtitle: "Test"),
                               ],
                             ),
                           ),
