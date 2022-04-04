@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:eventplanner/ui/home/presenter/home_presenter.dart';
 import 'package:eventplanner/ui/home/viewmodel/home_viewmodel.dart';
 import 'package:eventplanner/ui/home/views/home_view.dart';
-import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/components/index.dart';
+import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/widgets/index.dart';
 
 class MyHomePage extends StatefulWidget {
