@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Flexible(
+            Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
@@ -94,31 +94,32 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                         ],
                       ),
                     ),
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        color: AppColors.transparent,
-                        padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            subheading('Events for Today'),
-                            SizedBox(height: AppSpacings.defaultSpacing),
-                            SizedBox(
-                              height: 50,
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                                  EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                                  EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
+                    Container(
+                      width: double.infinity,
+                      color: AppColors.transparent,
+                      padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          subheading('Events for Today'),
+                          SizedBox(height: AppSpacings.defaultSpacing),
+                          Container(
+                            // change your height based on preference
+                            height: 80,
+                            width: double.infinity,
+                            child: ListView(
+                              // set the scroll direction to horizontal
+                              scrollDirection: Axis.horizontal,
+                              children: <Widget>[
+                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                SizedBox(width: 15),
+                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
