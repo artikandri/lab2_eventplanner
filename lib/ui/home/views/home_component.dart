@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
     double width = MediaQuery.of(context).size.width;
 
     return new Scaffold(
-      backgroundColor: LightColors.kLightellow,
+      backgroundColor: LightColors.kLightYellow,
       body: new Center(
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -59,10 +59,10 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                               subheading('My Tasks'),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => CalendarPage()),
-                                  );
+                                  // Navigator.push(
+                                  //   context,
+                                  //   MaterialPageRoute(builder: (context) => CalendarPage()),
+                                  // );
                                 },
                                 child: calendarIcon(),
                               ),
@@ -106,14 +106,12 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                             children: <Widget>[
                               EventCard(
                                 cardColor: LightColors.kGreen,
-                                loadingPercent: 0.25,
                                 title: 'Medical App',
                                 subtitle: '9 hours progress',
                               ),
                               SizedBox(width: 20.0),
                               EventCard(
                                 cardColor: LightColors.kRed,
-                                loadingPercent: 0.6,
                                 title: 'Making History Notes',
                                 subtitle: '20 hours progress',
                               ),
@@ -123,14 +121,12 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                             children: <Widget>[
                               EventCard(
                                 cardColor: LightColors.kDarkYellow,
-                                loadingPercent: 0.45,
                                 title: 'Sports App',
                                 subtitle: '5 hours progress',
                               ),
                               SizedBox(width: 20.0),
                               EventCard(
                                 cardColor: LightColors.kBlue,
-                                loadingPercent: 0.9,
                                 title: 'Online Flutter Course',
                                 subtitle: '23 hours progress',
                               ),

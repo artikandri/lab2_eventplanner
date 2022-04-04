@@ -6,4 +6,4 @@ Text subheading(String title) {
     title,
     style: TextStyle(color: LightColors.kDarkBlue, fontSize: 20.0, fontWeight: FontWeight.w700, letterSpacing: 1.2),
   );
-};
+}
