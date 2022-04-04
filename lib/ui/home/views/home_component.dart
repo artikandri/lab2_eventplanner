@@ -97,23 +97,26 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                     Container(
                       color: AppColors.transparent,
                       padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          subheading('Events for Today'),
-                          SizedBox(height: AppSpacings.defaultSpacing),
-                          SizedBox(
-                            height: 50,
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                              ],
-                            ),
-                          )
-                        ],
+                      child: SingleChildScrollView(
+                        // wrap with a scrollable widget
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            subheading('Events for Today'),
+                            SizedBox(height: AppSpacings.defaultSpacing),
+                            SizedBox(
+                              height: 50,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: [
+                                  EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                  EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                  EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ],
