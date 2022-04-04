@@ -15,9 +15,6 @@ class EventListItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: AppSpacings.defaultSpacing),
       padding: EdgeInsets.all(AppSpacings.defaultSpacing * 2),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(AppSpacings.defaultSpacing * 4),
-      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,16 +25,16 @@ class EventListItem extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: 14.0,
-                  color: Colors.white,
+                  fontSize: AppFonts.bodyFontSize,
+                  color: Colors.black,
                   fontWeight: FontWeight.w700,
                 ),
               ),
               Text(
                 subtitle,
                 style: TextStyle(
-                  fontSize: 12.0,
-                  color: Colors.white54,
+                  fontSize: AppFonts.bodyFontSize * .75,
+                  color: Colors.black,
                   fontWeight: FontWeight.w400,
                 ),
               ),
