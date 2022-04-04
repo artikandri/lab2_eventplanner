@@ -3,7 +3,7 @@ import 'package:eventplanner/ui/home/home_view.dart';
 import 'package:eventplanner/utils/shared_prefs_helper.dart';
 
 class HomePresenter {
-  void onButton1Clicked() {}
+  void onAddButtonClick() {}
   set homeView(HomeView value) {}
 }
 
