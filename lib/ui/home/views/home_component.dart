@@ -94,11 +94,11 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                         ],
                       ),
                     ),
-                    Container(
-                      color: AppColors.transparent,
-                      padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
-                      child: SingleChildScrollView(
-                        // wrap with a scrollable widget
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: AppColors.transparent,
+                        padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                           ],
                         ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
