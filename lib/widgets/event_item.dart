@@ -12,7 +12,7 @@ class EventItem extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white),
         borderRadius: BorderRadius.circular(20.0),
-        color: AppColors.kLightYellow,
+        color: AppColors.kDarkBlue,
       ),
       child: Text(
         this._label,
