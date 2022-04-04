@@ -3,7 +3,7 @@ import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/components/index.dart';
 
 class EventListItem extends StatelessWidget {
-  final Icon eventIcon;
+  final IconData eventIcon;
   final String title;
   final String subtitle;
 
