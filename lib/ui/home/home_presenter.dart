@@ -15,7 +15,7 @@ class BasicHomePresenter implements HomePresenter {
 
   BasicHomePresenter() {
     this._homeViewModel = new HomeViewModel();
-    this._sharedPrefsHelper = SharedPrefsHelper();
+    this._sharedPrefsHelper = new SharedPrefsHelper();
   }
 
   @override
@@ -29,6 +29,5 @@ class BasicHomePresenter implements HomePresenter {
   @override
   set homeView(HomeView value) {
     _homeView = value;
-    this._homeView.refreshHome(this._homeViewModel);
   }
 }
