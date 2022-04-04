@@ -1,7 +1,13 @@
 import 'package:eventplanner/ui/home/home_viewmodel.dart';
 
 class HomeView {
-  void refreshHome(HomeViewModel viewModel) {
-    print("not implemented yet");
+  HomeViewModel _viewModel = HomeViewModel();
+
+  void setEventsData(List events) {
+    _viewModel.events = events;
+  }
+
+  getEventsData() {
+    return _viewModel.events;
   }
 }

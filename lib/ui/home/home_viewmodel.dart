@@ -1,5 +1,5 @@
 class HomeViewModel {
-  var events = [];
+  static events = [];
 
   HomeViewModel();
 }
