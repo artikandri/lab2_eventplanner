@@ -7,7 +7,7 @@ class SharedPrefsHelper {
     myPrefs.setString(key, json.encode(value));
   }
 
-  Future<List> getListData(String key) async {
+  getListData(String key) async {
     SharedPreferences myPrefs = await SharedPreferences.getInstance();
     return json.decode(myPrefs.getString(key));
   }
