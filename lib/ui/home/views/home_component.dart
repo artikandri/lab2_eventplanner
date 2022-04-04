@@ -114,6 +114,8 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                                 EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
                                 SizedBox(width: 15),
                                 EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                SizedBox(width: 15),
+                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
                               ],
                             ),
                           ),
