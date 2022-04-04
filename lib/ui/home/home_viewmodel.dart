@@ -1,3 +1,6 @@
 class HomeViewModel {
-  HomeViewModel();
+
+  var events = []
+
+  HomeViewModel(this.events);
 }

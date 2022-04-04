@@ -11,12 +11,11 @@ class BasicHomePresenter implements HomePresenter {
   HomeView _HomeView;
 
   BasicHomePresenter() {
-    this._HomeViewModel = new HomeViewModel();
+    this._HomeViewModel = new HomeViewModel([]);
   }
 
   @override
   void onButton1Clicked() {
-    this._HomeViewModel.counter++;
     this._HomeView.refreshHome(this._HomeViewModel);
   }
 
