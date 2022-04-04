@@ -123,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                           Container(
                             height: 400,
                             child: ListView(
-                              scrollDirection: Axis.horizontal,
+                              scrollDirection: Axis.vertical,
                               children: <Widget>[
                                 EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
                                 SizedBox(width: 15),
