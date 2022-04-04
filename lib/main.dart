@@ -6,8 +6,8 @@ import 'package:eventplanner/ui/home/views/home_component.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: LightColors.kLightYellow, // navigation bar color
-    statusBarColor: Color(0xffffb969), // status bar color
+    systemNavigationBarColor: LightColors.kLightYellow,
+    statusBarColor: Color(0xffffb969),
   ));
 
   return runApp(MyApp());
