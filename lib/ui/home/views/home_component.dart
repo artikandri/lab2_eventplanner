@@ -102,52 +102,28 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                         children: <Widget>[
                           subheading('Events'),
                           SizedBox(height: AppSpacings.defaultSpacing),
-                          Row(
-                            children: <Widget>[
-                              Flexible(
-                                child: CustomScrollView(
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.horizontal,
-                                  slivers: <Widget>[
-                                    SliverPadding(
-                                      padding: const EdgeInsets.all(AppSpacings.defaultSpacing * 2),
-                                      sliver: SliverList(
-                                        delegate: SliverChildListDelegate(
-                                          <Widget>[
-                                            const Text('this horizontal'),
-                                            const Text('is horizontal'),
-                                            const Text('scroll horizontal'),
-                                            const Text('view horizontal'),
-                                            const Text('inside horizontal'),
-                                            const Text('list horizontal'),
-                                            const Text('view horizontal'),
-                                            const Text('in horizontal'),
-                                            const Text('horizontal horizontal'),
-                                            const Text('direction horizontal')
-
-                                            // EventCard(
-                                            //   cardColor: AppColors.kGreen,
-                                            //   title: 'Medical App',
-                                            //   subtitle: '9 hours progress',
-                                            // ),
-                                            // EventCard(
-                                            //   cardColor: AppColors.kGreen,
-                                            //   title: 'Medical App',
-                                            //   subtitle: '9 hours progress',
-                                            // ),
-                                            // EventCard(
-                                            //   cardColor: AppColors.kGreen,
-                                            //   title: 'Medical App',
-                                            //   subtitle: '9 hours progress',
-                                            // ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                          SizedBox(
+                            height: 50,
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                EventCard(
+                                  cardColor: AppColors.kRed,
+                                  title: 'Making History Notes',
+                                  subtitle: '20 hours progress',
                                 ),
-                              ),
-                            ],
+                                EventCard(
+                                  cardColor: AppColors.kRed,
+                                  title: 'Making History Notes',
+                                  subtitle: '20 hours progress',
+                                ),
+                                EventCard(
+                                  cardColor: AppColors.kRed,
+                                  title: 'Making History Notes',
+                                  subtitle: '20 hours progress',
+                                ),
+                              ],
+                            ),
                           )
                         ],
                       ),
