@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              subheading('My Tasks'),
+                              subheading('Events'),
                               GestureDetector(
                                 onTap: () {
                                   // Navigator.push(
@@ -108,27 +108,6 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
                                 cardColor: LightColors.kGreen,
                                 title: 'Medical App',
                                 subtitle: '9 hours progress',
-                              ),
-                              SizedBox(width: 20.0),
-                              EventCard(
-                                cardColor: LightColors.kRed,
-                                title: 'Making History Notes',
-                                subtitle: '20 hours progress',
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: <Widget>[
-                              EventCard(
-                                cardColor: LightColors.kDarkYellow,
-                                title: 'Sports App',
-                                subtitle: '5 hours progress',
-                              ),
-                              SizedBox(width: 20.0),
-                              EventCard(
-                                cardColor: LightColors.kBlue,
-                                title: 'Online Flutter Course',
-                                subtitle: '23 hours progress',
                               ),
                             ],
                           ),
