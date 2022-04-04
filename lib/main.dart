@@ -23,6 +23,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         textTheme: Theme.of(context).textTheme.apply(bodyColor: AppColors.kDarkBlue, displayColor: AppColors.kDarkBlue, fontFamily: 'Poppins'),
       ),
+      // routes: <String, WidgetBuilder>{
+      //   "/create_event": (BuildContext context) => new CreateEventPage(new CreateEventPresenter(), title: "Create Event"),
+      // },
       home: new MyHomePage(new BasicHomePresenter(), title: 'Event Planner'),
     );
   }

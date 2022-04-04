@@ -35,8 +35,6 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return new Scaffold(
       backgroundColor: AppColors.kLightYellow,
       body: new Center(
@@ -144,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
         ),
       ),
       floatingActionButton: new FloatingActionButton(
-        onPressed: () => this.widget.presenter.onButton1Clicked(),
+        onPressed: () => this.widget.presenter.onAddButtonClick(),
         tooltip: 'Create new event',
         child: new Icon(Icons.add),
       ),
