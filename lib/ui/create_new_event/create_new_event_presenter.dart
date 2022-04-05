@@ -3,7 +3,7 @@ import 'package:eventplanner/ui/create_new_event/create_new_event_view.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_viewmodel.dart';
 
 class CreateNewEventPresenter {
-  set CreateNewEventView(CreateNewEventView value) {}
+  set createNewEventView(CreateNewEventView value) {}
 }
 
 class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
@@ -15,7 +15,7 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
   }
 
   @override
-  set CreateNewEventView(CreateNewEventView value) {
+  set createNewEventView(CreateNewEventView value) {
     _view = value;
   }
 }

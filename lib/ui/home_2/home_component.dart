@@ -67,14 +67,14 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                     children: const [
                                       // A SlidableAction can have an icon and/or a label.
                                       SlidableAction(
-                                        onPressed: doNothing,
+                                        // onPressed: doNothing,
                                         backgroundColor: Color(0xFFFE4A49),
                                         foregroundColor: Colors.white,
                                         icon: Icons.delete,
                                         label: 'Delete',
                                       ),
                                       SlidableAction(
-                                        onPressed: doNothing,
+                                        // onPressed: doNothing,
                                         backgroundColor: Color(0xFF21B7CA),
                                         foregroundColor: Colors.white,
                                         icon: Icons.share,
@@ -90,14 +90,14 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                       SlidableAction(
                                         // An action can be bigger than the others.
                                         flex: 2,
-                                        onPressed: doNothing,
+                                        // onPressed: doNothing,
                                         backgroundColor: Color(0xFF7BC043),
                                         foregroundColor: Colors.white,
                                         icon: Icons.archive,
                                         label: 'Archive',
                                       ),
                                       SlidableAction(
-                                        onPressed: doNothing,
+                                        // onPressed: doNothing,
                                         backgroundColor: Color(0xFF0392CF),
                                         foregroundColor: Colors.white,
                                         icon: Icons.save,
