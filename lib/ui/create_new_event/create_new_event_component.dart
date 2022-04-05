@@ -112,9 +112,9 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                           FormBuilderValidators.required(context)
                         ]),
                         items: statusOptions
-                            .map((statusOption) => DropdownMenuItem(
-                                  value: statusOption['value'],
-                                  child: Text("$statusOption['label']"),
+                            .map((StatusOption statusOption) => DropdownMenuItem(
+                                  value: statusOption.label,
+                                  child: Text(""),
                                 ))
                             .toList(),
                       ),
