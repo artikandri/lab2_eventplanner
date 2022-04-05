@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:eventplanner/constants.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_view.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_presenter.dart';
 import 'package:eventplanner/components/index.dart';
@@ -99,31 +100,23 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         ]),
                         keyboardType: TextInputType.number,
                       ),
-                      FormBuilderFilterChip(
-                        name: 'filter_chip',
+                      FormBuilderDropdown(
+                        name: 'gender',
                         decoration: InputDecoration(
-                          labelText: 'Select many options',
+                          labelText: 'Gender',
                         ),
-                        options: [
-                          FormBuilderFieldOption(value: 'Test', child: Text('Test')),
-                          FormBuilderFieldOption(value: 'Test 1', child: Text('Test 1')),
-                          FormBuilderFieldOption(value: 'Test 2', child: Text('Test 2')),
-                          FormBuilderFieldOption(value: 'Test 3', child: Text('Test 3')),
-                          FormBuilderFieldOption(value: 'Test 4', child: Text('Test 4')),
-                        ],
-                      ),
-                      FormBuilderChoiceChip(
-                        name: 'choice_chip',
-                        decoration: InputDecoration(
-                          labelText: 'Select an option',
-                        ),
-                        options: [
-                          FormBuilderFieldOption(value: 'Test', child: Text('Test')),
-                          FormBuilderFieldOption(value: 'Test 1', child: Text('Test 1')),
-                          FormBuilderFieldOption(value: 'Test 2', child: Text('Test 2')),
-                          FormBuilderFieldOption(value: 'Test 3', child: Text('Test 3')),
-                          FormBuilderFieldOption(value: 'Test 4', child: Text('Test 4')),
-                        ],
+                        // initialValue: 'Male',
+                        allowClear: true,
+                        hint: Text('Select status'),
+                        validator: FormBuilderValidators.compose([
+                          FormBuilderValidators.required(context)
+                        ]),
+                        items: statusOptions
+                            .map((statusOption) => DropdownMenuItem(
+                                  value: statusOption.value,
+                                  child: Text('$statusOption.label'),
+                                ))
+                            .toList(),
                       ),
                       FormBuilderDateTimePicker(
                         name: 'date',
