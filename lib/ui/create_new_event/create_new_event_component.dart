@@ -61,6 +61,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                 SizedBox(height: 20),
                 Container(
                     child: Column(
+                  width: width,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Textbox(label: 'Title'),
@@ -73,21 +74,22 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                             FormBuilder(
                               key: _formKey,
                               child: Column(
+                                width: width,
                                 children: <Widget>[
-                                  // FormBuilderTextField(
-                                  //   name: 'age',
-                                  //   decoration: InputDecoration(
-                                  //     labelText: 'This value is passed along to the [Text.maxLines] attribute of the [Text] widget used to display the hint text.',
-                                  //   ),
-                                  //   // onChanged: _onChanged,
-                                  //   // valueTransformer: (text) => num.tryParse(text),
-                                  //   validator: FormBuilderValidators.compose([
-                                  //     FormBuilderValidators.required(context),
-                                  //     FormBuilderValidators.numeric(context),
-                                  //     FormBuilderValidators.max(context, 70),
-                                  //   ]),
-                                  //   keyboardType: TextInputType.number,
-                                  // ),
+                                  FormBuilderTextField(
+                                    name: 'age',
+                                    decoration: InputDecoration(
+                                      labelText: 'This value is passed along to the [Text.maxLines] attribute of the [Text] widget used to display the hint text.',
+                                    ),
+                                    // onChanged: _onChanged,
+                                    // valueTransformer: (text) => num.tryParse(text),
+                                    validator: FormBuilderValidators.compose([
+                                      FormBuilderValidators.required(context),
+                                      FormBuilderValidators.numeric(context),
+                                      FormBuilderValidators.max(context, 70),
+                                    ]),
+                                    keyboardType: TextInputType.number,
+                                  ),
                                   FormBuilderChoiceChip(
                                     name: 'status',
                                     decoration: InputDecoration(
