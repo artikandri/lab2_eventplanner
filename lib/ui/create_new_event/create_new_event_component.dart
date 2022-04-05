@@ -74,7 +74,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                             icon: downwardIcon,
                           ),
                         ),
-                        HomePage.calendarIcon(),
+                        // calendarIcon(),
                       ],
                     )
                   ],
