@@ -6,6 +6,8 @@ import 'package:eventplanner/ui/create_new_event/create_new_event_presenter.dart
 
 class HomePresenter {
   void onAddButtonClicked(BuildContext context) {}
+  VoidCallback onMarkAsReadButtonClicked() {}
+  VoidCallback onDeleteButtonClicked() {}
 
   set homeView(HomeView value) {}
 }
@@ -30,4 +32,10 @@ class BasicHomePresenter implements HomePresenter {
       MaterialPageRoute(builder: (context) => new CreateNewEventPage(new BasicCreateNewEventPresenter(), title: "Create new event")),
     );
   }
+
+  @override
+  VoidCallback onMarkAsReadButtonClicked() {}
+
+  @override
+  VoidCallback onDeleteButtonClicked() {}
 }
