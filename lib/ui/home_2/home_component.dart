@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
         ),
       ),
       floatingActionButton: new FloatingActionButton(
-        onPressed: () => this.widget.presenter.onAddButtonClicked(),
+        onPressed: () => this.widget.presenter.onAddButtonClicked(context),
         tooltip: 'Create new event',
         child: new Icon(Icons.add),
       ),

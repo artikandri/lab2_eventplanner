@@ -34,7 +34,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
         child: new Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
           FormBuilder(
             key: _formKey,
-            autovalidate: true,
             child: Column(
               children: <Widget>[
                 FormBuilderFilterChip(

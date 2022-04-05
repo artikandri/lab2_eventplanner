@@ -24,10 +24,10 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   @override
-  void onAddButtonClicked() {
+  void onAddButtonClicked(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => CreateNewEventPage(new BasicCreateNewEventPresenter(), title: "Create new event")),
+      MaterialPageRoute(builder: (context) => new CreateNewEventPage(new BasicCreateNewEventPresenter(), title: "Create new event")),
     );
   }
 }
