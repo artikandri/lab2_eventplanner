@@ -21,10 +21,10 @@ class BasicHomePresenter implements HomePresenter {
   @override
   void onAddButtonClick() {}
 
-  // @override
-  // void getEventListData async () {
-  //   List events = await _sharedPrefsHelper.getListData('events');
-  // }
+  @override
+  void getEventListData() {
+    // List events = await _sharedPrefsHelper.getListData('events');
+  }
 
   @override
   set homeView(HomeView value) {
