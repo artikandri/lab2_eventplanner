@@ -5,7 +5,7 @@ import 'package:eventplanner/ui/create_new_event/create_new_event_component.dart
 import 'package:eventplanner/ui/create_new_event/create_new_event_presenter.dart';
 
 class HomePresenter {
-  void onAddButtonClicked() {}
+  void onAddButtonClicked(BuildContext context) {}
 
   set homeView(HomeView value) {}
 }

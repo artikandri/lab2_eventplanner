@@ -26,6 +26,8 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
     this.widget.presenter.CreateNewEventView = this;
   }
 
+  void _onChanged() {}
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -138,24 +140,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                     FormBuilderValidators.max(context, 70),
                   ]),
                   keyboardType: TextInputType.number,
-                ),
-                FormBuilderDropdown(
-                  name: 'gender',
-                  decoration: InputDecoration(
-                    labelText: 'Gender',
-                  ),
-                  // initialValue: 'Male',
-                  allowClear: true,
-                  hint: Text('Select Gender'),
-                  validator: FormBuilderValidators.compose([
-                    FormBuilderValidators.required(context)
-                  ]),
-                  items: genderOptions
-                      .map((gender) => DropdownMenuItem(
-                            value: gender,
-                            child: Text('$gender'),
-                          ))
-                      .toList(),
                 ),
               ],
             ),
