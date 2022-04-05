@@ -17,7 +17,7 @@ class SlidableListItem extends StatelessWidget {
         dismissible: DismissiblePane(onDismissed: () {}),
         children: [
           SlidableAction(
-            onPressed: onMarkAsReadButtonClicked,
+            onPressed: (BuildContext context) {},
             backgroundColor: Color(0xFF21B7CA),
             foregroundColor: Colors.white,
             icon: Icons.share,
@@ -31,7 +31,7 @@ class SlidableListItem extends StatelessWidget {
           SlidableAction(
             // An action can be bigger than the others.
             flex: 2,
-            onPressed: onDeleteButtonClicked,
+            onPressed: (BuildContext context) {},
             backgroundColor: Color(0xFF7BC043),
             foregroundColor: Colors.white,
             icon: Icons.delete,
