@@ -27,7 +27,7 @@ class BasicHomePresenter implements HomePresenter {
   void onAddButtonClicked() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const CreateNewEventPage(new BasicCreateNewEventPresenter())),
+      MaterialPageRoute(builder: (context) => CreateNewEventPage(new BasicCreateNewEventPresenter(), title: "Create new event")),
     );
   }
 }
