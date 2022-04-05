@@ -113,8 +113,8 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         ]),
                         items: statusOptions
                             .map((statusOption) => DropdownMenuItem(
-                                  value: statusOption.value,
-                                  child: Text('$statusOption.label'),
+                                  value: statusOption['value'],
+                                  child: Text("$statusOption['label']"),
                                 ))
                             .toList(),
                       ),
