@@ -1,5 +1,1 @@
-class HomeViewModel {
-  var events = [];
-
-  HomeViewModel();
-}
+class HomeViewModel {}

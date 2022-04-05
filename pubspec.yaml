@@ -17,10 +17,11 @@ environment:
   sdk: ">=2.10.0 <3.0.0"
 
 dependencies:
-  shared_preferences: ^2.0.13
-  flutter_slidable: ^1.2.0
   flutter:
     sdk: flutter
+  shared_preferences: ^2.0.13
+  flutter_slidable: ^1.2.0
+  flutter_form_builder: ^7.1.1
 
 dev_dependencies:
   flutter_test:

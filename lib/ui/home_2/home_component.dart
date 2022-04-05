@@ -1,36 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:eventplanner/ui/home/home_presenter.dart';
-import 'package:eventplanner/ui/home/home_viewmodel.dart';
-import 'package:eventplanner/ui/home/home_view.dart';
+import 'package:eventplanner/ui/home_2/home_view.dart';
+import 'package:eventplanner/ui/home_2/home_presenter.dart';
 import 'package:eventplanner/components/index.dart';
 import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/widgets/index.dart';
 
-class MyHomePage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   final HomePresenter presenter;
 
-  MyHomePage(this.presenter, {Key key, this.title}) : super(key: key);
+  String title;
 
-  final String title;
+  HomePage(this.presenter, {Key key, this.title}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> implements HomeView {
-  HomeViewModel _viewModel;
-
+class _HomePageState extends State<HomePage> implements HomeView {
   @override
   void initState() {
     super.initState();
     this.widget.presenter.homeView = this;
-  }
-
-  @override
-  void refreshHome(HomeViewModel viewModel) {
-    setState(() {
-      this._viewModel = viewModel;
-    });
   }
 
   @override
@@ -45,44 +35,6 @@ class _MyHomePageState extends State<MyHomePage> implements HomeView {
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
-                    Container(
-                      color: AppColors.transparent,
-                      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              subheading('Events'),
-                            ],
-                          ),
-                          SizedBox(height: AppSpacings.defaultSpacing * 2),
-                          TaskColumn(
-                            icon: Icons.alarm,
-                            iconBackgroundColor: AppColors.kRed,
-                            title: 'To Do',
-                            subtitle: '5 tasks now. 1 started',
-                          ),
-                          SizedBox(
-                            height: AppSpacings.defaultSpacing * 2,
-                          ),
-                          TaskColumn(
-                            icon: Icons.blur_circular,
-                            iconBackgroundColor: AppColors.kDarkYellow,
-                            title: 'In Progress',
-                            subtitle: '1 tasks now. 1 started',
-                          ),
-                          SizedBox(height: AppSpacings.defaultSpacing * 2),
-                          TaskColumn(
-                            icon: Icons.check_circle_outline,
-                            iconBackgroundColor: AppColors.kBlue,
-                            title: 'Done',
-                            subtitle: '18 tasks now. 13 started',
-                          ),
-                        ],
-                      ),
-                    ),
                     Container(
                       width: double.infinity,
                       color: AppColors.transparent,
