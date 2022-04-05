@@ -22,8 +22,9 @@ class BasicHomePresenter implements HomePresenter {
   void onAddButtonClick() {}
 
   @override
-  void getEventListData() {
-    var _events = _sharedPrefsHelper.getListData('events');
+  void getEventListData async () {
+    List events = await _sharedPrefsHelper.getListData('events');
+   
   }
 
   @override
