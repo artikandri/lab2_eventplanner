@@ -25,10 +25,8 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
   @override
   void initState() {
     super.initState();
-    this.widget.presenter.CreateNewEventView = this;
+    this.widget.presenter.createNewEventView = this;
   }
-
-  void _onChanged(String formData) {}
 
   @override
   Widget build(BuildContext context) {
