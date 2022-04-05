@@ -131,7 +131,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          subheading('Events for Today'),
                           SizedBox(height: AppSpacings.defaultSpacing),
                           Container(
                               height: 400,
@@ -143,9 +142,13 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                       children: <Widget>[
                                         SlidableListItem(
                                             child: Container(
-                                              width: double.infinity,
-                                              child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
-                                            ),
+                                                width: double.infinity,
+                                                child: InkWell(
+                                                  onTap: () {
+                                                    print("test");
+                                                  }, // Handle your callback
+                                                  child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                                )),
                                             onMarkAsReadButtonClicked: () {},
                                             onDeleteButtonClicked: () {}),
                                         SizedBox(width: 15),
