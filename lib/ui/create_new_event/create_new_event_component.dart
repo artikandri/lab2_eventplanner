@@ -59,26 +59,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                   ],
                 ),
                 SizedBox(height: 20),
-                Container(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Textbox(label: 'Title'),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: <Widget>[
-                        Expanded(
-                          child: Textbox(
-                            label: 'Date',
-                            icon: downwardIcon,
-                          ),
-                        ),
-                        // calendarIcon(),
-                      ],
-                    )
-                  ],
-                ))
               ],
             ),
           ),
@@ -91,6 +71,34 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                   key: _formKey,
                   child: Column(
                     children: <Widget>[
+                      FormBuilderTextField(
+                        name: 'name',
+                        decoration: InputDecoration(
+                          labelText: 'Name',
+                        ),
+                        // onChanged: _onChanged,
+                        // valueTransformer: (text) => num.tryParse(text),
+                        validator: FormBuilderValidators.compose([
+                          FormBuilderValidators.required(context),
+                          FormBuilderValidators.numeric(context),
+                          FormBuilderValidators.max(context, 70),
+                        ]),
+                        keyboardType: TextInputType.number,
+                      ),
+                      FormBuilderTextField(
+                        name: 'name',
+                        decoration: InputDecoration(
+                          labelText: 'Description',
+                        ),
+                        // onChanged: _onChanged,
+                        // valueTransformer: (text) => num.tryParse(text),
+                        validator: FormBuilderValidators.compose([
+                          FormBuilderValidators.required(context),
+                          FormBuilderValidators.numeric(context),
+                          FormBuilderValidators.max(context, 70),
+                        ]),
+                        keyboardType: TextInputType.number,
+                      ),
                       FormBuilderFilterChip(
                         name: 'filter_chip',
                         decoration: InputDecoration(
@@ -139,60 +147,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                           helperText: 'Helper text',
                           hintText: 'Hint text',
                         ),
-                      ),
-                      FormBuilderSlider(
-                        name: 'slider',
-                        validator: FormBuilderValidators.compose([
-                          FormBuilderValidators.min(context, 6),
-                        ]),
-                        // onChanged: _onChanged,
-                        min: 0.0,
-                        max: 10.0,
-                        initialValue: 7.0,
-                        divisions: 20,
-                        activeColor: Colors.red,
-                        inactiveColor: Colors.pink[100],
-                        decoration: InputDecoration(
-                          labelText: 'Number of things',
-                        ),
-                      ),
-                      FormBuilderCheckbox(
-                        name: 'accept_terms',
-                        initialValue: false,
-                        // onChanged: _onChanged,
-                        title: RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'I have read and agree to the ',
-                                style: TextStyle(color: Colors.black),
-                              ),
-                              TextSpan(
-                                text: 'Terms and Conditions',
-                                style: TextStyle(color: Colors.blue),
-                              ),
-                            ],
-                          ),
-                        ),
-                        validator: FormBuilderValidators.equal(
-                          context,
-                          true,
-                          errorText: 'You must accept terms and conditions to continue',
-                        ),
-                      ),
-                      FormBuilderTextField(
-                        name: 'age',
-                        decoration: InputDecoration(
-                          labelText: 'This value is passed along to the [Text.maxLines] attribute of the [Text] widget used to display the hint text.',
-                        ),
-                        // onChanged: _onChanged,
-                        // valueTransformer: (text) => num.tryParse(text),
-                        validator: FormBuilderValidators.compose([
-                          FormBuilderValidators.required(context),
-                          FormBuilderValidators.numeric(context),
-                          FormBuilderValidators.max(context, 70),
-                        ]),
-                        keyboardType: TextInputType.number,
                       ),
                     ],
                   ),
