@@ -71,59 +71,60 @@ class _HomePageState extends State<HomePage> implements HomeView {
                           subheading('Events for Today'),
                           SizedBox(height: AppSpacings.defaultSpacing),
                           Container(
-                            height: 400,
-                            child: Expanded(
-                              // <-- Use Expanded with SizedBox.expand
-                              child: SizedBox.expand(
-                                child: ListView(
-                                  scrollDirection: Axis.vertical,
-                                  children: <Widget>[
-                                    Slidable(
-                                      // Specify a key if the Slidable is dismissible.
-                                      key: const ValueKey(0),
-                                      startActionPane: ActionPane(
-                                        motion: const ScrollMotion(),
-                                        dismissible: DismissiblePane(onDismissed: () {}),
-                                        children: const [
-                                          SlidableAction(
-                                            // onPressed: doNothing,
-                                            backgroundColor: Color(0xFF21B7CA),
-                                            foregroundColor: Colors.white,
-                                            icon: Icons.share,
-                                            label: 'Mark as done',
+                              height: 400,
+                              child: Column(
+                                child: Expanded(
+                                  // <-- Use Expanded with SizedBox.expand
+                                  child: SizedBox.expand(
+                                    child: ListView(
+                                      scrollDirection: Axis.vertical,
+                                      children: <Widget>[
+                                        Slidable(
+                                          // Specify a key if the Slidable is dismissible.
+                                          key: const ValueKey(0),
+                                          startActionPane: ActionPane(
+                                            motion: const ScrollMotion(),
+                                            dismissible: DismissiblePane(onDismissed: () {}),
+                                            children: const [
+                                              SlidableAction(
+                                                // onPressed: doNothing,
+                                                backgroundColor: Color(0xFF21B7CA),
+                                                foregroundColor: Colors.white,
+                                                icon: Icons.share,
+                                                label: 'Mark as done',
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
 
-                                      // The end action pane is the one at the right or the bottom side.
-                                      endActionPane: const ActionPane(
-                                        motion: ScrollMotion(),
-                                        children: [
-                                          SlidableAction(
-                                            // An action can be bigger than the others.
-                                            flex: 2,
-                                            // onPressed: doNothing,
-                                            backgroundColor: Color(0xFF7BC043),
-                                            foregroundColor: Colors.white,
-                                            icon: Icons.delete,
-                                            label: 'Remove',
+                                          // The end action pane is the one at the right or the bottom side.
+                                          endActionPane: const ActionPane(
+                                            motion: ScrollMotion(),
+                                            children: [
+                                              SlidableAction(
+                                                // An action can be bigger than the others.
+                                                flex: 2,
+                                                // onPressed: doNothing,
+                                                backgroundColor: Color(0xFF7BC043),
+                                                foregroundColor: Colors.white,
+                                                icon: Icons.delete,
+                                                label: 'Remove',
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
 
-                                      // The child of the Slidable is what the user sees when the
-                                      // component is not dragged.
-                                      child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                          // The child of the Slidable is what the user sees when the
+                                          // component is not dragged.
+                                          child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                        ),
+                                        SizedBox(width: 15),
+                                        EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                        SizedBox(width: 15),
+                                        EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                      ],
                                     ),
-                                    SizedBox(width: 15),
-                                    EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
-                                    SizedBox(width: 15),
-                                    EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ),
-                          ),
+                              )),
                         ],
                       ),
                     ),
