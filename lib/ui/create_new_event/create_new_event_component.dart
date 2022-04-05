@@ -139,40 +139,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                     ],
                   ),
                 ),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: MaterialButton(
-                        color: Theme.of(context).colorScheme.secondary,
-                        child: Text(
-                          "Submit",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        onPressed: () {
-                          _formKey.currentState.save();
-                          if (_formKey.currentState.validate()) {
-                            print(_formKey.currentState.value);
-                          } else {
-                            print("validation failed");
-                          }
-                        },
-                      ),
-                    ),
-                    SizedBox(width: 20),
-                    Expanded(
-                      child: MaterialButton(
-                        color: Theme.of(context).colorScheme.secondary,
-                        child: Text(
-                          "Reset",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        onPressed: () {
-                          _formKey.currentState.reset();
-                        },
-                      ),
-                    ),
-                  ],
-                )
               ]),
             ),
           )),
@@ -182,23 +148,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Expanded(
-                  child: MaterialButton(
-                    color: Theme.of(context).colorScheme.secondary,
-                    child: Text(
-                      "Submit",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onPressed: () {
-                      _formKey.currentState.save();
-                      if (_formKey.currentState.validate()) {
-                        print(_formKey.currentState.value);
-                      } else {
-                        print("validation failed");
-                      }
-                    },
-                  ),
-                ),
                 InkWell(
                   onTap: () {
                     _formKey.currentState.save();
