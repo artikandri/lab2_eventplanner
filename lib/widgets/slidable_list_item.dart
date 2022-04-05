@@ -14,7 +14,7 @@ class SlidableListItem extends StatelessWidget {
       key: const ValueKey(0),
       startActionPane: ActionPane(
         motion: const ScrollMotion(),
-        dismissible: DismissiblePane(onDismissed: () {}),
+        // dismissible: DismissiblePane(onDismissed: () {}),
         children: [
           SlidableAction(
             onPressed: (BuildContext context) {},
