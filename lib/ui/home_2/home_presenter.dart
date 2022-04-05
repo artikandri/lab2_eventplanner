@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:eventplanner/ui/home_2/home_view.dart';
 import 'package:eventplanner/ui/home_2/home_viewmodel.dart';
+import 'package:eventplanner/ui/create_new_event/create_new_event_component.dart';
+import 'package:eventplanner/ui/create_new_event/create_new_event_presenter.dart';
 
 class HomePresenter {
   void onAddButtonClicked() {}
@@ -22,5 +24,10 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   @override
-  void onAddButtonClicked() {}
+  void onAddButtonClicked() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const CreateNewEventPage(new BasicCreateNewEventPresenter())),
+    );
+  }
 }
