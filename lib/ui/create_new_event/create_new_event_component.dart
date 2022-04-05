@@ -42,7 +42,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
             child: Column(children: <Widget>[
           TopContainer(
             padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
-            width: width,
+            width: double.infinity,
             child: Column(
               children: <Widget>[
                 MyBackButton(),
@@ -202,7 +202,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
           )),
           Container(
             height: 80,
-            width: width,
+            // width: width,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
@@ -213,7 +213,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                   ),
                   alignment: Alignment.center,
                   margin: EdgeInsets.fromLTRB(20, 10, 20, 20),
-                  width: width - 40,
+                  // width: width - 40,
                   decoration: BoxDecoration(
                     color: AppColors.kBlue,
                     borderRadius: BorderRadius.circular(30),
