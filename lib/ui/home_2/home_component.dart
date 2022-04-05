@@ -62,6 +62,44 @@ class _HomePageState extends State<HomePage> implements HomeView {
                 child: Column(
                   children: <Widget>[
                     Container(
+                      color: AppColors.transparent,
+                      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              subheading('Events'),
+                            ],
+                          ),
+                          SizedBox(height: AppSpacings.defaultSpacing * 2),
+                          TaskColumn(
+                            icon: Icons.alarm,
+                            iconBackgroundColor: AppColors.kRed,
+                            title: 'To Do',
+                            subtitle: '5 tasks now. 1 started',
+                          ),
+                          SizedBox(
+                            height: AppSpacings.defaultSpacing * 2,
+                          ),
+                          TaskColumn(
+                            icon: Icons.blur_circular,
+                            iconBackgroundColor: AppColors.kDarkYellow,
+                            title: 'In Progress',
+                            subtitle: '1 tasks now. 1 started',
+                          ),
+                          SizedBox(height: AppSpacings.defaultSpacing * 2),
+                          TaskColumn(
+                            icon: Icons.check_circle_outline,
+                            iconBackgroundColor: AppColors.kBlue,
+                            title: 'Done',
+                            subtitle: '18 tasks now. 13 started',
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
                       width: double.infinity,
                       color: AppColors.transparent,
                       padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
