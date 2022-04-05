@@ -4,5 +4,4 @@ class CreateNewEventView {
   // set fungsi yg mau dipakai buat set state di component
   // nanti di component fungsinya di-override
 
-  CreateNewEventView();
 }
