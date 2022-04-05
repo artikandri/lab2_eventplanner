@@ -129,10 +129,13 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         // initialValue: DateTime.now(),
                         // enabled: true,
                       ),
-                      FormBuilderDateRangePicker(
-                        name: 'date_range',
-                        firstDate: DateTime(1970),
-                        lastDate: DateTime(2030),
+                      FormBuilderDateTimePicker(
+                        name: 'date',
+                        decoration: InputDecoration(
+                          labelText: 'Appointment Date',
+                        ),
+                        inputType: InputType.time,
+                        initialValue: DateTime.now(),
                         format: DateFormat('yyyy-MM-dd'),
                         // onChanged: _onChanged,
                       ),
