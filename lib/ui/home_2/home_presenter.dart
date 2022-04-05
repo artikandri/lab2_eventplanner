@@ -20,4 +20,7 @@ class BasicHomePresenter implements HomePresenter {
   set homeView(HomeView value) {
     _view = value;
   }
+
+  @override
+  void onAddButtonClicked() {}
 }
