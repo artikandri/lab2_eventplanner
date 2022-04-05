@@ -135,11 +135,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         lastDate: DateTime(2030),
                         format: DateFormat('yyyy-MM-dd'),
                         // onChanged: _onChanged,
-                        decoration: InputDecoration(
-                          labelText: 'Date Range',
-                          helperText: 'Helper text',
-                          hintText: 'Hint text',
-                        ),
                       ),
                     ],
                   ),
@@ -187,6 +182,23 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                Expanded(
+                  child: MaterialButton(
+                    color: Theme.of(context).colorScheme.secondary,
+                    child: Text(
+                      "Submit",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {
+                      _formKey.currentState.save();
+                      if (_formKey.currentState.validate()) {
+                        print(_formKey.currentState.value);
+                      } else {
+                        print("validation failed");
+                      }
+                    },
+                  ),
+                ),
                 Container(
                   child: Text(
                     'Create Task',
