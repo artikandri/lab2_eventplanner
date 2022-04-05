@@ -76,6 +76,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                                   child: Column(
                                     children: <Widget>[
                                       Expanded(
+                                          child: Container(
                                         child: FormBuilderTextField(
                                           name: 'age',
                                           decoration: InputDecoration(
@@ -90,7 +91,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                                           ]),
                                           keyboardType: TextInputType.number,
                                         ),
-                                      ),
+                                      )),
                                       FormBuilderChoiceChip(
                                         name: 'status',
                                         decoration: InputDecoration(
