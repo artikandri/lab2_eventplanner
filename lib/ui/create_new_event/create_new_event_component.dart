@@ -28,8 +28,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
     this.widget.presenter.CreateNewEventView = this;
   }
 
-  void _onChanged(String formData) {
-s  }
+  void _onChanged(String formData) {}
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +82,7 @@ s  }
                   firstDate: DateTime(1970),
                   lastDate: DateTime(2030),
                   format: DateFormat('yyyy-MM-dd'),
-                  onChanged: _onChanged,
+                  // onChanged: _onChanged,
                   decoration: InputDecoration(
                     labelText: 'Date Range',
                     helperText: 'Helper text',
@@ -95,7 +94,7 @@ s  }
                   validator: FormBuilderValidators.compose([
                     FormBuilderValidators.min(context, 6),
                   ]),
-                  onChanged: _onChanged,
+                  // onChanged: _onChanged,
                   min: 0.0,
                   max: 10.0,
                   initialValue: 7.0,
@@ -109,7 +108,7 @@ s  }
                 FormBuilderCheckbox(
                   name: 'accept_terms',
                   initialValue: false,
-                  onChanged: _onChanged,
+                  // onChanged: _onChanged,
                   title: RichText(
                     text: TextSpan(
                       children: [
@@ -135,7 +134,7 @@ s  }
                   decoration: InputDecoration(
                     labelText: 'This value is passed along to the [Text.maxLines] attribute of the [Text] widget used to display the hint text.',
                   ),
-                  onChanged: _onChanged,
+                  // onChanged: _onChanged,
                   // valueTransformer: (text) => num.tryParse(text),
                   validator: FormBuilderValidators.compose([
                     FormBuilderValidators.required(context),
