@@ -110,12 +110,12 @@ class _HomePageState extends State<HomePage> implements HomeView {
 
                                   // The child of the Slidable is what the user sees when the
                                   // component is not dragged.
-                                  child: EventListItem(title: "Test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                  child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                 ),
                                 SizedBox(width: 15),
-                                EventListItem(title: "Test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                 SizedBox(width: 15),
-                                EventListItem(title: "Test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                               ],
                             ),
                           ),
