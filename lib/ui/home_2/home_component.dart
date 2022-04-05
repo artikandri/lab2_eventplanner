@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                     child: ListView(
                                       scrollDirection: Axis.vertical,
                                       children: <Widget>[
-                                        SlidableListItem(child: EventListItem(title: "Test", subtitle: "Test deskripsi", eventIcon: Icons.alarm), onMarkAsReadButtonClicked: () {}, onDeleteButtonClicked: () {}),
+                                        SlidableListItem(child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm), onMarkAsReadButtonClicked: () {}, onDeleteButtonClicked: () {}),
                                         SizedBox(width: 15),
                                         EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                         SizedBox(width: 15),

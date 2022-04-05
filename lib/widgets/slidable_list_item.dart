@@ -11,7 +11,6 @@ class SlidableListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Slidable(
-      // Specify a key if the Slidable is dismissible.
       key: const ValueKey(0),
       startActionPane: ActionPane(
         motion: const ScrollMotion(),
@@ -26,8 +25,6 @@ class SlidableListItem extends StatelessWidget {
           ),
         ],
       ),
-
-      // The end action pane is the one at the right or the bottom side.
       endActionPane: ActionPane(
         motion: ScrollMotion(),
         children: [
