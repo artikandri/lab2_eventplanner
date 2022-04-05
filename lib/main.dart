@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       // routes: <String, WidgetBuilder>{
       //   "/create_event": (BuildContext context) => new CreateEventPage(new CreateEventPresenter(), title: "Create Event"),
       // },
-      home: new MyHomePage(new BasicHomePresenter(), title: 'Event Planner'),
+      home: new HomePage(new BasicHomePresenter(), title: 'Event Planner'),
     );
   }
 }
