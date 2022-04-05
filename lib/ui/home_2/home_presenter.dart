@@ -3,7 +3,7 @@ import 'package:eventplanner/ui/home_2/home_view.dart';
 import 'package:eventplanner/ui/home_2/home_viewmodel.dart';
 
 class HomePresenter {
-  void onButtonAddClicked() {}
+  void onAddButtonClicked() {}
 
   set homeView(HomeView value) {}
 }
