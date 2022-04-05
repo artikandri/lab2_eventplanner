@@ -4,7 +4,7 @@ import 'package:eventplanner/utils/shared_prefs_helper.dart';
 
 class HomePresenter {
   void onAddButtonClick() {}
-  // void getEventListData() {}
+  void getEventListData() {}
   set homeView(HomeView value) {}
 }
 
@@ -22,7 +22,7 @@ class BasicHomePresenter implements HomePresenter {
   void onAddButtonClick() {}
 
   @override
-  void getEventListData() {
+  getEventListData() {
     // List events = await _sharedPrefsHelper.getListData('events');
   }
 
