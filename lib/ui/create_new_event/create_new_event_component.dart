@@ -5,6 +5,7 @@ import 'package:eventplanner/components/index.dart';
 import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/widgets/index.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 
 class CreateNewEventPage extends StatefulWidget {
   final CreateNewEventPresenter presenter;
