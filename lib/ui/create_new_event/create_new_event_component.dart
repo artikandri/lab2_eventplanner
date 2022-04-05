@@ -74,7 +74,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                                 FormBuilder(
                                   key: _formKey,
                                   child: Column(
-                                    width: width,
                                     children: <Widget>[
                                       FormBuilderTextField(
                                         name: 'age',
