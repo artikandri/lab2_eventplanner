@@ -6,10 +6,12 @@ class EventListItem extends StatelessWidget {
   final IconData eventIcon;
   final String title;
   final String subtitle;
+  final String date;
 
   EventListItem({
     this.title,
     this.subtitle,
+    this.date,
     this.eventIcon,
   });
 
@@ -28,6 +30,7 @@ class EventListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               iconContainer(eventIcon),
@@ -48,7 +51,15 @@ class EventListItem extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-              ])
+              ]),
+              Text(
+                date,
+                style: TextStyle(
+                  fontSize: AppFonts.bodyFontSize,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ],
           ),
         ],

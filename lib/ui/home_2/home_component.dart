@@ -51,6 +51,30 @@ class _HomePageState extends State<HomePage> implements HomeView {
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: <Widget>[
+                                SizedBox(width: 15),
+                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                SizedBox(width: 15),
+                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      color: AppColors.transparent,
+                      padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          subheading('Events for Today'),
+                          SizedBox(height: AppSpacings.defaultSpacing),
+                          Container(
+                            height: 400,
+                            child: ListView(
+                              scrollDirection: Axis.vertical,
+                              children: <Widget>[
                                 Slidable(
                                   // Specify a key if the Slidable is dismissible.
                                   key: const ValueKey(0),
@@ -86,33 +110,8 @@ class _HomePageState extends State<HomePage> implements HomeView {
 
                                   // The child of the Slidable is what the user sees when the
                                   // component is not dragged.
-                                  child: EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                  child: EventListItem(title: "Test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                 ),
-                                SizedBox(width: 15),
-                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                                SizedBox(width: 15),
-                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      width: double.infinity,
-                      color: AppColors.transparent,
-                      padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          subheading('Events for Today'),
-                          SizedBox(height: AppSpacings.defaultSpacing),
-                          Container(
-                            height: 400,
-                            child: ListView(
-                              scrollDirection: Axis.vertical,
-                              children: <Widget>[
-                                EventListItem(title: "Test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                 SizedBox(width: 15),
                                 EventListItem(title: "Test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                 SizedBox(width: 15),
