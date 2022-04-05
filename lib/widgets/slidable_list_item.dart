@@ -6,7 +6,7 @@ class SlidableListItem extends StatelessWidget {
   final VoidCallback onMarkAsReadButtonClicked;
   final VoidCallback onDeleteButtonClicked;
 
-  SlidableListItem({this.child, this.onMarkAsReadButtonClicked, this.onDeleteButtonClicked});
+  SlidableListItem({Key key, this.child, this.onMarkAsReadButtonClicked, this.onDeleteButtonClicked}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
