@@ -26,6 +26,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    double height = size.height;
+    double width = size.width;
+
     return new Scaffold(
       backgroundColor: AppColors.kLightYellow,
       body: new Center(
@@ -75,12 +79,16 @@ class _HomePageState extends State<HomePage> implements HomeView {
                               child: Column(children: <Widget>[
                                 Expanded(
                                   child: Container(
-                                    height: double.maxFinite,
-                                    width: double.maxFinite,
                                     child: ListView(
                                       scrollDirection: Axis.vertical,
                                       children: <Widget>[
-                                        SlidableListItem(child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm), onMarkAsReadButtonClicked: () {}, onDeleteButtonClicked: () {}),
+                                        SlidableListItem(
+                                            child: Container(
+                                              width: double.infinity,
+                                              child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                            ),
+                                            onMarkAsReadButtonClicked: () {},
+                                            onDeleteButtonClicked: () {}),
                                         SizedBox(width: 15),
                                       ],
                                     ),
