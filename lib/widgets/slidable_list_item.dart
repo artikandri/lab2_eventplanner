@@ -3,10 +3,10 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 
 class SlidableListItem extends StatelessWidget {
   final Widget child;
-  final VoidCallback onMarkAsReadButtonClicked(BuildContext context) {};
-  final VoidCallback onDeleteButtonClicked(BuildContext context) {};
+  final VoidCallback onMarkAsReadButtonClicked;
+  final VoidCallback onDeleteButtonClicked;
 
-  SlidableListItem({Key key, this.child, this.onMarkAsReadButtonClicked, this.onDeleteButtonClicked}) : super(key: key);
+  SlidableListItem({this.child, this.onMarkAsReadButtonClicked, this.onDeleteButtonClicked});
 
   @override
   Widget build(BuildContext context) {
