@@ -199,19 +199,29 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                     },
                   ),
                 ),
-                Container(
-                  child: Text(
-                    'Create Task',
-                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 18),
+                InkWell(
+                  onTap: () {
+                    _formKey.currentState.save();
+                    if (_formKey.currentState.validate()) {
+                      print(_formKey.currentState.value);
+                    } else {
+                      print("validation failed");
+                    }
+                  },
+                  child: Container(
+                    child: Text(
+                      'Create Task',
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 18),
+                    ),
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.fromLTRB(20, 10, 20, 20),
+                    width: width - 40,
+                    decoration: BoxDecoration(
+                      color: AppColors.kBlue,
+                      borderRadius: BorderRadius.circular(30),
+                    ),
                   ),
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.fromLTRB(20, 10, 20, 20),
-                  width: width - 40,
-                  decoration: BoxDecoration(
-                    color: AppColors.kBlue,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
+                )
               ],
             ),
           ),
