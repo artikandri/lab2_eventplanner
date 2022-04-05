@@ -72,8 +72,8 @@ class _HomePageState extends State<HomePage> implements HomeView {
                           SizedBox(height: AppSpacings.defaultSpacing),
                           Container(
                               height: 400,
-                              child: Column(
-                                child: Expanded(
+                              child: Column(children: <Widget>[
+                                Expanded(
                                   // <-- Use Expanded with SizedBox.expand
                                   child: SizedBox.expand(
                                     child: ListView(
@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                     ),
                                   ),
                                 ),
-                              )),
+                              ])),
                         ],
                       ),
                     ),
