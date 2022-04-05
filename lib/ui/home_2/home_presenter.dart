@@ -6,8 +6,8 @@ import 'package:eventplanner/ui/create_new_event/create_new_event_presenter.dart
 
 class HomePresenter {
   void onAddButtonClicked(BuildContext context) {}
-  VoidCallback onMarkAsReadButtonClicked(BuildContext context) {}
-  VoidCallback onDeleteButtonClicked(BuildContext context) {}
+  onMarkAsReadButtonClicked(BuildContext context) {}
+  onDeleteButtonClicked(BuildContext context) {}
 
   set homeView(HomeView value) {}
 }
@@ -34,8 +34,8 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   @override
-  VoidCallback onMarkAsReadButtonClicked(BuildContext context) {}
+  onMarkAsReadButtonClicked(BuildContext context) {}
 
   @override
-  VoidCallback onDeleteButtonClicked(BuildContext context) {}
+  onDeleteButtonClicked(BuildContext context) {}
 }
