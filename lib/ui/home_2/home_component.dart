@@ -192,6 +192,8 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                         itemCount: _events.length,
                                                         scrollDirection: Axis.vertical,
                                                         itemBuilder: (BuildContext context, int index) {
+                                                          String eventSubtitle = getStatusLabelFromValue(_events[index]['status']);
+                                                          double eventOpacity = _events[index]['isRead'] ? .8 : 1;
                                                           return Container(
                                                             height: 50,
                                                             child: SlidableListItem(
@@ -201,7 +203,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                     onTap: () {
                                                                       this.widget.presenter.onEventListItemTapped(context, _events[index]);
                                                                     },
-                                                                    child: EventListItem(title: _events[index]['name'], date: _events[index]['date'], subtitle: getStatusLabelFromValue(_events[index]['status']), eventIcon: getStatusIconFromValue(_events[index]['status']), eventColor: getStatusColorFromValue(_events[index]['status'])),
+                                                                    child: EventListItem(opacity: eventOpacity, title: _events[index]['name'], date: _events[index]['date'], subtitle: eventSubtitle, eventIcon: getStatusIconFromValue(_events[index]['status']), eventColor: getStatusColorFromValue(_events[index]['status'])),
                                                                   )),
                                                               onMarkAsReadButtonClicked: () {
                                                                 this.widget.presenter.onMarkAsReadButtonClicked(context, _events[index]);

@@ -8,50 +8,53 @@ class EventListItem extends StatelessWidget {
   final String subtitle;
   final String date;
   final Color eventColor;
+  final double opacity;
 
-  EventListItem({this.title, this.subtitle, this.date, this.eventIcon, this.eventColor});
+  EventListItem({this.title, this.subtitle, this.date, this.eventIcon, this.eventColor, this.opacity});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        CircleAvatar(
-          radius: 20.0,
-          backgroundColor: eventColor == null ? AppColors.kLightGreen : eventColor,
-          child: Icon(
-            eventIcon,
-            size: AppSpacings.defaultSpacing * 2,
-            color: Colors.white,
-          ),
-        ),
-        SizedBox(width: AppSpacings.defaultSpacing * 2),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return Opacity(
+        opacity: opacity,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: AppFonts.bodyFontSize,
-                fontWeight: FontWeight.w600,
+            CircleAvatar(
+              radius: 20.0,
+              backgroundColor: eventColor == null ? AppColors.kLightGreen : eventColor,
+              child: Icon(
+                eventIcon,
+                size: AppSpacings.defaultSpacing * 2,
+                color: Colors.white,
               ),
             ),
-            Text(
-              subtitle,
-              style: TextStyle(fontSize: AppFonts.subFontSize, fontWeight: FontWeight.w500, color: Colors.black45),
+            SizedBox(width: AppSpacings.defaultSpacing * 2),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: AppFonts.bodyFontSize,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
+                  subtitle,
+                  style: TextStyle(fontSize: AppFonts.subFontSize, fontWeight: FontWeight.w500, color: Colors.black45),
+                ),
+              ],
             ),
+            SizedBox(width: AppSpacings.defaultSpacing * 2),
+            Text(
+              date,
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                fontSize: AppFonts.subFontSize,
+                fontWeight: FontWeight.w500,
+              ),
+            )
           ],
-        ),
-        SizedBox(width: AppSpacings.defaultSpacing * 2),
-        Text(
-          date,
-          textAlign: TextAlign.right,
-          style: TextStyle(
-            fontSize: AppFonts.subFontSize,
-            fontWeight: FontWeight.w500,
-          ),
-        )
-      ],
-    );
+        ));
   }
 }
