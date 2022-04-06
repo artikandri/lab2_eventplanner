@@ -46,6 +46,7 @@ class BasicHomePresenter implements HomePresenter {
     List updatedEvents = events.map((e) => e['id'] == eventData['id'] ? e['isRead'] = true : e).toList();
 
     SharedPrefsHelper().setData("events", updatedEvents);
+    print(getEventListData());
   }
 
   @override
