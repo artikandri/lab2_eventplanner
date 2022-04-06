@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
   void initState() {
     super.initState();
     this.widget.presenter.homeView = this;
+    // this.widget.presenter.
   }
 
   @override
