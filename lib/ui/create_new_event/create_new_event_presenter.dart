@@ -65,6 +65,7 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
 
   @override
   void saveData(dynamic formValue) {
+    print(formValue.description);
     String _name = _viewModel.name != null ? _viewModel.name : formValue.name;
     String _description = _viewModel.description != null ? _viewModel.description : formValue.description;
     int _status = _viewModel.status != null ? _viewModel.status : formValue.status;
