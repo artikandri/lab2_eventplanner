@@ -49,6 +49,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
       _inprogressEvents = _events.where((_event) => int.parse(_event['status']) == 1).toList();
       _doneEvents = _events.where((_event) => int.parse(_event['status']) == 2).toList();
     });
+    print("ayam");
     print(_todoEvents.length);
   }
 
