@@ -54,7 +54,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'Create new task',
+                      'Create new event',
                       style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
                     ),
                   ],
@@ -81,13 +81,12 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         // valueTransformer: (text) => num.tryParse(text),
                         validator: FormBuilderValidators.compose([
                           FormBuilderValidators.required(context),
-                          FormBuilderValidators.numeric(context),
                           FormBuilderValidators.max(context, 70),
                         ]),
                         keyboardType: TextInputType.number,
                       ),
                       FormBuilderTextField(
-                        name: 'name',
+                        name: 'description',
                         decoration: InputDecoration(
                           labelText: 'Description',
                         ),
@@ -95,17 +94,36 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         // valueTransformer: (text) => num.tryParse(text),
                         validator: FormBuilderValidators.compose([
                           FormBuilderValidators.required(context),
-                          FormBuilderValidators.numeric(context),
-                          FormBuilderValidators.max(context, 70),
                         ]),
                         keyboardType: TextInputType.number,
+                      ),
+                      FormBuilderDateTimePicker(
+                        name: 'appointmentDate',
+                        decoration: InputDecoration(
+                          labelText: 'Appointment Date',
+                        ),
+                        inputType: InputType.date,
+                        initialValue: DateTime.now(),
+                        format: DateFormat('yyyy-MM-dd'),
+                        // onChanged: _onChanged,
+                      ),
+                      FormBuilderDateTimePicker(
+                        name: 'appointmentTime',
+                        // onChanged: _onChanged,
+                        inputType: InputType.time,
+                        decoration: InputDecoration(
+                          labelText: 'Appointment Time',
+                        ),
+                        initialTime: TimeOfDay(hour: 8, minute: 0),
+                        // initialValue: DateTime.now(),
+                        // enabled: true,
                       ),
                       FormBuilderDropdown(
                         name: 'gender',
                         decoration: InputDecoration(
                           labelText: 'Gender',
                         ),
-                        // initialValue: 'Male',
+                        initialValue: 0,
                         allowClear: true,
                         hint: Text('Select status'),
                         validator: FormBuilderValidators.compose([
@@ -117,27 +135,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                                   child: Text(statusOption.label),
                                 ))
                             .toList(),
-                      ),
-                      FormBuilderDateTimePicker(
-                        name: 'date',
-                        // onChanged: _onChanged,
-                        inputType: InputType.time,
-                        decoration: InputDecoration(
-                          labelText: 'Appointment Time',
-                        ),
-                        initialTime: TimeOfDay(hour: 8, minute: 0),
-                        // initialValue: DateTime.now(),
-                        // enabled: true,
-                      ),
-                      FormBuilderDateTimePicker(
-                        name: 'date',
-                        decoration: InputDecoration(
-                          labelText: 'Appointment Date',
-                        ),
-                        inputType: InputType.date,
-                        initialValue: DateTime.now(),
-                        format: DateFormat('yyyy-MM-dd'),
-                        // onChanged: _onChanged,
                       ),
                     ],
                   ),
