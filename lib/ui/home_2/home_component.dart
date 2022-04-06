@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                   scrollDirection: Axis.horizontal,
                                   itemCount: _todayEvents.length,
                                   itemBuilder: (BuildContext context, int index) {
-                                    print(todayEvents);
+                                    print(_todayEvents);
                                     if (_todayEvents.length > 0) {
                                       return Column(children: <Widget>[
                                         EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
