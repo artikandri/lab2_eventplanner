@@ -68,7 +68,7 @@ class BasicHomePresenter implements HomePresenter {
   @override
   Future<List> getEventFutureListData() async {
     // await SharedPrefsHelper().setData("events", "");
-    var _futureEvents = await SharedPrefsHelper().getData("events");
+    Future _futureEvents = await SharedPrefsHelper().getData("events");
 
     return _futureEvents;
   }
