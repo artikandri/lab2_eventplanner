@@ -6,8 +6,7 @@ class CreateNewEventPresenter {
   void onNameChanged(String value) {}
   void onDescriptionChanged(String value) {}
   void onStatusChanged(int value) {}
-
-  // void onDateChanged(String value) {}
+  void onDateChanged(DateTime value) {}
   // void onTimeChanged(String value) {}
 
   set createNewEventView(CreateNewEventView value) {}
@@ -39,5 +38,10 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
   @override
   void onStatusChanged(int value) {
     _viewModel.status = value;
+  }
+
+  @override
+  void onDateChanged(DateTime value) {
+    print(value);
   }
 }

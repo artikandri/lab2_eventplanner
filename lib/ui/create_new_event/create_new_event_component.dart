@@ -93,10 +93,10 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         decoration: InputDecoration(
                           labelText: 'Appointment Date',
                         ),
-                        inputType: InputType.dateTime,
+                        inputType: InputType.date,
                         initialValue: DateTime.now(),
                         format: DateFormat('yyyy-MM-dd'),
-                        // onChanged: _onChanged,
+                        onChanged: this.widget.presenter.onDateChanged,
                       ),
                       FormBuilderDateTimePicker(
                         name: 'appointmentTime',
