@@ -40,6 +40,7 @@ class EventCard extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
+              SizedBox(height: AppSpacings.defaultSpacing * 1.5),
               Text(
                 subtitle,
                 style: TextStyle(
