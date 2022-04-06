@@ -87,7 +87,20 @@ class _HomePageState extends State<HomePage> implements HomeView {
                     Container(
                       color: AppColors.transparent,
                       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                      child: Column(
+                                  child: FutureBuilder(
+                                      future: _futureEvents,
+                                      builder: (context, snapshot) {
+                                        switch (snapshot.connectionState) {
+                                          case ConnectionState.none:
+                                            break;
+                                          case ConnectionState.waiting:
+                                            return CircularProgressIndicator(
+                                              strokeWidth: 2,
+                                            );
+                                          case ConnectionState.active:
+                                            break;
+                                          case ConnectionState.done:
+                                              return Column(
                         children: <Widget>[
                           SizedBox(height: AppSpacings.defaultSpacing * 2),
                           TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getEventsTaglineByStatus(0)),
@@ -98,7 +111,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
                           SizedBox(height: AppSpacings.defaultSpacing * 2),
                           TaskColumn(icon: Icons.check_circle_outline, iconBackgroundColor: AppColors.kBlue, title: 'Done', subtitle: getEventsTaglineByStatus(2)),
                         ],
-                      ),
+                      );
+                                        }
+                                      })),
+                            
                     ),
                     Container(
                       width: double.infinity,
@@ -152,51 +168,50 @@ class _HomePageState extends State<HomePage> implements HomeView {
                         children: <Widget>[
                           SizedBox(height: AppSpacings.defaultSpacing),
                           Container(
-                              height: 400,
                               child: Column(children: <Widget>[
-                                Expanded(
-                                  child: Container(
-                                      child: FutureBuilder(
-                                          future: _futureEvents,
-                                          builder: (context, snapshot) {
-                                            switch (snapshot.connectionState) {
-                                              case ConnectionState.none:
-                                                break;
-                                              case ConnectionState.waiting:
-                                                return CircularProgressIndicator(
-                                                  strokeWidth: 2,
-                                                );
-                                              case ConnectionState.active:
-                                                break;
-                                              case ConnectionState.done:
-                                                if (snapshot.data != null) {
-                                                  return Container(
-                                                    child: ListView.builder(
-                                                        itemCount: snapshot.data.length,
-                                                        scrollDirection: Axis.vertical,
-                                                        itemBuilder: (BuildContext context, int index) {
-                                                          return Container(
-                                                            height: 50,
-                                                            child: SlidableListItem(
-                                                                child: Container(
-                                                                    width: double.infinity,
-                                                                    child: InkWell(
-                                                                      onTap: () {
-                                                                        this.widget.presenter.onEventListItemTapped(context);
-                                                                      }, // Handle your callback
-                                                                      child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
-                                                                    )),
-                                                                onMarkAsReadButtonClicked: () {},
-                                                                onDeleteButtonClicked: () {}),
-                                                          );
-                                                        }),
-                                                  );
-                                                }
-                                                return Container(child: Text("No events registered"));
+                            Expanded(
+                              child: Container(
+                                  child: FutureBuilder(
+                                      future: _futureEvents,
+                                      builder: (context, snapshot) {
+                                        switch (snapshot.connectionState) {
+                                          case ConnectionState.none:
+                                            break;
+                                          case ConnectionState.waiting:
+                                            return CircularProgressIndicator(
+                                              strokeWidth: 2,
+                                            );
+                                          case ConnectionState.active:
+                                            break;
+                                          case ConnectionState.done:
+                                            if (snapshot.data != null) {
+                                              return Container(
+                                                child: ListView.builder(
+                                                    itemCount: snapshot.data.length,
+                                                    scrollDirection: Axis.vertical,
+                                                    itemBuilder: (BuildContext context, int index) {
+                                                      return Container(
+                                                        height: 50,
+                                                        child: SlidableListItem(
+                                                            child: Container(
+                                                                width: double.infinity,
+                                                                child: InkWell(
+                                                                  onTap: () {
+                                                                    this.widget.presenter.onEventListItemTapped(context);
+                                                                  }, // Handle your callback
+                                                                  child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                                                )),
+                                                            onMarkAsReadButtonClicked: () {},
+                                                            onDeleteButtonClicked: () {}),
+                                                      );
+                                                    }),
+                                              );
                                             }
-                                          })),
-                                ),
-                              ])),
+                                            return Container(child: Text("No events registered"));
+                                        }
+                                      })),
+                            ),
+                          ])),
                         ],
                       ),
                     ),

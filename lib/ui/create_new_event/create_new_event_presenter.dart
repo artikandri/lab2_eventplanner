@@ -91,7 +91,6 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
     );
   }
 
-  @override
   Future<List> getEventListData() async {
     var items = await SharedPrefsHelper().getData("events");
     return items;
