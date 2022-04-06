@@ -120,11 +120,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                         break;
                                       case ConnectionState.done:
                                         if (snapshot.data != null) {
-                                          setEvents(snapshot.data);
                                           return Container(
                                               child: ListView.builder(
                                                   scrollDirection: Axis.horizontal,
-                                                  itemCount: _todayEvents.length,
+                                                  itemCount: snapshot.data.length,
                                                   itemBuilder: (BuildContext context, int index) {
                                                     return Column(children: <Widget>[
                                                       EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
