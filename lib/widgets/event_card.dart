@@ -26,8 +26,8 @@ class EventCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppSpacings.defaultSpacing),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
