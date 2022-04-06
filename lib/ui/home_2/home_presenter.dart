@@ -50,26 +50,24 @@ class BasicHomePresenter implements HomePresenter {
     SharedPrefsHelper().setData("events", updatedEvents);
     _viewModel.events = updatedEvents;
     _view.setEventsData(updatedEvents);
-    print("ayam");
   }
 
-  @override
-  void onMarkAsReadButtonClicked(BuildContext context, dynamic eventData) {
-    showAlertDialog(context, "Warning", "Are you sure you want to mark this event as read?", markEventAsRead(eventData), () {
-      print("sapi");
-    });
-
-    // to do: reload page
-    // to do: notif
-  }
-
-  @override
-  void onDeleteButtonClicked(BuildContext context, dynamic eventData) {
+  deleteEvent(eventData) {
     List updatedEvents = _viewModel.events.where((e) => e['id'] != eventData['id']).toList();
     SharedPrefsHelper().setData("events", updatedEvents);
 
     _viewModel.events = updatedEvents;
     _view.setEventsData(updatedEvents);
+  }
+
+  @override
+  void onMarkAsReadButtonClicked(BuildContext context, dynamic eventData) {
+    showAlertDialog(context, "Warning", "Are you sure you want to mark this event as read?", markEventAsRead(eventData), null);
+  }
+
+  @override
+  void onDeleteButtonClicked(BuildContext context, dynamic eventData) {
+    showAlertDialog(context, "Warning", "Are you sure you want to delete this event?", deleteEvent(eventData), null);
   }
 
   @override
