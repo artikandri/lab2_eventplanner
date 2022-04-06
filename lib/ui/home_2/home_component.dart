@@ -202,10 +202,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                     child: EventListItem(title: _events[index]['name'], date: _events[index]['date'], subtitle: getStatusLabelFromValue(_events[index]['status']), eventIcon: Icons.alarm),
                                                                   )),
                                                               onMarkAsReadButtonClicked: () {
-                                                                this.widget.presenter.onMarkAsReadButtonClicked(_events[index]);
+                                                                this.widget.presenter.onMarkAsReadButtonClicked(context, _events[index]);
                                                               },
                                                               onDeleteButtonClicked: () {
-                                                                this.widget.presenter.onDeleteButtonClicked(_events[index]);
+                                                                this.widget.presenter.onDeleteButtonClicked(context, _events[index]);
                                                               },
                                                             ),
                                                           );

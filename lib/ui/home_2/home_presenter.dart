@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:eventplanner/utils/index.dart';
+import 'package:eventplanner/components/dialog.dart';
 import 'package:eventplanner/ui/home_2/home_view.dart';
 import 'package:eventplanner/ui/home_2/home_viewmodel.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_component.dart';
@@ -9,8 +10,8 @@ import 'package:eventplanner/ui/event_detail/event_detail_presenter.dart';
 
 class HomePresenter {
   void onAddButtonClicked(BuildContext context) {}
-  void onMarkAsReadButtonClicked(dynamic eventData) {}
-  void onDeleteButtonClicked(dynamic eventData) {}
+  void onMarkAsReadButtonClicked(BuildContext context, dynamic eventData) {}
+  void onDeleteButtonClicked(BuildContext context, dynamic eventData) {}
   void onEventListItemTapped(BuildContext context, dynamic eventData) {}
   Future<List> getEventFutureListData() {}
   List getEventListData() {}
@@ -40,8 +41,7 @@ class BasicHomePresenter implements HomePresenter {
     );
   }
 
-  @override
-  void onMarkAsReadButtonClicked(dynamic eventData) {
+  void markEventAsRead(eventData) {
     List updatedEvents = _viewModel.events.map((e) {
       e['isRead'] = e['id'] == eventData['id'] ? true : e['isRead'];
 
@@ -50,12 +50,18 @@ class BasicHomePresenter implements HomePresenter {
     SharedPrefsHelper().setData("events", updatedEvents);
     _viewModel.events = updatedEvents;
     _view.setEventsData(updatedEvents);
+  }
+
+  @override
+  void onMarkAsReadButtonClicked(BuildContext context, dynamic eventData) {
+    showAlertDialog(context, "test", "test", markEventAsRead(eventData), () {});
+
     // to do: reload page
     // to do: notif
   }
 
   @override
-  void onDeleteButtonClicked(dynamic eventData) {
+  void onDeleteButtonClicked(BuildContext context, dynamic eventData) {
     List updatedEvents = _viewModel.events.where((e) => e['id'] != eventData['id']).toList();
     SharedPrefsHelper().setData("events", updatedEvents);
 
