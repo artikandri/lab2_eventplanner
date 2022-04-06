@@ -7,8 +7,8 @@ import 'package:eventplanner/ui/home_2/home_component.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: AppColors.kLightYellow,
-    statusBarColor: Color(0xffffb969),
+    systemNavigationBarColor: AppColors.kWhite,
+    statusBarColor: AppColors.kPalePurple,
   ));
 
   return runApp(MyApp());
@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Event Planner',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        textTheme: Theme.of(context).textTheme.apply(bodyColor: AppColors.kDarkBlue, displayColor: AppColors.kDarkBlue, fontFamily: 'Poppins'),
+        primarySwatch: AppColors.kDarkPurple,
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: AppColors.kDarkPurple, displayColor: AppColors.kDarkPurple, fontFamily: 'Poppins'),
       ),
       localizationsDelegates: [
         FormBuilderLocalizations.delegate,
