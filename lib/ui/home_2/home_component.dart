@@ -131,7 +131,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                       child: FutureBuilder(
                                     future: this.widget.presenter.getEventListData(),
                                     builder: (context, snapshot) {
-                                      print(snapshot);
                                       switch (snapshot.connectionState) {
                                         case ConnectionState.none:
                                           break;
@@ -144,23 +143,30 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                           break;
                                         case ConnectionState.done:
                                           return Container(
-                                            child: ListView(
-                                              scrollDirection: Axis.vertical,
-                                              children: <Widget>[
-                                                SlidableListItem(
-                                                    child: Container(
-                                                        width: double.infinity,
-                                                        child: InkWell(
-                                                          onTap: () {
-                                                            this.widget.presenter.onEventListItemTapped(context);
-                                                          }, // Handle your callback
-                                                          child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
-                                                        )),
-                                                    onMarkAsReadButtonClicked: () {},
-                                                    onDeleteButtonClicked: () {}),
-                                                SizedBox(width: 15),
-                                              ],
-                                            ),
+                                            child: ListView.builder(
+                                                itemCount: _viewModel.events.length,
+                                                scrollDirection: Axis.vertical,
+                                                itemBuilder: (BuildContext context, int index) {
+                                                  return Container(
+                                                    height: 50,
+                                                    child: SlidableListItem(
+                                                        child: Container(
+                                                            width: double.infinity,
+                                                            child: InkWell(
+                                                              onTap: () {
+                                                                this.widget.presenter.onEventListItemTapped(context);
+                                                              }, // Handle your callback
+                                                              child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                                            )),
+                                                        onMarkAsReadButtonClicked: () {},
+                                                        onDeleteButtonClicked: () {}),
+                                                  );
+                                                }
+
+                                                // children: <Widget>[
+                                                //   SizedBox(width: 15),
+                                                // ],
+                                                ),
                                           );
                                       }
                                     },
