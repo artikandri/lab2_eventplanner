@@ -14,7 +14,7 @@ class EventCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
         child: Container(
       margin: EdgeInsets.symmetric(vertical: AppSpacings.defaultSpacing),
       padding: EdgeInsets.all(AppSpacings.defaultSpacing * 2),
@@ -22,7 +22,7 @@ class EventCard extends StatelessWidget {
         color: cardColor,
         borderRadius: BorderRadius.circular(AppSpacings.defaultSpacing),
       ),
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
