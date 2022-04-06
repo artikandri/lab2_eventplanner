@@ -10,7 +10,7 @@ import 'package:eventplanner/ui/event_detail/event_detail_presenter.dart';
 class HomePresenter {
   void onAddButtonClicked(BuildContext context) {}
   void onMarkAsReadButtonClicked(dynamic eventData) {}
-  void onDeleteButtonClicked(BuildContext context) {}
+  void onDeleteButtonClicked(dynamic eventData) {}
   void onEventListItemTapped(BuildContext context) {}
   Future<List> getEventFutureListData() {}
   List getEventListData() {}
@@ -47,10 +47,15 @@ class BasicHomePresenter implements HomePresenter {
       return e;
     }).toList();
     SharedPrefsHelper().setData("events", updatedEvents);
+    // to do: reload page
+    // to do: notif
   }
 
   @override
-  void onDeleteButtonClicked(BuildContext context) {}
+  void onDeleteButtonClicked(dynamic eventData) {
+    List updatedEvents = _viewModel.events.where((e) => e['id'] != eventData['id']).toList();
+    SharedPrefsHelper().setData("events", updatedEvents);
+  }
 
   @override
   void onEventListItemTapped(BuildContext context) {
