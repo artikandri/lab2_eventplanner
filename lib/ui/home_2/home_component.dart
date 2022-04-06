@@ -4,6 +4,7 @@ import 'package:eventplanner/ui/home_2/home_presenter.dart';
 import 'package:eventplanner/components/index.dart';
 import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/widgets/index.dart';
+import 'package:eventplanner/utils/index.dart';
 
 class HomePage extends StatefulWidget {
   final HomePresenter presenter;
@@ -31,24 +32,17 @@ class _HomePageState extends State<HomePage> implements HomeView {
     _futureEvents = this.widget.presenter.getEventListData();
     _futureEvents.then((value) {
       if (value != null) {
-        setState(() {
-          _events = value;
-          setEventsData();
-        });
+        setEventsData(value);
       }
-      //   if (value != null) {
-      //     _events.add(value);
-      //     print(value['datetime']);
-      //     if (value['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))) {
-      //       _todayEvents.add(value);
-      //     }
-      //   }
     });
   }
 
-  setEventsData() {
-    // _todayEvents = _events.where((_event) => _event['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))).toList();
-    _todoEvents = _events.where((_event) => int.parse(_event['status']) == 0).toList();
+  void setEventsData(List events) {
+    setState(() {
+      _events = events;
+      _todayEvents = _events.where((_event) => _event['datetime'].isToday()).toList();
+      _todoEvents = _events.where((_event) => int.parse(_event['status']) == 0).toList();
+    });
   }
 
   @override
