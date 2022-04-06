@@ -14,20 +14,22 @@ List<StatusOption> statusOptions = [
   StatusOption(value: 2, label: "Done"),
 ];
 
+Color getStatusIconFromValue(int value) {}
+
 Color getStatusColorFromValue(int value) {
   Color color = AppColors.kLightGreen;
   switch (value) {
     case 0:
-      label = "To Do";
+      color = AppColors.kLightRed;
       break;
     case 1:
-      label = "In Progress";
+      color = AppColors.kLightOrange;
       break;
     case 2:
-      label = "Done";
+      color = AppColors.kLightPurple;
       break;
   }
-  return label;
+  return color;
 }
 
 String getStatusLabelFromValue(int value) {

@@ -3,7 +3,7 @@ import 'package:eventplanner/theme/index.dart';
 
 CircleAvatar iconContainer(icon) {
   return CircleAvatar(
-    radius: 20.0,
+    radius: AppSpacings.defaultSpacing * 3,
     backgroundColor: AppColors.kDarkBlue,
     child: Icon(
       icon,
