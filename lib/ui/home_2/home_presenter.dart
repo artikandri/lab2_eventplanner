@@ -11,8 +11,9 @@ class HomePresenter {
   void onAddButtonClicked(BuildContext context) {}
   void onMarkAsReadButtonClicked(BuildContext context) {}
   void onDeleteButtonClicked(BuildContext context) {}
-  onEventListItemTapped(BuildContext context) {}
+  void onEventListItemTapped(BuildContext context) {}
   Future getEventListData() {}
+  void setEvents() {}
 
   set homeView(HomeView value) {}
 }
@@ -46,7 +47,7 @@ class BasicHomePresenter implements HomePresenter {
   void onDeleteButtonClicked(BuildContext context) {}
 
   @override
-  onEventListItemTapped(BuildContext context) {
+  void onEventListItemTapped(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => new EventDetailPage(new BasicEventDetailPresenter(), title: "Event detail")),
@@ -56,8 +57,12 @@ class BasicHomePresenter implements HomePresenter {
   @override
   Future<List> getEventListData() async {
     var events = await SharedPrefsHelper().getData("events");
-    // _viewModel.events = events;
-    // _view.setEvents(events);
     return events;
+  }
+
+  @override
+  void setEvents(events) {
+    _viewModel.events = events;
+    _view.setEvents(events);
   }
 }
