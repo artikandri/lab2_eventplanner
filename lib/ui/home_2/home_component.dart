@@ -30,13 +30,17 @@ class _HomePageState extends State<HomePage> implements HomeView {
     this.widget.presenter.homeView = this;
     _futureEvents = this.widget.presenter.getEventListData();
     _futureEvents.then((value) {
-      if (value != null) _events.add(value);
+      if (value != null) {
+        _events.add(value);
+        if(value['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1))))) {
+          _todayEvents.add(value);
+        }
+      }
     });
-    setEventsData();
   }
 
   setEventsData() {
-    _todayEvents = _events.where((_event) => _event['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))).toList();
+    _todayEvents = _events.where((_event) => .toList();
     _todoEvents = _events.where((_event) => int.parse(_event['status']) == 0).toList();
   }
 
@@ -142,7 +146,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                           return Container(
                                               child: ListView.builder(
                                                   scrollDirection: Axis.horizontal,
-                                                  itemCount: snapshot.data.length,
+                                                  itemCount: _todayEvents.length,
                                                   itemBuilder: (BuildContext context, int index) {
                                                     return Column(children: <Widget>[
                                                       EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
