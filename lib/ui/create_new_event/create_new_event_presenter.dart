@@ -75,6 +75,7 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
 
     List _previousEvents = getPreviousEvents();
     _previousEvents.add({
+      "id": UniqueKey().toString(),
       "name": _name,
       "description": _description,
       "status": _status,
