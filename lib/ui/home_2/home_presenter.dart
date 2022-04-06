@@ -12,7 +12,7 @@ class HomePresenter {
   void onMarkAsReadButtonClicked(BuildContext context) {}
   void onDeleteButtonClicked(BuildContext context) {}
   onEventListItemTapped(BuildContext context) {}
-  List getEventListData async() {}
+  Future getEventListData() {}
 
   set homeView(HomeView value) {}
 }
@@ -54,8 +54,13 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   @override
-  List getEventListData async () {
-    var data = await _sharedPrefsHelper.getData("events");
-    print(data);
+  Future<List> getEventListData() async {
+    var items = await SharedPrefsHelper().getData("events"); // TODO: Add this function to this class
+
+    // for (var i = 0; i < items.length; i++) {
+    //   print((items[i].toMap()));
+    //   allItems.add(items[i].toMap());
+    // }
+    return items;
   }
 }

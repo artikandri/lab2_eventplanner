@@ -21,7 +21,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
   void initState() {
     super.initState();
     this.widget.presenter.homeView = this;
-    this.widget.presenter.getEventListData();
   }
 
   @override
@@ -129,7 +128,14 @@ class _HomePageState extends State<HomePage> implements HomeView {
                               child: Column(children: <Widget>[
                                 Expanded(
                                   child: Container(
-                                    child: ListView(
+                                    child: 
+                                    FutureBuilder(
+        future: this.widget.presenter.getEventListData(),
+        builder: (context, snapshot){
+          if(snapshot.connectionState == ConnectionState.done){
+            return Container(
+                child: 
+                                    ListView(
                                       scrollDirection: Axis.vertical,
                                       children: <Widget>[
                                         SlidableListItem(
@@ -145,7 +151,18 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                             onDeleteButtonClicked: () {}),
                                         SizedBox(width: 15),
                                       ],
-                                    ),
+                                    ),,
+            );
+          }
+          else if(snapshot.hasError){
+            throw snapshot.error;
+          }
+          else{
+            return Center(child: CircularProgressIndicator());
+          }
+        },
+      ),
+      
                                   ),
                                 ),
                               ])),
