@@ -59,7 +59,6 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
   void saveData() {
     List _previousEvents = [];
     getEventListData().then((value) {
-      print(value);
       if (value != null) value.forEach((item) => _previousEvents.add(item));
     });
     _previousEvents.add({
@@ -71,7 +70,9 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
       "time": _viewModel.time,
       "isRead": false
     });
-    SharedPrefsHelper().setData('events', _previousEvents);
+    print(_viewModel);
+    print(_previousEvents);
+    // SharedPrefsHelper().setData('events', _previousEvents);
   }
 
   @override
