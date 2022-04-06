@@ -30,11 +30,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
     super.initState();
     this.widget.presenter.homeView = this;
     _futureEvents = this.widget.presenter.getEventListData();
-    // _futureEvents.then((value) {
-    //   if (value != null) {
-    //     setEventsData(value);
-    //   }
-    // });
   }
 
   @override
@@ -148,7 +143,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                   itemCount: _todayEvents.length,
                                                   itemBuilder: (BuildContext context, int index) {
                                                     return Column(children: <Widget>[
-                                                      EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                                      EventCard(title: _todayEvents[index].name, subtitle: _todayEvents[index].description, cardColor: AppColors.kDarkBlue),
                                                       SizedBox(width: 15)
                                                     ]);
                                                   }));
