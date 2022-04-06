@@ -23,6 +23,7 @@ class BasicHomePresenter implements HomePresenter {
 
   BasicHomePresenter() {
     this._viewModel = HomeViewModel();
+    this._view = HomeView();
   }
 
   @override
@@ -63,7 +64,7 @@ class BasicHomePresenter implements HomePresenter {
     // await SharedPrefsHelper().setData("events", "");
     var events = await SharedPrefsHelper().getData("events");
     _viewModel.events = events;
-    // _view.setEventsData(events);
+    _view.setEventsData(events);
     return events;
   }
 }
