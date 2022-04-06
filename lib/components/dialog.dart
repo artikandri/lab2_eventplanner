@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Future<bool> showAlertDialog(BuildContext context, String title, String description, VoidCallback onApprove, VoidCallback onCancel) async {
+Future<bool> showAlertDialog(BuildContext context, String title, String description) async {
   bool isConfirmed = false;
   return showDialog<bool>(
     context: context,
