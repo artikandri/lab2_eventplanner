@@ -151,8 +151,8 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                             onDeleteButtonClicked: () {}),
                                         SizedBox(width: 15),
                                       ],
-                                    ),,
-            );
+                                    ),
+            )
           }
           else if(snapshot.hasError){
             throw snapshot.error;
@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
             return Center(child: CircularProgressIndicator());
           }
         },
-      ),
+                                    )
       
                                   ),
                                 ),
