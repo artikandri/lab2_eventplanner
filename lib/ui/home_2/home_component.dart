@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
 
   @override
   String getEventsTaglineByStatus(int eventStatus) {
-    List events = _events.where((_event) => _event.status == eventStatus).toList();
+    List events = _events.where((_event) => _event['status'] == eventStatus).toList();
     int nrOfEvents = events.length;
     return "${nrOfEvents == 0 ? 'No' : nrOfEvents.toString()} events";
   }
