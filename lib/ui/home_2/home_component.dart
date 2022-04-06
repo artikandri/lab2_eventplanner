@@ -30,6 +30,9 @@ class _HomePageState extends State<HomePage> implements HomeView {
     super.initState();
     this.widget.presenter.homeView = this;
     _futureEvents = this.widget.presenter.getEventListData();
+    _futureEvents.then((value) {
+      setEventsData(value);
+    });
   }
 
   @override
