@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:eventplanner/utils/index.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_view.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_viewmodel.dart';
 
@@ -9,6 +10,7 @@ class CreateNewEventPresenter {
   void onStatusChanged(int value) {}
   void onDateChanged(DateTime value) {}
   void onTimeChanged(DateTime value) {}
+  void saveData() {}
 
   set createNewEventView(CreateNewEventView value) {}
 }
@@ -44,12 +46,36 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
   @override
   void onDateChanged(DateTime value) {
     String date = DateFormat('yyyy-MM-dd').format(value);
-    print(date);
+    _viewModel.date = date;
   }
 
   @override
   void onTimeChanged(DateTime value) {
-    String time = DateFormat('jms').format(value);
-    print(time);
+    String time = DateFormat('Hms').format(value);
+    _viewModel.time = time;
+  }
+
+  @override
+  void saveData() {
+    List _previousEvents = [];
+    getEventListData().then((value) {
+      if (value != null) value.forEach((item) => _previousEvents.add(item));
+    });
+    _previousEvents.add({
+      "name": _viewModel.name,
+      "description": _viewModel.description,
+      "status": _viewModel.status,
+      "datetime": "${_viewModel.date} ${_viewModel.time}",
+      "date": _viewModel.date,
+      "time": _viewModel.time,
+      "isRead": false
+    });
+    SharedPrefsHelper().setData('events', _previousEvents);
+  }
+
+  @override
+  Future<List> getEventListData() async {
+    var items = await SharedPrefsHelper().getData("events");
+    return items;
   }
 }

@@ -144,7 +144,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                   onTap: () {
                     _formKey.currentState.save();
                     if (_formKey.currentState.validate()) {
-                      print(_formKey.currentState.value);
+                      this.widget.presenter.saveData();
                     } else {
                       print("validation failed");
                     }
