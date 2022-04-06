@@ -31,7 +31,7 @@ class EventCard extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: 14.0,
+                  fontSize: AppFonts.subFontSize,
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
                 ),
@@ -39,7 +39,7 @@ class EventCard extends StatelessWidget {
               Text(
                 subtitle,
                 style: TextStyle(
-                  fontSize: 12.0,
+                  fontSize: AppFonts.subFontSize,
                   color: Colors.white54,
                   fontWeight: FontWeight.w400,
                 ),
