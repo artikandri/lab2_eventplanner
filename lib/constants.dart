@@ -16,10 +16,13 @@ String getStatusLabelFromValue(int value) {
   switch (value) {
     case 0:
       label = "To Do";
+      break;
     case 1:
       label = "In Progress";
+      break;
     case 2:
       label = "Done";
+      break;
   }
   return label;
 }
