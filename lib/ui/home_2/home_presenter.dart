@@ -70,7 +70,7 @@ class BasicHomePresenter implements HomePresenter {
 
   @override
   void onDeleteButtonClicked(BuildContext context, dynamic eventData) {
-    showAlertDialog(context, "Warning", "Are you sure you want to delete this event?", deleteEvent, null);
+    showAlertDialog(context, "Warning", "Are you sure you want to delete this event?", deleteEvent(eventData), null);
   }
 
   @override
