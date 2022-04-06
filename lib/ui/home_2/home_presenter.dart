@@ -54,9 +54,9 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   @override
-  List getEventListData() {
-    var data = _sharedPrefsHelper.getData("events");
+  List getEventListData async () {
+    var data = await _sharedPrefsHelper.getData("events");
     print(data);
-    return data;
+    // return data;
   }
 }
