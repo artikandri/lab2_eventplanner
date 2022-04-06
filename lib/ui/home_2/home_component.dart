@@ -200,7 +200,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                       }, // Handle your callback
                                                                       child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                                                     )),
-                                                                onMarkAsReadButtonClicked: () {
+                                                                onMarkAsReadButtonClicked: (BuildContext context) {
                                                                   print("ayam");
                                                                   this.widget.presenter.onMarkAsReadButtonClicked(snapshot.data[index]);
                                                                 },
