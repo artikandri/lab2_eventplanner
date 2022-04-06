@@ -64,13 +64,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                       child: Column(
                         children: <Widget>[
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              subheading('Events'),
-                            ],
-                          ),
                           SizedBox(height: AppSpacings.defaultSpacing * 2),
                           TaskColumn(
                             icon: Icons.alarm,

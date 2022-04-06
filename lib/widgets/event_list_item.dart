@@ -17,53 +17,44 @@ class EventListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: AppSpacings.defaultSpacing),
-      padding: EdgeInsets.all(AppSpacings.defaultSpacing * 2),
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(width: 1.5, color: Colors.grey[300]),
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              iconContainer(eventIcon),
-              Column(children: <Widget>[
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: AppFonts.bodyFontSize,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                    fontSize: AppFonts.bodyFontSize * .75,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ]),
-              Text(
-                date,
-                style: TextStyle(
-                  fontSize: AppFonts.bodyFontSize,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ],
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        CircleAvatar(
+          radius: 20.0,
+          backgroundColor: AppColors.kDarkBlue,
+          child: Icon(
+            eventIcon,
+            size: 15.0,
+            color: Colors.white,
           ),
-        ],
-      ),
+        ),
+        SizedBox(width: 10.0),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            Text(
+              subtitle,
+              style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.black45),
+            ),
+          ],
+        ),
+        SizedBox(width: 10.0),
+        Text(
+          date,
+          style: TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.w500,
+          ),
+        )
+      ],
     );
   }
 }
