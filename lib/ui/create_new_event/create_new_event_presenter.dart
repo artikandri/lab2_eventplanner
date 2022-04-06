@@ -70,7 +70,7 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
       "time": _viewModel.time,
       "isRead": false
     });
-    print(_viewModel);
+    print(_viewModel.status);
     print(_previousEvents);
     // SharedPrefsHelper().setData('events', _previousEvents);
   }
