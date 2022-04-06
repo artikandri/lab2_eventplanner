@@ -7,8 +7,11 @@ class SharedPrefsHelper {
     myPrefs.setString(key, json.encode(value));
   }
 
-  getData(String key) async {
+  List getListData(String key) async {
+    List list = [];
     SharedPreferences myPrefs = await SharedPreferences.getInstance();
-    return json.decode(myPrefs.getString(key));
-  }
+    if(myPrefs.getString(key) != null) {
+      list = json.decode(myPrefs.getString(key)).toList();
+    }
+    return list;
 }
