@@ -44,11 +44,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
         DateTime dt = DateTime.parse(_event['datetime']);
         return dt.isToday();
       }).toList();
-      print(_todayEvents);
 
       _todoEvents = _events.where((_event) => _event['status'] == 0).toList();
-      _inprogressEvents = _events.where((_event) => int.parse(_event['status']) == 1).toList();
-      _doneEvents = _events.where((_event) => int.parse(_event['status']) == 2).toList();
+      _inprogressEvents = _events.where((_event) => _event['status'] == 1).toList();
+      _doneEvents = _events.where((_event) => _event['status'] == 2).toList();
     });
   }
 
