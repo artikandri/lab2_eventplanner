@@ -35,7 +35,7 @@ class EventCard extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: AppFonts.subFontSize,
+                  fontSize: AppFonts.bodyFontSize,
                   color: AppColors.kDarkPurple,
                   fontWeight: FontWeight.w700,
                 ),
