@@ -20,6 +20,9 @@ class _HomePageState extends State<HomePage> implements HomeView {
 
   List _events = [];
   List _todayEvents = [];
+  List _todoEvents = [];
+  List _inprogressEvents = [];
+  List _doneEvents = [];
 
   @override
   void initState() {
@@ -29,6 +32,12 @@ class _HomePageState extends State<HomePage> implements HomeView {
     _futureEvents.then((value) {
       if (value != null) _events.add(value);
     });
+
+    setEventsData();
+  }
+
+  setEventsData() {
+    _todayEvents = _events.where((_event) => _event['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))).toList();
   }
 
   @override
@@ -94,7 +103,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                               return Column(
                                 children: <Widget>[
                                   SizedBox(height: AppSpacings.defaultSpacing * 2),
-                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getTodoEventsTagline),
+                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: "${_todoEvents.length == 0 ? 'No' : _todoEvents.length.toString()} events"),
                                   SizedBox(
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),
