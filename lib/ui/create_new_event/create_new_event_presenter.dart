@@ -12,7 +12,7 @@ class CreateNewEventPresenter {
   void onStatusChanged(int value) {}
   void onDateChanged(DateTime value) {}
   void onTimeChanged(DateTime value) {}
-  void saveData(dynamic value) {}
+  void saveData(dynamic value, BuildContext context) {}
 
   set createNewEventView(CreateNewEventView value) {}
 }
