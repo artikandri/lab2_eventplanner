@@ -80,18 +80,18 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       child: Column(
                         children: <Widget>[
                           SizedBox(
-                            height: 30,
+                            height: AppSpacings.defaultSpacing * 4,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               Text(
                                 'My Events',
-                                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
+                                style: TextStyle(fontSize: AppFonts.titleFontSize, fontWeight: FontWeight.w700),
                               ),
                             ],
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: AppSpacings.defaultSpacing * 3),
                         ],
                       ),
                     ),
@@ -123,7 +123,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          subheading('Events for'),
+                          subheading('Events Today'),
                           SizedBox(height: AppSpacings.defaultSpacing),
                           Container(
                               height: 80,
@@ -148,8 +148,8 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                   itemCount: _todayEvents.length,
                                                   itemBuilder: (BuildContext context, int index) {
                                                     return Column(children: <Widget>[
-                                                      EventCard(title: _todayEvents[index]['name'], subtitle: _todayEvents[index]['description'], cardColor: AppColors.kDarkBlue),
-                                                      SizedBox(width: 15)
+                                                      EventCard(title: _todayEvents[index]['name'], subtitle: _todayEvents[index]['time'], cardColor: AppColors.kDarkBlue),
+                                                      SizedBox(width: AppSpacings.defaultSpacing * 2)
                                                     ]);
                                                   }));
                                         }
