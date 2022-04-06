@@ -25,8 +25,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-
-    final eventData = ModalRoute.of(context)!.settings.arguments;
+    final eventData = ModalRoute.of(context).settings.arguments;
     print(eventData);
 
     return new Scaffold(
