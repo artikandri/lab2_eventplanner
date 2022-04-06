@@ -39,7 +39,7 @@ class BasicEventDetailPresenter implements EventDetailPresenter {
       e['isRead'] = e['id'] == eventData['id'];
       return e;
     }).toList();
-    SharedPrefsHelper().setData("events", updatedEvents);
-    print(events);
+    // SharedPrefsHelper().setData("events", updatedEvents);
+    print(futureEvents);
   }
 }
