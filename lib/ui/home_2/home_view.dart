@@ -1,6 +1,6 @@
 import 'package:eventplanner/ui/home_2/home_viewmodel.dart';
 
 class HomeView {
-  onLoadEvents(List events) {}
+  setEvents(List events) {}
   String getEventsTaglineByStatus(int eventStatus) {}
 }
