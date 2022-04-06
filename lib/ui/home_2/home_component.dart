@@ -17,14 +17,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> implements HomeView {
   List _events = [];
-  List _todayEvents = [];
+
   Future _futureEvents;
+  List _todayEvents;
 
   @override
   void initState() {
     super.initState();
     this.widget.presenter.homeView = this;
     _futureEvents = this.widget.presenter.getEventListData();
+    _futureEvents.then((value) {
+      if (value['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))) {
+        _todayEvents.add(value);
+      }
+    });
   }
 
   @override
@@ -120,11 +126,11 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                       case ConnectionState.active:
                                         break;
                                       case ConnectionState.done:
-                                        if (snapshot.data != null) {
+                                        if (_todayEvents.length > 0) {
                                           return Container(
                                               child: ListView.builder(
                                                   scrollDirection: Axis.horizontal,
-                                                  itemCount: snapshot.data.length,
+                                                  itemCount: _todayEvents.length,
                                                   itemBuilder: (BuildContext context, int index) {
                                                     return Column(children: <Widget>[
                                                       EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
