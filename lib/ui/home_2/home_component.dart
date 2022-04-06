@@ -44,7 +44,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
         DateTime dt = DateTime.parse(_event['datetime']);
         return dt.isToday();
       }).toList();
+
       _todoEvents = _events.where((_event) => int.parse(_event['status']) == 0).toList();
+      _inprogressEvents = _events.where((_event) => int.parse(_event['status']) == 1).toList();
+      _doneEvents = _events.where((_event) => int.parse(_event['status']) == 2).toList();
     });
   }
 
@@ -111,7 +114,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                               return Column(
                                 children: <Widget>[
                                   SizedBox(height: AppSpacings.defaultSpacing * 2),
-                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: "${_todoEvents.length == 0 ? 'No' : _todoEvents.length.toString()} events"),
+                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', nrOfEvents: _todoEvents.length),
                                   SizedBox(
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),

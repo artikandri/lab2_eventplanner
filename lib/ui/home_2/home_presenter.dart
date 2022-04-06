@@ -12,8 +12,7 @@ class HomePresenter {
   void onMarkAsReadButtonClicked(BuildContext context) {}
   void onDeleteButtonClicked(BuildContext context) {}
   void onEventListItemTapped(BuildContext context) {}
-  Future getEventListData() {}
-  // void setEvents() {}
+  Future<List> getEventListData() {}
 
   set homeView(HomeView value) {}
 }
