@@ -17,7 +17,7 @@ class EventDetailPage extends StatefulWidget {
 
 class _EventDetailPageState extends State<EventDetailPage> implements EventDetailView {
   Map _eventData;
-  
+
   @override
   void initState() {
     super.initState();
@@ -26,8 +26,8 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
 
   @override
   void setEventData(Map eventData) {
-    setState({
-    _eventData = eventData;
+    setState(() {
+      _eventData = eventData;
     });
   }
 
