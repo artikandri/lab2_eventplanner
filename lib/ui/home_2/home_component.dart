@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),
                                   TaskColumn(icon: getStatusIconFromValue(2), iconBackgroundColor: getStatusColorFromValue(2, isDarker: true), title: 'Done', nrOfEvents: _doneEvents.length),
-                                  SizedBox(height: AppSpacings.defaultSpacing * 2),
+                                  SizedBox(height: AppSpacings.defaultSpacing * 3),
                                 ],
                               );
                             })),
@@ -157,6 +157,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                         return Container(child: Text("No events registered today"));
                                     }
                                   })),
+                          SizedBox(height: AppSpacings.defaultSpacing * 3),
                         ],
                       ),
                     ),
