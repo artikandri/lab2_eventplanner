@@ -64,13 +64,6 @@ class BasicHomePresenter implements HomePresenter {
     // await SharedPrefsHelper().setData("events", "");
     var events = await SharedPrefsHelper().getData("events");
     print(events);
-    events.then((value) {
-      print(value);
-    });
-    List _events = events.toList();
-    _viewModel.events = _events;
-    _view.setEventsData(_events);
-    print(_events);
     return events;
   }
 }
