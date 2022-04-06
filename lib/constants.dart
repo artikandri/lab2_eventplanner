@@ -26,7 +26,7 @@ Color getStatusColorFromValue(int value) {
       color = AppColors.kLightOrange;
       break;
     case 2:
-      color = AppColors.kLightPurple;
+      color = AppColors.kPaleLightPurple;
       break;
   }
   return color;
