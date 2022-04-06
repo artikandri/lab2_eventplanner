@@ -7,7 +7,6 @@ import 'package:eventplanner/widgets/index.dart';
 
 class HomePage extends StatefulWidget {
   final HomePresenter presenter;
-
   final String title;
 
   HomePage(this.presenter, {Key key, this.title}) : super(key: key);
@@ -17,10 +16,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> implements HomeView {
+  List _events = [];
+
   @override
   void initState() {
     super.initState();
     this.widget.presenter.homeView = this;
+  }
+
+  @override 
+  onLoadEvents(List events) {
+    setState({
+      _events = events;
+    });
   }
 
   @override
