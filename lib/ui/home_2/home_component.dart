@@ -85,37 +85,33 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       ),
                     ),
                     Container(
-                      color: AppColors.transparent,
-                      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                                  child: FutureBuilder(
-                                      future: _futureEvents,
-                                      builder: (context, snapshot) {
-                                        switch (snapshot.connectionState) {
-                                          case ConnectionState.none:
-                                            break;
-                                          case ConnectionState.waiting:
-                                            return CircularProgressIndicator(
-                                              strokeWidth: 2,
-                                            );
-                                          case ConnectionState.active:
-                                            break;
-                                          case ConnectionState.done:
-                                              return Column(
-                        children: <Widget>[
-                          SizedBox(height: AppSpacings.defaultSpacing * 2),
-                          TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getEventsTaglineByStatus(0)),
-                          SizedBox(
-                            height: AppSpacings.defaultSpacing * 2,
-                          ),
-                          TaskColumn(icon: Icons.blur_circular, iconBackgroundColor: AppColors.kDarkYellow, title: 'In Progress', subtitle: getEventsTaglineByStatus(1)),
-                          SizedBox(height: AppSpacings.defaultSpacing * 2),
-                          TaskColumn(icon: Icons.check_circle_outline, iconBackgroundColor: AppColors.kBlue, title: 'Done', subtitle: getEventsTaglineByStatus(2)),
-                        ],
-                      );
-                                        }
-                                      })),
-                            
-                    ),
+                        color: AppColors.transparent,
+                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                        child: FutureBuilder(
+                            future: _futureEvents,
+                            builder: (context, snapshot) {
+                              switch (snapshot.connectionState) {
+                                case ConnectionState.none:
+                                  break;
+                                case ConnectionState.waiting:
+                                  return CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                  );
+                                case ConnectionState.active:
+                                  break;
+                                case ConnectionState.done:
+                                  return Column(children: <Widget>[
+                                    SizedBox(height: AppSpacings.defaultSpacing * 2),
+                                    TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getEventsTaglineByStatus(0)),
+                                    SizedBox(
+                                      height: AppSpacings.defaultSpacing * 2,
+                                    ),
+                                    TaskColumn(icon: Icons.blur_circular, iconBackgroundColor: AppColors.kDarkYellow, title: 'In Progress', subtitle: getEventsTaglineByStatus(1)),
+                                    SizedBox(height: AppSpacings.defaultSpacing * 2),
+                                    TaskColumn(icon: Icons.check_circle_outline, iconBackgroundColor: AppColors.kBlue, title: 'Done', subtitle: getEventsTaglineByStatus(2)),
+                                  ]);
+                              }
+                            })),
                     Container(
                       width: double.infinity,
                       color: AppColors.transparent,
