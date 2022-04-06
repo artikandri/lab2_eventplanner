@@ -6,14 +6,16 @@ class TopContainer extends StatelessWidget {
   final double width;
   final Widget child;
   final EdgeInsets padding;
-  TopContainer({this.height, this.width, this.child, this.padding});
+  final Color containerColor;
+
+  TopContainer({this.height, this.width, this.child, this.padding, this.containerColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: padding != null ? padding : EdgeInsets.symmetric(horizontal: 20.0),
       decoration: BoxDecoration(
-          color: AppColors.kPalePurple,
+          color: containerColor == null ? AppColors.kPaleGray : containerColor,
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(40.0),
             bottomLeft: Radius.circular(40.0),

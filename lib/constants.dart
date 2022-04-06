@@ -8,10 +8,23 @@ class StatusOption {
   StatusOption({this.value, this.label});
 }
 
+class TimeOption {
+  int value;
+  String label;
+
+  TimeOption({this.value, this.label});
+}
+
 List<StatusOption> statusOptions = [
   StatusOption(value: 0, label: "To Do"),
   StatusOption(value: 1, label: "In Progress"),
   StatusOption(value: 2, label: "Done"),
+];
+
+List<TimeOption> timeOptions = [
+  TimeOption(value: 0, label: "Today"),
+  TimeOption(value: -1, label: "Yesterday"),
+  TimeOption(value: 1, label: "Tomorrow"),
 ];
 
 Color getStatusIconFromValue(int value) {}

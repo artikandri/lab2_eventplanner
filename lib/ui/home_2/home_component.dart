@@ -76,6 +76,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                     TopContainer(
                       padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
                       width: width,
+                      containerColor: AppColors.kPaleGray,
                       child: Column(
                         children: <Widget>[
                           SizedBox(
@@ -85,7 +86,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                'Welcome',
+                                'My Events',
                                 style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
                               ),
                             ],
@@ -122,7 +123,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          subheading('Events for Today'),
+                          subheading('Events for'),
                           SizedBox(height: AppSpacings.defaultSpacing),
                           Container(
                               height: 80,

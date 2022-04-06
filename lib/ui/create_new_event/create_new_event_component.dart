@@ -37,6 +37,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
           TopContainer(
             padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
             width: width,
+            containerColor: AppColors.kPaleGray,
             child: Column(
               children: <Widget>[
                 MyBackButton(),

@@ -47,6 +47,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
           TopContainer(
             padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
             width: width,
+            containerColor: getStatusColorFromValue(eventData['status']),
             child: Column(
               children: <Widget>[
                 MyBackButton(),
