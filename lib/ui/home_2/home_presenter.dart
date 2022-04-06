@@ -10,7 +10,7 @@ class HomePresenter {
   void onAddButtonClicked(BuildContext context) {}
   void onMarkAsReadButtonClicked(BuildContext context) {}
   void onDeleteButtonClicked(BuildContext context) {}
-  void onEventListItemTapped() {}
+  void onEventListItemTapped(BuildContext context) {}
 
   set homeView(HomeView value) {}
 }
@@ -43,7 +43,7 @@ class BasicHomePresenter implements HomePresenter {
   void onDeleteButtonClicked(BuildContext context) {}
 
   @override
-  void onEventListItemTapped() {
+  void onEventListItemTapped(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => new CreateNewEventPage(new BasicCreateNewEventPresenter(), title: "Create new event")),
