@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                         SizedBox(width: 15)
                                       ]);
                                     }
-                                    return Container(child: Text("No events today"));
+                                    return Text("No events today");
                                   })),
                         ],
                       ),
