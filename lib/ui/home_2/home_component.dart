@@ -25,19 +25,20 @@ class _HomePageState extends State<HomePage> implements HomeView {
   List _doneEvents = [];
 
   @override
-  void initState() {
+  void initState async () {
     super.initState();
     this.widget.presenter.homeView = this;
     _futureEvents = this.widget.presenter.getEventListData();
-    _futureEvents.then((value) {
-      if (value != null) {
-        _events.add(value);
-        print(value['datetime']);
-        if (value['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))) {
-          _todayEvents.add(value);
-        }
-      }
-    });
+    List _events = await _futureEvents;
+    // _futureEvents.then((value) {
+    //   if (value != null) {
+    //     _events.add(value);
+    //     print(value['datetime']);
+    //     if (value['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))) {
+    //       _todayEvents.add(value);
+    //     }
+    //   }
+    // });
   }
 
   // setEventsData() {
