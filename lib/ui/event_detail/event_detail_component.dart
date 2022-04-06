@@ -26,6 +26,8 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return new Scaffold(
         backgroundColor: AppColors.kLightYellow,
         body: new Center(
