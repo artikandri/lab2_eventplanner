@@ -137,53 +137,50 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                 Expanded(
                                   child: Container(
                                       child: FutureBuilder(
-                                    future: this.widget.presenter.getEventListData(),
-                                    builder: (context, snapshot) {
-                                      switch (snapshot.connectionState) {
-                                        case ConnectionState.none:
-                                          break;
-                                        case ConnectionState.waiting:
-                                          return CircularProgressIndicator(
-                                            color: Colors.black54,
-                                            strokeWidth: 2,
-                                          );
-                                        case ConnectionState.active:
-                                          break;
-                                        case ConnectionState.done:
-                                          if(_events.length > 0) {
-
-                                          return Container(
-                                            child: ListView.builder(
-                                                itemCount: _events.length,
-                                                scrollDirection: Axis.vertical,
-                                                itemBuilder: (BuildContext context, int index) {
+                                          future: this.widget.presenter.getEventListData(),
+                                          builder: (context, snapshot) {
+                                            switch (snapshot.connectionState) {
+                                              case ConnectionState.none:
+                                                break;
+                                              case ConnectionState.waiting:
+                                                return CircularProgressIndicator(
+                                                  color: Colors.black54,
+                                                  strokeWidth: 2,
+                                                );
+                                              case ConnectionState.active:
+                                                break;
+                                              case ConnectionState.done:
+                                                if (_events.length > 0) {
                                                   return Container(
-                                                    height: 50,
-                                                    child: SlidableListItem(
-                                                        child: Container(
-                                                            width: double.infinity,
-                                                            child: InkWell(
-                                                              onTap: () {
-                                                                this.widget.presenter.onEventListItemTapped(context);
-                                                              }, // Handle your callback
-                                                              child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
-                                                            )),
-                                                        onMarkAsReadButtonClicked: () {},
-                                                        onDeleteButtonClicked: () {}),
+                                                    child: ListView.builder(
+                                                        itemCount: _events.length,
+                                                        scrollDirection: Axis.vertical,
+                                                        itemBuilder: (BuildContext context, int index) {
+                                                          return Container(
+                                                            height: 50,
+                                                            child: SlidableListItem(
+                                                                child: Container(
+                                                                    width: double.infinity,
+                                                                    child: InkWell(
+                                                                      onTap: () {
+                                                                        this.widget.presenter.onEventListItemTapped(context);
+                                                                      }, // Handle your callback
+                                                                      child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                                                    )),
+                                                                onMarkAsReadButtonClicked: () {},
+                                                                onDeleteButtonClicked: () {}),
+                                                          );
+                                                        }
+
+                                                        // children: <Widget>[
+                                                        //   SizedBox(width: 15),
+                                                        // ],
+                                                        ),
                                                   );
                                                 }
-
-                                                // children: <Widget>[
-                                                //   SizedBox(width: 15),
-                                                // ],
-                                                ),
-                                          );
-                                          return Container(
-                                            child: Text("No events registered")
-                                          );
-                                      }
-                                    },
-                                  )),
+                                                return Container(child: Text("No events registered"));
+                                            }
+                                          })),
                                 ),
                               ])),
                         ],
