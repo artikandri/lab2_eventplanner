@@ -118,9 +118,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                   SizedBox(
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),
-                                  // TaskColumn(icon: Icons.blur_circular, iconBackgroundColor: AppColors.kDarkYellow, title: 'In Progress', subtitle: getEventsTaglineByStatus(1)),
-                                  // SizedBox(height: AppSpacings.defaultSpacing * 2),
-                                  // TaskColumn(icon: Icons.check_circle_outline, iconBackgroundColor: AppColors.kBlue, title: 'Done', subtitle: getEventsTaglineByStatus(2)),
+                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'In Progress', nrOfEvents: _inprogressEvents.length),
                                 ],
                               );
                             })),
