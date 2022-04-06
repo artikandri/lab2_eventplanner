@@ -85,33 +85,21 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       ),
                     ),
                     Container(
-                        color: AppColors.transparent,
-                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                        child: FutureBuilder(
-                            future: _futureEvents,
-                            builder: (context, snapshot) {
-                              switch (snapshot.connectionState) {
-                                case ConnectionState.none:
-                                  break;
-                                case ConnectionState.waiting:
-                                  return CircularProgressIndicator(
-                                    strokeWidth: 2,
-                                  );
-                                case ConnectionState.active:
-                                  break;
-                                case ConnectionState.done:
-                                  return Column(children: <Widget>[
-                                    SizedBox(height: AppSpacings.defaultSpacing * 2),
-                                    TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getEventsTaglineByStatus(0)),
-                                    SizedBox(
-                                      height: AppSpacings.defaultSpacing * 2,
-                                    ),
-                                    TaskColumn(icon: Icons.blur_circular, iconBackgroundColor: AppColors.kDarkYellow, title: 'In Progress', subtitle: getEventsTaglineByStatus(1)),
-                                    SizedBox(height: AppSpacings.defaultSpacing * 2),
-                                    TaskColumn(icon: Icons.check_circle_outline, iconBackgroundColor: AppColors.kBlue, title: 'Done', subtitle: getEventsTaglineByStatus(2)),
-                                  ]);
-                              }
-                            })),
+                      color: AppColors.transparent,
+                      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                      child: Column(
+                        children: <Widget>[
+                          SizedBox(height: AppSpacings.defaultSpacing * 2),
+                          TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getEventsTaglineByStatus(0)),
+                          SizedBox(
+                            height: AppSpacings.defaultSpacing * 2,
+                          ),
+                          TaskColumn(icon: Icons.blur_circular, iconBackgroundColor: AppColors.kDarkYellow, title: 'In Progress', subtitle: getEventsTaglineByStatus(1)),
+                          SizedBox(height: AppSpacings.defaultSpacing * 2),
+                          TaskColumn(icon: Icons.check_circle_outline, iconBackgroundColor: AppColors.kBlue, title: 'Done', subtitle: getEventsTaglineByStatus(2)),
+                        ],
+                      ),
+                    ),
                     Container(
                       width: double.infinity,
                       color: AppColors.transparent,
@@ -156,7 +144,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       ),
                     ),
                     Container(
-                      height: 300,
                       width: double.infinity,
                       color: AppColors.transparent,
                       padding: EdgeInsets.symmetric(horizontal: AppSpacings.defaultSpacing * 2, vertical: AppSpacings.defaultSpacing),
@@ -165,50 +152,51 @@ class _HomePageState extends State<HomePage> implements HomeView {
                         children: <Widget>[
                           SizedBox(height: AppSpacings.defaultSpacing),
                           Container(
+                              height: 400,
                               child: Column(children: <Widget>[
-                            Expanded(
-                              child: Container(
-                                  child: FutureBuilder(
-                                      future: _futureEvents,
-                                      builder: (context, snapshot) {
-                                        switch (snapshot.connectionState) {
-                                          case ConnectionState.none:
-                                            break;
-                                          case ConnectionState.waiting:
-                                            return CircularProgressIndicator(
-                                              strokeWidth: 2,
-                                            );
-                                          case ConnectionState.active:
-                                            break;
-                                          case ConnectionState.done:
-                                            if (snapshot.data != null) {
-                                              return Container(
-                                                child: ListView.builder(
-                                                    itemCount: snapshot.data.length,
-                                                    scrollDirection: Axis.vertical,
-                                                    itemBuilder: (BuildContext context, int index) {
-                                                      return Container(
-                                                        height: 50,
-                                                        child: SlidableListItem(
-                                                            child: Container(
-                                                                width: double.infinity,
-                                                                child: InkWell(
-                                                                  onTap: () {
-                                                                    this.widget.presenter.onEventListItemTapped(context);
-                                                                  }, // Handle your callback
-                                                                  child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
-                                                                )),
-                                                            onMarkAsReadButtonClicked: () {},
-                                                            onDeleteButtonClicked: () {}),
-                                                      );
-                                                    }),
-                                              );
+                                Expanded(
+                                  child: Container(
+                                      child: FutureBuilder(
+                                          future: _futureEvents,
+                                          builder: (context, snapshot) {
+                                            switch (snapshot.connectionState) {
+                                              case ConnectionState.none:
+                                                break;
+                                              case ConnectionState.waiting:
+                                                return CircularProgressIndicator(
+                                                  strokeWidth: 2,
+                                                );
+                                              case ConnectionState.active:
+                                                break;
+                                              case ConnectionState.done:
+                                                if (snapshot.data != null) {
+                                                  return Container(
+                                                    child: ListView.builder(
+                                                        itemCount: snapshot.data.length,
+                                                        scrollDirection: Axis.vertical,
+                                                        itemBuilder: (BuildContext context, int index) {
+                                                          return Container(
+                                                            height: 50,
+                                                            child: SlidableListItem(
+                                                                child: Container(
+                                                                    width: double.infinity,
+                                                                    child: InkWell(
+                                                                      onTap: () {
+                                                                        this.widget.presenter.onEventListItemTapped(context);
+                                                                      }, // Handle your callback
+                                                                      child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                                                    )),
+                                                                onMarkAsReadButtonClicked: () {},
+                                                                onDeleteButtonClicked: () {}),
+                                                          );
+                                                        }),
+                                                  );
+                                                }
+                                                return Container(child: Text("No events registered"));
                                             }
-                                            return Container(child: Text("No events registered"));
-                                        }
-                                      })),
-                            ),
-                          ])),
+                                          })),
+                                ),
+                              ])),
                         ],
                       ),
                     ),
