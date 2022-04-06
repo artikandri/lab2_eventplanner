@@ -113,6 +113,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),
                                   TaskColumn(icon: getStatusIconFromValue(2), iconBackgroundColor: getStatusColorFromValue(2, isDarker: true), title: 'Done', nrOfEvents: _doneEvents.length),
+                                  SizedBox(height: AppSpacings.defaultSpacing * 2),
                                 ],
                               );
                             })),
@@ -124,7 +125,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           subheading('Events Today'),
-                          SizedBox(height: AppSpacings.defaultSpacing),
+                          SizedBox(height: AppSpacings.defaultSpacing * 1.5),
                           Container(
                               height: 80,
                               width: double.infinity,
