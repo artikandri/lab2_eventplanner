@@ -13,7 +13,7 @@ class HomePresenter {
   void onDeleteButtonClicked(BuildContext context) {}
   void onEventListItemTapped(BuildContext context) {}
   Future getEventListData() {}
-  void setEvents() {}
+  // void setEvents() {}
 
   set homeView(HomeView value) {}
 }
@@ -60,9 +60,9 @@ class BasicHomePresenter implements HomePresenter {
     return events;
   }
 
-  @override
-  void setEvents(events) {
-    _viewModel.events = events;
-    _view.setEvents(events);
-  }
+  // @override
+  // void setEvents(events) {
+  //   _viewModel.events = events;
+  //   _view.setEvents(events);
+  // }
 }
