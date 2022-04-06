@@ -120,6 +120,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                         break;
                                       case ConnectionState.done:
                                         if (snapshot.data != null) {
+                                          print(snapshot.data);
                                           return Container(
                                               child: ListView.builder(
                                                   scrollDirection: Axis.horizontal,
@@ -163,7 +164,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                               case ConnectionState.active:
                                                 break;
                                               case ConnectionState.done:
-                                                if (_todayEvents.length > 0) {
+                                                if (snapshot.data != null) {
                                                   return Container(
                                                     child: ListView.builder(
                                                         itemCount: _events.length,
