@@ -26,15 +26,18 @@ class _HomePageState extends State<HomePage> implements HomeView {
   }
 
   @override
+  String getEventsTaglineByStatus(int eventStatus) {
+    List events = _events.where((_event) => _event.status == eventStatus).toList();
+    int nrOfEvents = events.length;
+    return "${nrOfEvents == 0 ? 'No' : nrOfEvents.toString()} events";
+  }
+
+  @override
   onLoadEvents(List events) {
     setState(() {
       _events = events;
       _todayEvents = _events.where((_event) => _event.date.isAfter(DateTime.now().subtract(Duration(days: 1)))).toList();
     });
-  }
-
-  List getEventsByStatus(int eventStatus) {
-    return _events.where((_event) => _event.status == eventStatus).toList();
   }
 
   @override
@@ -79,28 +82,13 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       child: Column(
                         children: <Widget>[
                           SizedBox(height: AppSpacings.defaultSpacing * 2),
-                          TaskColumn(
-                            icon: Icons.alarm,
-                            iconBackgroundColor: AppColors.kRed,
-                            title: 'To Do',
-                            subtitle: getEventsByStatus(0).length.toString(),
-                          ),
+                          TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getEventsTaglineByStatus(0)),
                           SizedBox(
                             height: AppSpacings.defaultSpacing * 2,
                           ),
-                          TaskColumn(
-                            icon: Icons.blur_circular,
-                            iconBackgroundColor: AppColors.kDarkYellow,
-                            title: 'In Progress',
-                            subtitle: '1 tasks now. 1 started',
-                          ),
+                          TaskColumn(icon: Icons.blur_circular, iconBackgroundColor: AppColors.kDarkYellow, title: 'In Progress', subtitle: getEventsTaglineByStatus(1)),
                           SizedBox(height: AppSpacings.defaultSpacing * 2),
-                          TaskColumn(
-                            icon: Icons.check_circle_outline,
-                            iconBackgroundColor: AppColors.kBlue,
-                            title: 'Done',
-                            subtitle: '18 tasks now. 13 started',
-                          ),
+                          TaskColumn(icon: Icons.check_circle_outline, iconBackgroundColor: AppColors.kBlue, title: 'Done', subtitle: getEventsTaglineByStatus(2)),
                         ],
                       ),
                     ),
