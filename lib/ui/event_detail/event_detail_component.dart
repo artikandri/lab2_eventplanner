@@ -26,6 +26,6 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return new Scaffold(backgroundColor: AppColors.kLightYellow, body: new Center(child: new Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[])));
   }
 }

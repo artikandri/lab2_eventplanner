@@ -32,7 +32,7 @@ class BasicHomePresenter implements HomePresenter {
   void onAddButtonClicked(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => new EventDetailPage(new BasicEventDetailPresenter(), title: "Event detail")),
+      MaterialPageRoute(builder: (context) => new CreateNewEventPage(new BasicCreateNewEventPresenter(), title: "Create new event")),
     );
   }
 
@@ -46,7 +46,7 @@ class BasicHomePresenter implements HomePresenter {
   onEventListItemTapped(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => new CreateNewEventPage(new BasicCreateNewEventPresenter(), title: "Create new event")),
+      MaterialPageRoute(builder: (context) => new EventDetailPage(new BasicEventDetailPresenter(), title: "Event detail")),
     );
   }
 }
