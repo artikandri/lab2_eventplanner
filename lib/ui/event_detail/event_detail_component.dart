@@ -38,6 +38,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
     final eventData = ModalRoute.of(context).settings.arguments;
 
     this.widget.presenter.setEventData(eventData);
+    this.widget.presenter.markEventAsRead(eventData);
 
     return new Scaffold(
         backgroundColor: AppColors.kLightYellow,
