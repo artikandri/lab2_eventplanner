@@ -9,8 +9,8 @@ class CreateNewEventViewModel {
 
 //   final toUTC = DateTime(selectedDate.year, selectedDate.month, selectedDate.year,
 // selectedTime.hour, selectedTime.minute);
-
-  set name(String newName) {
+  get name => _name;
+  void set name(String newName) {
     _name = newName;
   }
 

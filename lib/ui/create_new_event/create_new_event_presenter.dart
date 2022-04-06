@@ -27,6 +27,7 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
 
   @override
   void onNameChanged(String value) {
-    print(value);
+    _viewModel.name = value;
+    print(_viewModel.name);
   }
 }
