@@ -42,7 +42,6 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   markEventAsRead(eventData) {
-    print("ayam");
     List updatedEvents = _viewModel.events.map((e) {
       e['isRead'] = e['id'] == eventData['id'] ? true : e['isRead'];
 
