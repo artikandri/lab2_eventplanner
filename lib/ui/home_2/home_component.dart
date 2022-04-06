@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
   List _events = [];
 
   Future _futureEvents;
-  List _todayEvents;
+  List _todayEvents = [];
 
   @override
   void initState() {
