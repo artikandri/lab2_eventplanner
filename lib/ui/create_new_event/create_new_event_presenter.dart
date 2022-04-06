@@ -56,23 +56,33 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
     _viewModel.time = time;
   }
 
-  @override
-  void saveData(dynamic formValue) {
-    print(formValue);
+  List getPreviousEvents() {
     List _previousEvents = [];
     getEventListData().then((value) {
       if (value != null) value.forEach((item) => _previousEvents.add(item));
     });
+    return _previousEvents;
+  }
+
+  @override
+  void saveData(dynamic formValue) {
+    String _name = _viewModel.name != null ? _viewModel.name : formValue.name;
+    String _description = _viewModel.description != null ? _viewModel.description : formValue.description;
+    int _status = _viewModel.status != null ? _viewModel.status : formValue.status;
+    String _date = _viewModel.date != null ? _viewModel.date : formValue.date;
+    String _time = _viewModel.time != null ? _viewModel.time : formValue.date;
+
+    List _previousEvents = getPreviousEvents();
     _previousEvents.add({
-      "name": _viewModel.name,
-      "description": _viewModel.description,
-      "status": _viewModel.status,
-      "datetime": "${_viewModel.date} ${_viewModel.time}",
-      "date": _viewModel.date,
-      "time": _viewModel.time,
+      "name": _name,
+      "description": _description,
+      "status": _status,
+      "datetime": "${_date} ${_time}",
+      "date": _date,
+      "time": _time,
       "isRead": false
     });
-    print(_viewModel.status);
+
     print(_previousEvents);
     // SharedPrefsHelper().setData('events', _previousEvents);
   }

@@ -89,7 +89,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         keyboardType: TextInputType.number,
                       ),
                       FormBuilderDateTimePicker(
-                        name: 'appointmentDate',
+                        name: 'date',
                         decoration: InputDecoration(
                           labelText: 'Appointment Date',
                         ),
@@ -99,7 +99,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         onChanged: this.widget.presenter.onDateChanged,
                       ),
                       FormBuilderDateTimePicker(
-                        name: 'appointmentTime',
+                        name: 'time',
                         onChanged: this.widget.presenter.onTimeChanged,
                         inputType: InputType.time,
                         decoration: InputDecoration(

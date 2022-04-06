@@ -1,8 +1,8 @@
 class CreateNewEventViewModel {
   // set data
 
-  String _name = "";
-  String _description = "";
+  String _name;
+  String _description;
   int _status;
   String _date;
   String _time;
