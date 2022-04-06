@@ -3,6 +3,7 @@ import 'package:eventplanner/ui/event_detail/event_detail_view.dart';
 import 'package:eventplanner/ui/event_detail/event_detail_presenter.dart';
 import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/widgets/index.dart';
+import 'package:eventplanner/constants.dart';
 
 class EventDetailPage extends StatefulWidget {
   final EventDetailPresenter presenter;
@@ -71,7 +72,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                       style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
                     ),
                     Text(
-                      _eventData['status'],
+                      getStatusLabelFromValue(_eventData['status']),
                       style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
                     ),
                   ],
