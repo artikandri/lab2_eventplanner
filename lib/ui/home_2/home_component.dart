@@ -131,7 +131,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                       child: FutureBuilder(
                                     future: this.widget.presenter.getEventListData(),
                                     builder: (context, snapshot) {
-                                      print(context);
                                       print(snapshot);
                                       switch (snapshot.connectionState) {
                                         case ConnectionState.none:
