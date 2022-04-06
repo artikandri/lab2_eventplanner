@@ -1,5 +1,5 @@
 class EventDetailViewModel {
-  static Map<String, String> _eventData = {
+  static Map<String, dynamic> _eventData = {
     "id": "",
     "name": "",
     "description": "",
