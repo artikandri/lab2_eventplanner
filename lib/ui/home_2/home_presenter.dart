@@ -63,12 +63,12 @@ class BasicHomePresenter implements HomePresenter {
 
   @override
   void onMarkAsReadButtonClicked(BuildContext context, dynamic eventData) {
-    showAlertDialog(context, "Warning", "Are you sure you want to mark this event as read?", markEventAsRead(eventData), null);
+    showAlertDialog(context, "Warning", "Are you sure you want to mark this event as read?", markEventAsRead, null);
   }
 
   @override
   void onDeleteButtonClicked(BuildContext context, dynamic eventData) {
-    showAlertDialog(context, "Warning", "Are you sure you want to delete this event?", deleteEvent(eventData), null);
+    showAlertDialog(context, "Warning", "Are you sure you want to delete this event?", deleteEvent, null);
   }
 
   @override
