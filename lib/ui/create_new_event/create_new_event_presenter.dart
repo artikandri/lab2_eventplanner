@@ -82,8 +82,8 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
       "isRead": false
     });
 
-    print(_previousEvents);
-    // SharedPrefsHelper().setData('events', _previousEvents);
+    SharedPrefsHelper().setData('events', _previousEvents);
+    getEventListData().then((value) {print(value)});
   }
 
   @override
