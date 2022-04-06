@@ -42,14 +42,8 @@ class BasicHomePresenter implements HomePresenter {
 
   @override
   void onMarkAsReadButtonClicked(dynamic eventData) {
-    Future _futureEvents = getEventFutureListData();
-    List _events;
-    _futureEvents.then((value) {
-      _events = value;
-    });
-
-    // List updatedEvents = events.map((e) => e['id'] == eventData['id'] ? e['isRead'] = true : e).toList();
-
+    List updatedEvents = _viewModel.events.map((e) => e['id'] == eventData['id'] ? e['isRead'] = true : e).toList();
+    print(updatedEvents);
     // SharedPrefsHelper().setData("events", updatedEvents);
     // print(getEventListData());
   }
@@ -69,7 +63,6 @@ class BasicHomePresenter implements HomePresenter {
   Future<List> getEventFutureListData() async {
     // await SharedPrefsHelper().setData("events", "");
     var _futureEvents = await SharedPrefsHelper().getData("events");
-
     _viewModel.events = _futureEvents;
     return _futureEvents;
   }
