@@ -9,9 +9,5 @@ class HomeViewModel {
     _events = newEvents;
   }
 
-  List eventsByStatus(int eventStatus) {
-    return _events.where((_event) => _event.status == eventStatus).toList();
-  }
-
   HomeViewModel();
 }

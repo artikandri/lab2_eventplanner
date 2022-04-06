@@ -33,6 +33,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
     });
   }
 
+  List getEventsByStatus(int eventStatus) {
+    return _events.where((_event) => _event.status == eventStatus).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -79,7 +83,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                             icon: Icons.alarm,
                             iconBackgroundColor: AppColors.kRed,
                             title: 'To Do',
-                            subtitle: '',
+                            subtitle: '$getEventsByStatus(0) events',
                           ),
                           SizedBox(
                             height: AppSpacings.defaultSpacing * 2,
