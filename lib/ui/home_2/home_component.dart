@@ -128,42 +128,36 @@ class _HomePageState extends State<HomePage> implements HomeView {
                               child: Column(children: <Widget>[
                                 Expanded(
                                   child: Container(
-                                    child: 
-                                    FutureBuilder(
-        future: this.widget.presenter.getEventListData(),
-        builder: (context, snapshot){
-          if(snapshot.connectionState == ConnectionState.done){
-            return Container(
-                child: 
-                                    ListView(
-                                      scrollDirection: Axis.vertical,
-                                      children: <Widget>[
-                                        SlidableListItem(
-                                            child: Container(
-                                                width: double.infinity,
-                                                child: InkWell(
-                                                  onTap: () {
-                                                    this.widget.presenter.onEventListItemTapped(context);
-                                                  }, // Handle your callback
-                                                  child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
-                                                )),
-                                            onMarkAsReadButtonClicked: () {},
-                                            onDeleteButtonClicked: () {}),
-                                        SizedBox(width: 15),
-                                      ],
-                                    ),
-            )
-          }
-          else if(snapshot.hasError){
-            throw snapshot.error;
-          }
-          else{
-            return Center(child: CircularProgressIndicator());
-          }
-        },
-                                    )
-      
-                                  ),
+                                      child: FutureBuilder(
+                                    future: this.widget.presenter.getEventListData(),
+                                    builder: (context, snapshot) {
+                                      if (snapshot.connectionState == ConnectionState.done) {
+                                        return Container(
+                                          child: ListView(
+                                            scrollDirection: Axis.vertical,
+                                            children: <Widget>[
+                                              SlidableListItem(
+                                                  child: Container(
+                                                      width: double.infinity,
+                                                      child: InkWell(
+                                                        onTap: () {
+                                                          this.widget.presenter.onEventListItemTapped(context);
+                                                        }, // Handle your callback
+                                                        child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                                      )),
+                                                  onMarkAsReadButtonClicked: () {},
+                                                  onDeleteButtonClicked: () {}),
+                                              SizedBox(width: 15),
+                                            ],
+                                          ),
+                                        );
+                                      } else if (snapshot.hasError) {
+                                        throw snapshot.error;
+                                      } else {
+                                        return Center(child: CircularProgressIndicator());
+                                      }
+                                    },
+                                  )),
                                 ),
                               ])),
                         ],
