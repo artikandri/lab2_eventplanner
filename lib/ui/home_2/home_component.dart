@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
           children: <Widget>[
             Expanded(
               child: SingleChildScrollView(
-                child: Column(
+                child: Row(
                   children: <Widget>[
                     TopContainer(
                       padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
