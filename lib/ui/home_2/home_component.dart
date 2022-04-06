@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                   itemCount: _todayEvents.length,
                                                   itemBuilder: (BuildContext context, int index) {
                                                     return Column(children: <Widget>[
-                                                      EventCard(title: _todayEvents[index].name, subtitle: _todayEvents[index].description, cardColor: AppColors.kDarkBlue),
+                                                      EventCard(title: _todayEvents[index]['name'], subtitle: _todayEvents[index]['description'], cardColor: AppColors.kDarkBlue),
                                                       SizedBox(width: 15)
                                                     ]);
                                                   }));
