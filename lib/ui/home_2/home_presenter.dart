@@ -54,6 +54,7 @@ class BasicHomePresenter implements HomePresenter {
   @override
   void onDeleteButtonClicked(dynamic eventData) {
     List updatedEvents = _viewModel.events.where((e) => e['id'] != eventData['id']).toList();
+    print(updatedEvents);
     SharedPrefsHelper().setData("events", updatedEvents);
   }
 
