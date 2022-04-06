@@ -104,15 +104,15 @@ class _HomePageState extends State<HomePage> implements HomeView {
                               return Column(
                                 children: <Widget>[
                                   SizedBox(height: AppSpacings.defaultSpacing * 2),
-                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', nrOfEvents: _todoEvents.length),
+                                  TaskColumn(icon: getStatusIconFromValue(0), iconBackgroundColor: getStatusColorFromValue(0), title: 'To Do', nrOfEvents: _todoEvents.length),
                                   SizedBox(
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),
-                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'In Progress', nrOfEvents: _inprogressEvents.length),
+                                  TaskColumn(icon: getStatusIconFromValue(1), iconBackgroundColor: getStatusColorFromValue(1), title: 'In Progress', nrOfEvents: _inprogressEvents.length),
                                   SizedBox(
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),
-                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'Done', nrOfEvents: _doneEvents.length),
+                                  TaskColumn(icon: getStatusIconFromValue(2), iconBackgroundColor: getStatusColorFromValue(2), title: 'Done', nrOfEvents: _doneEvents.length),
                                 ],
                               );
                             })),

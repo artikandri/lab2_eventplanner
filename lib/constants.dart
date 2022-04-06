@@ -27,7 +27,21 @@ List<TimeOption> timeOptions = [
   TimeOption(value: 1, label: "Tomorrow"),
 ];
 
-Color getStatusIconFromValue(int value) {}
+IconData getStatusIconFromValue(int value) {
+  IconData icon = Icons.alarm;
+  switch (value) {
+    case 0:
+      icon = Icons.alarm;
+      break;
+    case 1:
+      icon = Icons.blur_circular;
+      break;
+    case 2:
+      icon = Icons.check_circle_outline;
+      break;
+  }
+  return icon;
+}
 
 Color getStatusColorFromValue(int value) {
   Color color = AppColors.kLightGreen;
