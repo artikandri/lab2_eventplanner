@@ -157,6 +157,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                           );
                                         });
                                   }
+                                  return Container();
                                 }),
                               ])),
                         ],
