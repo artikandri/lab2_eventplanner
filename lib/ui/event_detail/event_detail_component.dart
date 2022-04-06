@@ -37,7 +37,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
             width: width,
             child: Column(
               children: <Widget>[
-                BackButton(),
+                MyBackButton(),
                 SizedBox(
                   height: 30,
                 ),

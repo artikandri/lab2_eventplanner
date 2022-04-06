@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:eventplanner/theme/colors/light_colors.dart';
 
-class BackButton extends StatelessWidget {
+class MyBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
