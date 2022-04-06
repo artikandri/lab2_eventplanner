@@ -18,7 +18,7 @@ class SlidableListItem extends StatelessWidget {
         children: [
           SlidableAction(
             onPressed: (BuildContext context) {
-              onMarkAsReadButtonClicked(context);
+              onMarkAsReadButtonClicked();
             },
             backgroundColor: Color(0xFF21B7CA),
             foregroundColor: Colors.white,
@@ -33,7 +33,9 @@ class SlidableListItem extends StatelessWidget {
           SlidableAction(
             // An action can be bigger than the others.
             flex: 2,
-            onPressed: (BuildContext context) {},
+            onPressed: (BuildContext context) {
+              onDeleteButtonClicked();
+            },
             backgroundColor: Color(0xFF7BC043),
             foregroundColor: Colors.white,
             icon: Icons.delete,
