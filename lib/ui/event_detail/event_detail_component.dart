@@ -59,25 +59,27 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                       _eventData['name'],
                       style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
                     ),
-                    Text(
-                      _eventData['description'],
-                      style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
-                    ),
-                    Text(
-                      _eventData['date'],
-                      style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
-                    ),
-                    Text(
-                      _eventData['time'],
-                      style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
-                    ),
-                    Text(
-                      getStatusLabelFromValue(_eventData['status']),
-                      style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
-                    ),
                   ],
                 ),
                 SizedBox(height: 20),
+                Column(children: <Widget>[
+                  Text(
+                    _eventData['description'],
+                    style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
+                  ),
+                  Text(
+                    _eventData['date'],
+                    style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
+                  ),
+                  Text(
+                    _eventData['time'],
+                    style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
+                  ),
+                  Text(
+                    getStatusLabelFromValue(_eventData['status']),
+                    style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
+                  ),
+                ])
               ],
             ),
           ),
