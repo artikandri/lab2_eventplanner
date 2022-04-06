@@ -38,6 +38,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
     return "${nrOfEvents == 0 ? 'No' : nrOfEvents.toString()} events";
   }
 
+  String getTodoEventsTagline() {
+    return getEventsTaglineByStatus(0);
+  }
+
   @override
   setEvents(List events) {
     setState(() {
@@ -90,7 +94,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                               return Column(
                                 children: <Widget>[
                                   SizedBox(height: AppSpacings.defaultSpacing * 2),
-                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getEventsTaglineByStatus(0)),
+                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getTodoEventsTagline),
                                   SizedBox(
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),
