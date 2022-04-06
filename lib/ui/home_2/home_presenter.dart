@@ -62,9 +62,11 @@ class BasicHomePresenter implements HomePresenter {
 
   @override
   void onMarkAsReadButtonClicked(BuildContext context, dynamic eventData) {
+    var snackBar = SnackBar(content: Text('Event marked as read'));
     showAlertDialog(context, "Warning", "Are you sure you want to mark this event as read?").then((value) {
       if (value) {
         markEventAsRead(eventData);
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }
     });
   }
