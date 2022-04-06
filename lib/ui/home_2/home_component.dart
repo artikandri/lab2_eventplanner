@@ -40,7 +40,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
   void setEventsData(List events) {
     setState(() {
       _events = events;
-      _todayEvents = _events.where((_event) => _event['datetime'].isToday()).toList();
+      _todayEvents = _events.where((_event) {
+        DateTime dt = DateTime.parse(_event['datetime']);
+        return dt.isToday();
+      }).toList();
       _todoEvents = _events.where((_event) => int.parse(_event['status']) == 0).toList();
     });
   }
