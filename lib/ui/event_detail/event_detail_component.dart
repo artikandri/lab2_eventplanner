@@ -71,10 +71,6 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                       style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
                     ),
                     Text(
-                      _eventData['isRead'],
-                      style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
-                    ),
-                    Text(
                       _eventData['status'],
                       style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
                     ),
