@@ -34,31 +34,31 @@ class _HomePageState extends State<HomePage> implements HomeView {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TopContainer(
-              padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
-              width: width,
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Welcome',
-                        style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                ],
-              ),
-            ),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
+                    TopContainer(
+                      padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
+                      width: width,
+                      child: Column(
+                        children: <Widget>[
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                'Welcome',
+                                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 20),
+                        ],
+                      ),
+                    ),
                     Container(
                       color: AppColors.transparent,
                       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
