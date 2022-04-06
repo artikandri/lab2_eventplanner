@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_view.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_viewmodel.dart';
 
