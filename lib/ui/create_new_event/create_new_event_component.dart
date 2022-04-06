@@ -82,9 +82,9 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         decoration: InputDecoration(
                           labelText: 'Description',
                         ),
-                        // onChanged: _onChanged,
+                        onChanged: this.widget.presenter.onDescriptionChanged,
                         validator: FormBuilderValidators.compose([
-                          FormBuilderValidators.required(context),
+                          // FormBuilderValidators.required(context),
                         ]),
                         keyboardType: TextInputType.number,
                       ),
@@ -114,6 +114,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         decoration: InputDecoration(
                           labelText: 'Status',
                         ),
+                        onChanged: this.widget.presenter.onStatusChanged,
                         initialValue: 0,
                         allowClear: true,
                         hint: Text('Select status'),
