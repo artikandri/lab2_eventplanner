@@ -5,15 +5,17 @@ class TaskColumn extends StatelessWidget {
   final Color iconBackgroundColor;
   final String title;
   final int nrOfEvents;
+
   TaskColumn({
     this.icon,
     this.iconBackgroundColor,
     this.title,
     this.nrOfEvents,
   });
+
   @override
   Widget build(BuildContext context) {
-    String subtitle = "${nrOfEvents == 0 ? 'No' : nrOfEvents.toString()} events";
+    String subtitle = nrOfEvents == 0 || nrOfEvents == null ? "No events" : "${nrOfEvents} events";
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
