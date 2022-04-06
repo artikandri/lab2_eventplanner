@@ -20,7 +20,7 @@ class HomePresenter {
 class BasicHomePresenter implements HomePresenter {
   HomeViewModel _viewModel;
   HomeView _view;
-  SharedPrefsHelper _sharedPrefsHelper;
+  SharedPrefsHelper _sharedPrefsHelper = SharedPrefsHelper();
 
   BasicHomePresenter() {
     this._viewModel = HomeViewModel();
