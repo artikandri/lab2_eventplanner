@@ -104,33 +104,15 @@ class _HomePageState extends State<HomePage> implements HomeView {
                               return Column(
                                 children: <Widget>[
                                   SizedBox(height: AppSpacings.defaultSpacing * 2),
-                                  TaskColumn(
-                                      icon: getStatusIconFromValue(0),
-                                      iconBackgroundColor: getStatusColorFromValue(0, {
-                                        true
-                                      }),
-                                      title: 'To Do',
-                                      nrOfEvents: _todoEvents.length),
+                                  TaskColumn(icon: getStatusIconFromValue(0), iconBackgroundColor: getStatusColorFromValue(0, isDarker: true), title: 'To Do', nrOfEvents: _todoEvents.length),
                                   SizedBox(
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),
-                                  TaskColumn(
-                                      icon: getStatusIconFromValue(1),
-                                      iconBackgroundColor: getStatusColorFromValue(1, {
-                                        true
-                                      }),
-                                      title: 'In Progress',
-                                      nrOfEvents: _inprogressEvents.length),
+                                  TaskColumn(icon: getStatusIconFromValue(1), iconBackgroundColor: getStatusColorFromValue(1, isDarker: true), title: 'In Progress', nrOfEvents: _inprogressEvents.length),
                                   SizedBox(
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),
-                                  TaskColumn(
-                                      icon: getStatusIconFromValue(2),
-                                      iconBackgroundColor: getStatusColorFromValue(2, {
-                                        true
-                                      }),
-                                      title: 'Done',
-                                      nrOfEvents: _doneEvents.length),
+                                  TaskColumn(icon: getStatusIconFromValue(2), iconBackgroundColor: getStatusColorFromValue(2, isDarker: true), title: 'Done', nrOfEvents: _doneEvents.length),
                                 ],
                               );
                             })),
