@@ -18,11 +18,11 @@ class CreateNewEventViewModel {
     _description = newDescription;
   }
 
-  set date(String newDate) {
+  set date(int newDate) {
     _date = newDate;
   }
 
-  set status(String newStatus) {
+  set status(int newStatus) {
     _status = newStatus;
   }
 
