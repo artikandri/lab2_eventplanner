@@ -33,6 +33,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
       if (value != null) {
         setState(() {
           _events = value;
+          setEventsData();
         });
       }
       //   if (value != null) {
@@ -45,10 +46,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
     });
   }
 
-  // setEventsData() {
-  //   _todayEvents = _events.where((_event) => .toList();
-  //   _todoEvents = _events.where((_event) => int.parse(_event['status']) == 0).toList();
-  // }
+  setEventsData() {
+    _todayEvents = _events.where((_event) => _event['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))).toList();
+    _todoEvents = _events.where((_event) => int.parse(_event['status']) == 0).toList();
+  }
 
   @override
   String getEventsTaglineByStatus(int eventStatus) {
