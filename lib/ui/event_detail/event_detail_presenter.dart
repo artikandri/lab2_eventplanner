@@ -30,7 +30,11 @@ class BasicEventDetailPresenter implements EventDetailPresenter {
 
   @override
   void markEventAsRead(Map eventData) {
-    List events = SharedPrefsHelper().getData("events");
+    Future futureEvents = SharedPrefsHelper().getData("events");
+    List events = [];
+    futureEvents.then((value) {
+      events = value;
+    });
     List updatedEvents = events.map((e) {
       e['isRead'] = e['id'] == eventData['id'];
       return e;
