@@ -3,7 +3,7 @@ class CreateNewEventViewModel {
 
   String _name = "";
   String _description = "";
-  String _status;
+  int _status;
   bool _isRead = false;
   int _date;
 
@@ -19,8 +19,8 @@ class CreateNewEventViewModel {
     _description = newDescription;
   }
 
-  String get status => _status;
-  void set status(String newStatus) {
+  int get status => _status;
+  void set status(int newStatus) {
     _status = newStatus;
   }
 
