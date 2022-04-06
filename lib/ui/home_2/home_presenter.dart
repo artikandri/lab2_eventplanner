@@ -50,11 +50,14 @@ class BasicHomePresenter implements HomePresenter {
     SharedPrefsHelper().setData("events", updatedEvents);
     _viewModel.events = updatedEvents;
     _view.setEventsData(updatedEvents);
+    print("ayam");
   }
 
   @override
   void onMarkAsReadButtonClicked(BuildContext context, dynamic eventData) {
-    showAlertDialog(context, "test", "test", markEventAsRead(eventData), () {});
+    showAlertDialog(context, "Warning", "Are you sure you want to mark this event as read?", markEventAsRead(eventData), () {
+      print("sapi");
+    });
 
     // to do: reload page
     // to do: notif

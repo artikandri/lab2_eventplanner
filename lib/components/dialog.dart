@@ -18,17 +18,18 @@ Future<void> showAlertDialog(BuildContext context, String title, String descript
             child: const Text('Cancel'),
             onPressed: () {
               if (onCancel != null) {
-                Navigator.of(context).pop();
+                onCancel();
               }
+              Navigator.of(context).pop();
             },
           ),
           TextButton(
             child: const Text('Approve'),
             onPressed: () {
-              Navigator.of(context).pop();
               if (onApprove != null) {
                 onApprove();
               }
+              Navigator.of(context).pop();
             },
           ),
         ],
