@@ -75,7 +75,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
                   children: <Widget>[
                     TopContainer(
                       padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
-                      width: width,
                       containerColor: AppColors.kPaleGray,
                       child: Column(
                         children: <Widget>[
