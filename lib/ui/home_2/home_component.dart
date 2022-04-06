@@ -150,6 +150,8 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                         case ConnectionState.active:
                                           break;
                                         case ConnectionState.done:
+                                          if(_events.length > 0) {
+
                                           return Container(
                                             child: ListView.builder(
                                                 itemCount: _events.length,
@@ -176,6 +178,9 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                 // ],
                                                 ),
                                           );
+                                          return Container(
+                                            child: Text("No events registered");
+                                          )
                                       }
                                     },
                                   )),
