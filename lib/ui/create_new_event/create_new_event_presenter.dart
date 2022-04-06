@@ -3,6 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:eventplanner/utils/index.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_view.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_viewmodel.dart';
+import 'package:eventplanner/ui/home_2/home_presenter.dart';
+import 'package:eventplanner/ui/home_2/home_component.dart';
 
 class CreateNewEventPresenter {
   void onNameChanged(String value) {}
@@ -64,7 +66,7 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
   }
 
   @override
-  void saveData(dynamic formValue) {
+  void saveData(dynamic formValue, BuildContext context) {
     String _name = _viewModel.name != null ? _viewModel.name : formValue.name;
     String _description = _viewModel.description != null ? _viewModel.description : formValue['description'];
     int _status = _viewModel.status != null ? _viewModel.status : formValue['status'];
@@ -85,7 +87,7 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
     SharedPrefsHelper().setData('events', _previousEvents);
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => new CreateNewEventPage(new BasicCreateNewEventPresenter(), title: "Create new event")),
+      MaterialPageRoute(builder: (context) => new HomePage(new BasicHomePresenter(), title: "Create new event")),
     );
   }
 
