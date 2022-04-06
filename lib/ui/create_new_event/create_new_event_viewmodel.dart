@@ -5,10 +5,9 @@ class CreateNewEventViewModel {
   String _description = "";
   int _status;
   bool _isRead = false;
-  int _date;
+  String _date;
+  String _time;
 
-//   final toUTC = DateTime(selectedDate.year, selectedDate.month, selectedDate.year,
-// selectedTime.hour, selectedTime.minute);
   String get name => _name;
   void set name(String newName) {
     _name = newName;
@@ -24,8 +23,14 @@ class CreateNewEventViewModel {
     _status = newStatus;
   }
 
-  set date(int newDate) {
+  String get date => _date;
+  set date(String newDate) {
     _date = newDate;
+  }
+
+  String get time => _time;
+  set time(String newTime) {
+    _time = newTime;
   }
 
   CreateNewEventViewModel();

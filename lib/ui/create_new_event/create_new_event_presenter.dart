@@ -7,7 +7,7 @@ class CreateNewEventPresenter {
   void onDescriptionChanged(String value) {}
   void onStatusChanged(int value) {}
   void onDateChanged(DateTime value) {}
-  // void onTimeChanged(String value) {}
+  void onTimeChanged(DateTime value) {}
 
   set createNewEventView(CreateNewEventView value) {}
 }
@@ -42,6 +42,13 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
 
   @override
   void onDateChanged(DateTime value) {
-    print(value);
+    String date = DateFormat('yyyy-MM-dd').format(value);
+    print(date);
+  }
+
+  @override
+  void onTimeChanged(DateTime value) {
+    String time = DateFormat('jms').format(value);
+    print(time);
   }
 }

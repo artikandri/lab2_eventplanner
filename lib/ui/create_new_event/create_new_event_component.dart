@@ -100,7 +100,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                       ),
                       FormBuilderDateTimePicker(
                         name: 'appointmentTime',
-                        // onChanged: _onChanged,
+                        onChanged: this.widget.presenter.onTimeChanged,
                         inputType: InputType.time,
                         decoration: InputDecoration(
                           labelText: 'Appointment Time',
