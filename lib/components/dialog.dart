@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 Future<void> showAlertDialog(BuildContext context, String title, String description, VoidCallback onApprove, VoidCallback onCancel) async {
   return showDialog<void>(
     context: context,
-    barrierDismissible: false, // user must tap button!
+    barrierDismissible: false,
     builder: (BuildContext context) {
       return AlertDialog(
         title: Text(title),
@@ -26,9 +26,9 @@ Future<void> showAlertDialog(BuildContext context, String title, String descript
           TextButton(
             child: const Text('Approve'),
             onPressed: () {
-              if (onApprove != null) {
-                onApprove();
-              }
+              // if (onApprove != null) {
+              //   onApprove();
+              // }
               Navigator.of(context).pop();
             },
           ),
