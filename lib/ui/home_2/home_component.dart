@@ -110,22 +110,17 @@ class _HomePageState extends State<HomePage> implements HomeView {
                           subheading('Events for Today'),
                           SizedBox(height: AppSpacings.defaultSpacing),
                           Container(
-                            height: 80,
-                            width: double.infinity,
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                                                        itemCount: _todayEvents.length,
-                                                        itemBuilder: (BuildContext context, int index) {
-                                                          return Column(
-                                                            children: <Widget>[
-                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                                SizedBox(width: 15)
-                                                            ]
-                                                          );
-                                                        }
-                            )
-                            );
-                          ),
+                              height: 80,
+                              width: double.infinity,
+                              child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: _todayEvents.length,
+                                  itemBuilder: (BuildContext context, int index) {
+                                    return Column(children: <Widget>[
+                                      EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                      SizedBox(width: 15)
+                                    ]);
+                                  })),
                         ],
                       ),
                     ),
