@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
     double width = size.width;
 
     return new Scaffold(
-      backgroundColor: AppColors.kLightYellow,
+      backgroundColor: AppColors.kWhite,
       body: new Center(
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
