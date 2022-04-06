@@ -34,13 +34,13 @@ class BasicEventDetailPresenter implements EventDetailPresenter {
     List events = [];
     futureEvents.then((value) {
       events = value;
-      print(events);
+      List updatedEvents = events.map((e) {
+        e['isRead'] = e['id'] == eventData['id'];
+        return e;
+      }).toList();
+
+      print(updatedEvents);
     });
-    List updatedEvents = events.map((e) {
-      e['isRead'] = e['id'] == eventData['id'];
-      return e;
-    }).toList();
     // SharedPrefsHelper().setData("events", updatedEvents);
-    print(futureEvents);
   }
 }
