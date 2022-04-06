@@ -65,23 +65,22 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
 
   @override
   void saveData(dynamic formValue) {
-    print(formValue['status']);
     String _name = _viewModel.name != null ? _viewModel.name : formValue.name;
-    // String _description = _viewModel.description != null ? _viewModel.description : formValue.description;
-    // int _status = _viewModel.status != null ? _viewModel.status : formValue.status;
-    // String _date = _viewModel.date != null ? _viewModel.date : formValue.date;
-    // String _time = _viewModel.time != null ? _viewModel.time : formValue.date;
+    String _description = _viewModel.description != null ? _viewModel.description : formValue['description'];
+    int _status = _viewModel.status != null ? _viewModel.status : formValue['status'];
+    String _date = _viewModel.date != null ? _viewModel.date : DateFormat('yyyy-MM-dd').format(formValue['date']);
+    String _time = _viewModel.time != null ? _viewModel.time : DateFormat('Hms').format(formValue['time']);
 
     List _previousEvents = getPreviousEvents();
-    // _previousEvents.add({
-    //   "name": _name,
-    //   "description": _description,
-    //   "status": _status,
-    //   "datetime": "${_date} ${_time}",
-    //   "date": _date,
-    //   "time": _time,
-    //   "isRead": false
-    // });
+    _previousEvents.add({
+      "name": _name,
+      "description": _description,
+      "status": _status,
+      "datetime": "${_date} ${_time}",
+      "date": _date,
+      "time": _time,
+      "isRead": false
+    });
 
     print(_previousEvents);
     // SharedPrefsHelper().setData('events', _previousEvents);
