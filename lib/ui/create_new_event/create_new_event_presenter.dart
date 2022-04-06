@@ -65,6 +65,10 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
     return _previousEvents;
   }
 
+  String nullToString(dynamic value) {
+    return value == null ? "" : value;
+  }
+
   @override
   void saveData(dynamic formValue, BuildContext context) {
     String _name = _viewModel.name != null ? _viewModel.name : formValue.name;
@@ -76,8 +80,8 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
     List _previousEvents = getPreviousEvents();
     _previousEvents.add({
       "id": UniqueKey().toString(),
-      "name": _name,
-      "description": _description,
+      "name": nullToString(_name),
+      "description": nullToString(_description),
       "status": _status,
       "datetime": "${_date} ${_time}",
       "date": _date,
