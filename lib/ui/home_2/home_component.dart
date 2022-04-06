@@ -196,7 +196,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                   width: double.infinity,
                                                                   child: InkWell(
                                                                     onTap: () {
-                                                                      this.widget.presenter.onEventListItemTapped(context);
+                                                                      this.widget.presenter.onEventListItemTapped(context, _events[index]);
                                                                     }, // Handle your callback
                                                                     child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                                                   )),

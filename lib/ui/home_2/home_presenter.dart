@@ -11,7 +11,7 @@ class HomePresenter {
   void onAddButtonClicked(BuildContext context) {}
   void onMarkAsReadButtonClicked(dynamic eventData) {}
   void onDeleteButtonClicked(dynamic eventData) {}
-  void onEventListItemTapped(BuildContext context) {}
+  void onEventListItemTapped(BuildContext context, dynamic eventData) {}
   Future<List> getEventFutureListData() {}
   List getEventListData() {}
 
@@ -63,10 +63,18 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   @override
-  void onEventListItemTapped(BuildContext context) {
+  void onEventListItemTapped(BuildContext context, dynamic eventData) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => new EventDetailPage(new BasicEventDetailPresenter(), title: "Event detail")),
+      MaterialPageRoute(
+        builder: (context) => new EventDetailPage(
+          new BasicEventDetailPresenter(),
+          title: "Event detail",
+        ),
+        settings: RouteSettings(
+          arguments: eventData,
+        ),
+      ),
     );
   }
 

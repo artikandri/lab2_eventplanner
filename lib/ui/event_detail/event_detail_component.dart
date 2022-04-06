@@ -26,10 +26,13 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
 
+    final eventData = ModalRoute.of(context)!.settings.arguments;
+    print(eventData);
+
     return new Scaffold(
         backgroundColor: AppColors.kLightYellow,
         body: new Center(
-            child: new Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+            child: new Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
           TopContainer(
             padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
             width: width,
