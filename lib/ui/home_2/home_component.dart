@@ -121,8 +121,9 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                         EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
                                         SizedBox(width: 15)
                                       ]);
+                                    } else {
+                                      return Text("No events today");
                                     }
-                                    return Text("No events today");
                                   })),
                         ],
                       ),
