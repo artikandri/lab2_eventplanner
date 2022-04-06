@@ -30,11 +30,11 @@ class _HomePageState extends State<HomePage> implements HomeView {
     super.initState();
     this.widget.presenter.homeView = this;
     _futureEvents = this.widget.presenter.getEventListData();
-    _futureEvents.then((value) {
-      if (value != null) {
-        setEventsData(value);
-      }
-    });
+    // _futureEvents.then((value) {
+    //   if (value != null) {
+    //     setEventsData(value);
+    //   }
+    // });
   }
 
   @override
@@ -57,10 +57,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
     List events = _events.where((_event) => int.parse(_event['status']) == eventStatus).toList();
     int nrOfEvents = events.length;
     return "${nrOfEvents == 0 ? 'No' : nrOfEvents.toString()} events";
-  }
-
-  String getTodoEventsTagline() {
-    return getEventsTaglineByStatus(0);
   }
 
   @override
