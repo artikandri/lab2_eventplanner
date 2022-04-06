@@ -7,13 +7,9 @@ class EventListItem extends StatelessWidget {
   final String title;
   final String subtitle;
   final String date;
+  final Color eventColor;
 
-  EventListItem({
-    this.title,
-    this.subtitle,
-    this.date,
-    this.eventIcon,
-  });
+  EventListItem({this.title, this.subtitle, this.date, this.eventIcon, this.eventColor});
 
   @override
   Widget build(BuildContext context) {
@@ -22,36 +18,36 @@ class EventListItem extends StatelessWidget {
       children: <Widget>[
         CircleAvatar(
           radius: 20.0,
-          backgroundColor: AppColors.kDarkBlue,
+          backgroundColor: eventColor == null ? AppColors.kLightGreen : eventColor,
           child: Icon(
             eventIcon,
-            size: 15.0,
+            size: AppSpacings.defaultSpacing * 2,
             color: Colors.white,
           ),
         ),
-        SizedBox(width: 10.0),
+        SizedBox(width: AppSpacings.defaultSpacing * 2),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
               title,
               style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.w700,
+                fontSize: AppFonts.bodyFontSize,
+                fontWeight: FontWeight.w600,
               ),
             ),
             Text(
               subtitle,
-              style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.black45),
+              style: TextStyle(fontSize: AppFonts.subFontSize, fontWeight: FontWeight.w500, color: Colors.black45),
             ),
           ],
         ),
-        SizedBox(width: 10.0),
+        SizedBox(width: AppSpacings.defaultSpacing * 2),
         Text(
           date,
           textAlign: TextAlign.right,
           style: TextStyle(
-            fontSize: 16.0,
+            fontSize: AppFonts.subFontSize,
             fontWeight: FontWeight.w500,
           ),
         )
