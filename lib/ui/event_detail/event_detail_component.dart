@@ -16,6 +16,8 @@ class EventDetailPage extends StatefulWidget {
 }
 
 class _EventDetailPageState extends State<EventDetailPage> implements EventDetailView {
+  Map _eventData;
+  
   @override
   void initState() {
     super.initState();
@@ -23,10 +25,18 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
   }
 
   @override
+  void setEventData(Map eventData) {
+    setState({
+    _eventData = eventData;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     final eventData = ModalRoute.of(context).settings.arguments;
-    print(eventData);
+
+    this.widget.presenter.setEventData(eventData);
 
     return new Scaffold(
         backgroundColor: AppColors.kLightYellow,
