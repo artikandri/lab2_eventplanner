@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 import 'package:eventplanner/constants.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_view.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_presenter.dart';
-import 'package:eventplanner/components/index.dart';
 import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/widgets/index.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -109,13 +108,13 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                           labelText: 'Appointment Time',
                         ),
                         initialTime: TimeOfDay(hour: 8, minute: 0),
-                        // initialValue: DateTime.now(),
+                        initialValue: DateTime.now(),
                         // enabled: true,
                       ),
                       FormBuilderDropdown(
-                        name: 'gender',
+                        name: 'status',
                         decoration: InputDecoration(
-                          labelText: 'Gender',
+                          labelText: 'Status',
                         ),
                         initialValue: 0,
                         allowClear: true,
