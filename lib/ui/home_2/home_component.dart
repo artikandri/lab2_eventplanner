@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                         return Container(child: Text("No events registered today"));
                                     }
                                   })),
-                          SizedBox(height: AppSpacings.defaultSpacing * 3),
+                          SizedBox(height: AppSpacings.defaultSpacing * 2),
                         ],
                       ),
                     ),
