@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                         case ConnectionState.done:
                                           return Container(
                                             child: ListView.builder(
-                                                itemCount: _viewModel.events.length,
+                                                itemCount: _events.length,
                                                 scrollDirection: Axis.vertical,
                                                 itemBuilder: (BuildContext context, int index) {
                                                   return Container(
