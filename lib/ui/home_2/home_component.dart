@@ -30,8 +30,11 @@ class _HomePageState extends State<HomePage> implements HomeView {
     this.widget.presenter.homeView = this;
     _futureEvents = this.widget.presenter.getEventListData();
     _futureEvents.then((value) {
-      print(value);
-      if (value != null) _events = value;
+      if (value != null) {
+        setState(() {
+          _events = value;
+        });
+      }
       //   if (value != null) {
       //     _events.add(value);
       //     print(value['datetime']);
