@@ -43,17 +43,17 @@ IconData getStatusIconFromValue(int value) {
   return icon;
 }
 
-Color getStatusColorFromValue(int value, bool isDarker=false) {
+Color getStatusColorFromValue(int value, {bool isDarker = false}) {
   Color color = AppColors.kLightGreen;
   switch (value) {
     case 0:
       color = isDarker ? AppColors.kRed : AppColors.kLightRed;
       break;
     case 1:
-      color = isDarker ? AppColors.kOrange :AppColors.kLightOrange;
+      color = isDarker ? AppColors.kOrange : AppColors.kLightOrange;
       break;
     case 2:
-      color = isDarker ? AppColors.kGreen :AppColors.kLightGreen;
+      color = isDarker ? AppColors.kGreen : AppColors.kLightGreen;
       break;
   }
   return color;
