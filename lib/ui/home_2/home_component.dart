@@ -114,9 +114,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                             width: double.infinity,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-
                                                         itemCount: _todayEvents.length,
-                                                        scrollDirection: Axis.vertical,
                                                         itemBuilder: (BuildContext context, int index) {
                                                           return Column(
                                                             children: <Widget>[
@@ -125,7 +123,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                             ]
                                                           )
                                                         }
-                            ),
+                            );
                           ),
                         ],
                       ),
