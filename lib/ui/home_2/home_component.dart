@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:eventplanner/ui/home_2/home_view.dart';
 import 'package:eventplanner/ui/home_2/home_presenter.dart';
 import 'package:eventplanner/components/index.dart';
@@ -9,7 +8,7 @@ import 'package:eventplanner/widgets/index.dart';
 class HomePage extends StatefulWidget {
   final HomePresenter presenter;
 
-  String title;
+  final String title;
 
   HomePage(this.presenter, {Key key, this.title}) : super(key: key);
 
@@ -27,7 +26,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double height = size.height;
     double width = size.width;
 
     return new Scaffold(

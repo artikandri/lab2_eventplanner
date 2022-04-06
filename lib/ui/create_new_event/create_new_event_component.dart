@@ -11,8 +11,7 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 
 class CreateNewEventPage extends StatefulWidget {
   final CreateNewEventPresenter presenter;
-
-  String title;
+  final String title;
 
   CreateNewEventPage(this.presenter, {Key key, this.title}) : super(key: key);
 
@@ -32,11 +31,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    var downwardIcon = Icon(
-      Icons.keyboard_arrow_down,
-      color: Colors.black54,
-    );
-
     return new Scaffold(
         backgroundColor: AppColors.kLightYellow,
         body: SafeArea(
