@@ -83,7 +83,9 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
     });
 
     SharedPrefsHelper().setData('events', _previousEvents);
-    getEventListData().then((value) {print(value.toString())});
+    getEventListData().then((value) {
+      print(value.toString());
+    });
   }
 
   @override
