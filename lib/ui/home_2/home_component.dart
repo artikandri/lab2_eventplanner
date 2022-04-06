@@ -24,9 +24,9 @@ class _HomePageState extends State<HomePage> implements HomeView {
     this.widget.presenter.homeView = this;
   }
 
-  @override 
+  @override
   onLoadEvents(List events) {
-    setState({
+    setState(() {
       _events = events;
     });
   }
