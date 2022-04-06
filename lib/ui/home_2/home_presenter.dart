@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eventplanner/utils/index.dart';
 import 'package:eventplanner/ui/home_2/home_view.dart';
 import 'package:eventplanner/ui/home_2/home_viewmodel.dart';
 import 'package:eventplanner/ui/create_new_event/create_new_event_component.dart';
@@ -11,6 +12,7 @@ class HomePresenter {
   void onMarkAsReadButtonClicked(BuildContext context) {}
   void onDeleteButtonClicked(BuildContext context) {}
   onEventListItemTapped(BuildContext context) {}
+  List getEventListData() {}
 
   set homeView(HomeView value) {}
 }
@@ -18,6 +20,7 @@ class HomePresenter {
 class BasicHomePresenter implements HomePresenter {
   HomeViewModel _viewModel;
   HomeView _view;
+  SharedPrefsHelper _sharedPrefsHelper;
 
   BasicHomePresenter() {
     this._viewModel = HomeViewModel();
@@ -48,5 +51,11 @@ class BasicHomePresenter implements HomePresenter {
       context,
       MaterialPageRoute(builder: (context) => new EventDetailPage(new BasicEventDetailPresenter(), title: "Event detail")),
     );
+  }
+
+  @override
+  List getEventListData() {
+    var data = _sharedPrefsHelper.getData("events");
+    print(data);
   }
 }
