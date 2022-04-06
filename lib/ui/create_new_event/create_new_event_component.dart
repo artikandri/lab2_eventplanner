@@ -70,8 +70,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         decoration: InputDecoration(
                           labelText: 'Name',
                         ),
-                        // onChanged: _onChanged,
-                        // valueTransformer: (text) => num.tryParse(text),
+                        onChanged: this.widget.presenter.onNameChanged,
                         validator: FormBuilderValidators.compose([
                           FormBuilderValidators.required(context),
                           FormBuilderValidators.max(context, 70),
@@ -84,7 +83,6 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                           labelText: 'Description',
                         ),
                         // onChanged: _onChanged,
-                        // valueTransformer: (text) => num.tryParse(text),
                         validator: FormBuilderValidators.compose([
                           FormBuilderValidators.required(context),
                         ]),
