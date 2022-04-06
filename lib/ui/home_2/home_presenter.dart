@@ -48,7 +48,6 @@ class BasicHomePresenter implements HomePresenter {
       _events = value;
     });
 
-    print(_events);
     // List updatedEvents = events.map((e) => e['id'] == eventData['id'] ? e['isRead'] = true : e).toList();
 
     // SharedPrefsHelper().setData("events", updatedEvents);
@@ -69,9 +68,14 @@ class BasicHomePresenter implements HomePresenter {
   @override
   Future<List> getEventFutureListData() async {
     // await SharedPrefsHelper().setData("events", "");
-    var events = await SharedPrefsHelper().getData("events");
-    print(events);
-    return events;
+    Future _futureEvents = await SharedPrefsHelper().getData("events");
+    List _events;
+    _futureEvents.then((value) {
+      _events = value;
+      _viewModel.events = _events;
+    });
+
+    return _futureEvents;
   }
 
   List getEventListData() {
