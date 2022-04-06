@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Event Planner',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
         textTheme: Theme.of(context).textTheme.apply(bodyColor: AppColors.kDarkPurple, displayColor: AppColors.kDarkPurple, fontFamily: 'Poppins'),
       ),
       localizationsDelegates: [
