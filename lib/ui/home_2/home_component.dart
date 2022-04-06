@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                             icon: Icons.alarm,
                             iconBackgroundColor: AppColors.kRed,
                             title: 'To Do',
-                            subtitle: '5 tasks now. 1 started',
+                            subtitle: '',
                           ),
                           SizedBox(
                             height: AppSpacings.defaultSpacing * 2,
@@ -116,14 +116,14 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                   scrollDirection: Axis.horizontal,
                                   itemCount: _todayEvents.length,
                                   itemBuilder: (BuildContext context, int index) {
-                                    print(_todayEvents);
+                                    print("ayam");
                                     if (_todayEvents.length > 0) {
                                       return Column(children: <Widget>[
                                         EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
                                         SizedBox(width: 15)
                                       ]);
                                     } else {
-                                      return Text("No events today");
+                                      return Text("No events registered today");
                                     }
                                   })),
                         ],
