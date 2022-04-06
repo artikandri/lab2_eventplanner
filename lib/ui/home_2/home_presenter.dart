@@ -69,11 +69,6 @@ class BasicHomePresenter implements HomePresenter {
   Future<List> getEventFutureListData() async {
     // await SharedPrefsHelper().setData("events", "");
     var _futureEvents = await SharedPrefsHelper().getData("events");
-    List _events;
-    _futureEvents.then((value) {
-      _events = value;
-      _viewModel.events = _events;
-    });
 
     return _futureEvents;
   }
