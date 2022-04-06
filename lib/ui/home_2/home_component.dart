@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
   setEvents(List events) {
     setState(() {
       _events = events;
-      _todayEvents = _events.where((_event) => _event.date.isAfter(DateTime.now().subtract(Duration(days: 1)))).toList();
+      // _todayEvents = _events.where((_event) => _event.date.isAfter(DateTime.now().subtract(Duration(days: 1)))).toList();
       print(events);
     });
   }
