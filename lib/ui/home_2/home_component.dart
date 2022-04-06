@@ -166,7 +166,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                 if (snapshot.data != null) {
                                                   return Container(
                                                     child: ListView.builder(
-                                                        itemCount: _events.length,
+                                                        itemCount: snapshot.data.length,
                                                         scrollDirection: Axis.vertical,
                                                         itemBuilder: (BuildContext context, int index) {
                                                           return Container(
