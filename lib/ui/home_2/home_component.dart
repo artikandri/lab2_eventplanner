@@ -89,14 +89,14 @@ class _HomePageState extends State<HomePage> implements HomeView {
                             builder: (context, snapshot) {
                               return Column(
                                 children: <Widget>[
-                                  SizedBox(height: AppSpacings.defaultSpacing * 2),
-                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getEventsTaglineByStatus(0)),
-                                  SizedBox(
-                                    height: AppSpacings.defaultSpacing * 2,
-                                  ),
-                                  TaskColumn(icon: Icons.blur_circular, iconBackgroundColor: AppColors.kDarkYellow, title: 'In Progress', subtitle: getEventsTaglineByStatus(1)),
-                                  SizedBox(height: AppSpacings.defaultSpacing * 2),
-                                  TaskColumn(icon: Icons.check_circle_outline, iconBackgroundColor: AppColors.kBlue, title: 'Done', subtitle: getEventsTaglineByStatus(2)),
+                                  // SizedBox(height: AppSpacings.defaultSpacing * 2),
+                                  // TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', subtitle: getEventsTaglineByStatus(0)),
+                                  // SizedBox(
+                                  //   height: AppSpacings.defaultSpacing * 2,
+                                  // ),
+                                  // TaskColumn(icon: Icons.blur_circular, iconBackgroundColor: AppColors.kDarkYellow, title: 'In Progress', subtitle: getEventsTaglineByStatus(1)),
+                                  // SizedBox(height: AppSpacings.defaultSpacing * 2),
+                                  // TaskColumn(icon: Icons.check_circle_outline, iconBackgroundColor: AppColors.kBlue, title: 'Done', subtitle: getEventsTaglineByStatus(2)),
                                 ],
                               );
                             })),
