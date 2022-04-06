@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                         scrollDirection: Axis.vertical,
                                                         itemBuilder: (BuildContext context, int index) {
                                                           String eventSubtitle = getStatusLabelFromValue(_events[index]['status']);
-                                                          double eventOpacity = _events[index]['isRead'] ? .8 : 1;
+                                                          double eventOpacity = _events[index]['isRead'] ? .5 : 1;
                                                           return Container(
                                                             height: 50,
                                                             child: SlidableListItem(
