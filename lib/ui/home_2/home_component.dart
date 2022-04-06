@@ -5,6 +5,7 @@ import 'package:eventplanner/components/index.dart';
 import 'package:eventplanner/theme/index.dart';
 import 'package:eventplanner/widgets/index.dart';
 import 'package:eventplanner/utils/index.dart';
+import 'package:eventplanner/constants.dart';
 
 class HomePage extends StatefulWidget {
   final HomePresenter presenter;
@@ -197,8 +198,8 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                   child: InkWell(
                                                                     onTap: () {
                                                                       this.widget.presenter.onEventListItemTapped(context, _events[index]);
-                                                                    }, // Handle your callback
-                                                                    child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                                                    },
+                                                                    child: EventListItem(title: _events[index]['name'], date: _events[index]['name']['date'], subtitle: getStatusLabelFromValue(_events[index]['status']), eventIcon: Icons.alarm),
                                                                   )),
                                                               onMarkAsReadButtonClicked: () {
                                                                 this.widget.presenter.onMarkAsReadButtonClicked(_events[index]);
