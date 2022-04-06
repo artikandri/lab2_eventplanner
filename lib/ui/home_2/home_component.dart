@@ -180,7 +180,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                           );
                                           return Container(
                                             child: Text("No events registered");
-                                          )
+                                          );
                                       }
                                     },
                                   )),
