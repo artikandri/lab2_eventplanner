@@ -56,11 +56,7 @@ class BasicHomePresenter implements HomePresenter {
   @override
   Future<List> getEventListData() async {
     var items = await SharedPrefsHelper().getData("events"); // TODO: Add this function to this class
-
-    // for (var i = 0; i < items.length; i++) {
-    //   print((items[i].toMap()));
-    //   allItems.add(items[i].toMap());
-    // }
+    print(items);
     return items;
   }
 }
