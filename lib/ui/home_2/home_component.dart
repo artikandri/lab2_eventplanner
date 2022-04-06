@@ -199,7 +199,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                     onTap: () {
                                                                       this.widget.presenter.onEventListItemTapped(context, _events[index]);
                                                                     },
-                                                                    child: EventListItem(title: _events[index]['name'], date: _events[index]['date'], subtitle: getStatusLabelFromValue(_events[index]['status'].toString()), eventIcon: Icons.alarm),
+                                                                    child: EventListItem(title: _events[index]['name'], date: _events[index]['date'], subtitle: getStatusLabelFromValue(_events[index]['status']), eventIcon: Icons.alarm),
                                                                   )),
                                                               onMarkAsReadButtonClicked: () {
                                                                 this.widget.presenter.onMarkAsReadButtonClicked(_events[index]);
