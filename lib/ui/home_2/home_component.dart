@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
     });
   }
 
+  @override
   void setEventsData(List events) {
     setState(() {
       _events = events;
@@ -60,13 +61,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
 
   String getTodoEventsTagline() {
     return getEventsTaglineByStatus(0);
-  }
-
-  @override
-  setEvents(List events) {
-    setState(() {
-      _events = events;
-    });
   }
 
   @override

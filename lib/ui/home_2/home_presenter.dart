@@ -9,7 +9,7 @@ import 'package:eventplanner/ui/event_detail/event_detail_presenter.dart';
 
 class HomePresenter {
   void onAddButtonClicked(BuildContext context) {}
-  void onMarkAsReadButtonClicked(BuildContext context) {}
+  void onMarkAsReadButtonClicked(dynamic eventData) {}
   void onDeleteButtonClicked(BuildContext context) {}
   void onEventListItemTapped(BuildContext context) {}
   Future<List> getEventListData() {}
@@ -39,7 +39,13 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   @override
-  void onMarkAsReadButtonClicked(BuildContext context) {}
+  void onMarkAsReadButtonClicked(dynamic eventData) {
+    Future _futureEvents = getEventListData();
+    List _events;
+    _futureEvents.then((value) {
+      _events.add(value);
+    });
+  }
 
   @override
   void onDeleteButtonClicked(BuildContext context) {}
@@ -56,6 +62,8 @@ class BasicHomePresenter implements HomePresenter {
   Future<List> getEventListData() async {
     // await SharedPrefsHelper().setData("events", "");
     var events = await SharedPrefsHelper().getData("events");
+    _viewModel.events = events;
+    _view.setEventsData(events);
     return events;
   }
 }
