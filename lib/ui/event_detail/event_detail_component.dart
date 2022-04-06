@@ -55,7 +55,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'Event detail',
+                      _eventData['name'],
                       style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
                     ),
                   ],
