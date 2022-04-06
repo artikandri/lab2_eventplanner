@@ -57,5 +57,6 @@ class BasicHomePresenter implements HomePresenter {
   List getEventListData() {
     var data = _sharedPrefsHelper.getData("events");
     print(data);
+    return data;
   }
 }
