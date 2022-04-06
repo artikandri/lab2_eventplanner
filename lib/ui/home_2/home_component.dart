@@ -192,19 +192,21 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                           return Container(
                                                             height: 50,
                                                             child: SlidableListItem(
-                                                                child: Container(
-                                                                    width: double.infinity,
-                                                                    child: InkWell(
-                                                                      onTap: () {
-                                                                        this.widget.presenter.onEventListItemTapped(context);
-                                                                      }, // Handle your callback
-                                                                      child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
-                                                                    )),
-                                                                onMarkAsReadButtonClicked: () {
-                                                                  print("ayam");
-                                                                  this.widget.presenter.onMarkAsReadButtonClicked(snapshot.data[index]);
-                                                                },
-                                                                onDeleteButtonClicked: () {}),
+                                                              child: Container(
+                                                                  width: double.infinity,
+                                                                  child: InkWell(
+                                                                    onTap: () {
+                                                                      this.widget.presenter.onEventListItemTapped(context);
+                                                                    }, // Handle your callback
+                                                                    child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
+                                                                  )),
+                                                              onMarkAsReadButtonClicked: () {
+                                                                this.widget.presenter.onMarkAsReadButtonClicked(snapshot.data[index]);
+                                                              },
+                                                              onDeleteButtonClicked: () {
+                                                                this.widget.presenter.onDeleteButtonClicked(snapshot.data[index]);
+                                                              },
+                                                            ),
                                                           );
                                                         }),
                                                   );
