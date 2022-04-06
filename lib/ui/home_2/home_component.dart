@@ -49,6 +49,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
       _inprogressEvents = _events.where((_event) => int.parse(_event['status']) == 1).toList();
       _doneEvents = _events.where((_event) => int.parse(_event['status']) == 2).toList();
     });
+    print(_todoEvents.length);
   }
 
   @override
@@ -122,7 +123,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                   SizedBox(
                                     height: AppSpacings.defaultSpacing * 2,
                                   ),
-                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'To Do', nrOfEvents: _doneEvents.length),
+                                  TaskColumn(icon: Icons.alarm, iconBackgroundColor: AppColors.kRed, title: 'Done', nrOfEvents: _doneEvents.length),
                                 ],
                               );
                             })),
