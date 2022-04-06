@@ -14,7 +14,11 @@ class EventCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    double width = size.width;
+
     return Container(
+      width: width,
       margin: EdgeInsets.symmetric(vertical: AppSpacings.defaultSpacing),
       padding: EdgeInsets.all(AppSpacings.defaultSpacing * 2),
       decoration: BoxDecoration(
