@@ -12,7 +12,8 @@ class HomePresenter {
   void onMarkAsReadButtonClicked(dynamic eventData) {}
   void onDeleteButtonClicked(BuildContext context) {}
   void onEventListItemTapped(BuildContext context) {}
-  Future<List> getEventListData() {}
+  Future<List> getEventFutureListData() {}
+  List getEventListData() {}
 
   set homeView(HomeView value) {}
 }
@@ -40,13 +41,7 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   @override
-  void onMarkAsReadButtonClicked(dynamic eventData) {
-    Future _futureEvents = getEventListData();
-    List _events;
-    _futureEvents.then((value) {
-      _events.add(value);
-    });
-  }
+  void onMarkAsReadButtonClicked(dynamic eventData) {}
 
   @override
   void onDeleteButtonClicked(BuildContext context) {}
@@ -60,10 +55,18 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   @override
-  Future<List> getEventListData() async {
+  Future<List> getEventFutureListData() async {
     // await SharedPrefsHelper().setData("events", "");
     var events = await SharedPrefsHelper().getData("events");
-    print(events);
     return events;
+  }
+
+  List getEventListData() {
+    Future _futureEvents = getEventFutureListData();
+    List _events;
+    _futureEvents.then((value) {
+      _events = value;
+    });
+    return _events;
   }
 }
