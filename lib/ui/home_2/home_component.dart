@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                             icon: Icons.alarm,
                             iconBackgroundColor: AppColors.kRed,
                             title: 'To Do',
-                            subtitle: '$getEventsByStatus(0) events',
+                            subtitle: getEventsByStatus(0),
                           ),
                           SizedBox(
                             height: AppSpacings.defaultSpacing * 2,
