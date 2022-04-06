@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                           SizedBox(height: AppSpacings.defaultSpacing * 1.5),
                           Container(
                               height: 80,
-                              width: double.infinity,
+                              width: width,
                               child: FutureBuilder(
                                   future: _futureEvents,
                                   builder: (context, snapshot) {
@@ -148,7 +148,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                   scrollDirection: Axis.horizontal,
                                                   itemCount: _todayEvents.length,
                                                   itemBuilder: (BuildContext context, int index) {
-                                                    return Column(width: width, children: <Widget>[
+                                                    return Column(children: <Widget>[
                                                       EventCard(title: _todayEvents[index]['name'], subtitle: _todayEvents[index]['time'], cardColor: getStatusColorFromValue(_todayEvents[index]['status'])),
                                                       SizedBox(width: AppSpacings.defaultSpacing * 2)
                                                     ]);
