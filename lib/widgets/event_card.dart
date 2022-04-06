@@ -15,7 +15,6 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Container(
       margin: EdgeInsets.symmetric(vertical: AppSpacings.defaultSpacing),
       padding: EdgeInsets.all(AppSpacings.defaultSpacing * 2),
       decoration: BoxDecoration(
@@ -24,7 +23,7 @@ class EventCard extends StatelessWidget {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +36,6 @@ class EventCard extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              SizedBox(height: AppSpacings.defaultSpacing * 1.5),
               Text(
                 subtitle,
                 style: TextStyle(
@@ -50,6 +48,6 @@ class EventCard extends StatelessWidget {
           ),
         ],
       ),
-    ));
+    );
   }
 }
