@@ -18,12 +18,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> implements HomeView {
   List _events = [];
   List _todayEvents = [];
+  Future _futureEvents;
 
   @override
   void initState() {
     super.initState();
     this.widget.presenter.homeView = this;
-    this.widget.presenter.getEventListData();
+    _futureEvents = this.widget.presenter.getEventListData();
   }
 
   @override
@@ -107,7 +108,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                               height: 80,
                               width: double.infinity,
                               child: FutureBuilder(
-                                  future: this.widget.presenter.getEventListData(),
+                                  future: _futureEvents,
                                   builder: (context, snapshot) {
                                     switch (snapshot.connectionState) {
                                       case ConnectionState.none:
@@ -151,7 +152,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                 Expanded(
                                   child: Container(
                                       child: FutureBuilder(
-                                          future: this.widget.presenter.getEventListData(),
+                                          future: _futureEvents,
                                           builder: (context, snapshot) {
                                             switch (snapshot.connectionState) {
                                               case ConnectionState.none:

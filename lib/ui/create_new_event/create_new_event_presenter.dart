@@ -83,9 +83,10 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
     });
 
     SharedPrefsHelper().setData('events', _previousEvents);
-    getEventListData().then((value) {
-      print(value.toString());
-    });
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => new CreateNewEventPage(new BasicCreateNewEventPresenter(), title: "Create new event")),
+    );
   }
 
   @override
