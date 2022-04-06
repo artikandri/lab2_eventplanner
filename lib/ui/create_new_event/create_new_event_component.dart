@@ -93,7 +93,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         decoration: InputDecoration(
                           labelText: 'Appointment Date',
                         ),
-                        inputType: InputType.datetime,
+                        inputType: InputType.dateTime,
                         initialValue: DateTime.now(),
                         format: DateFormat('yyyy-MM-dd'),
                         // onChanged: _onChanged,
