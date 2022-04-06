@@ -150,7 +150,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                 break;
                                               case ConnectionState.waiting:
                                                 return CircularProgressIndicator(
-                                                  color: Colors.black54,
                                                   strokeWidth: 2,
                                                 );
                                               case ConnectionState.active:
