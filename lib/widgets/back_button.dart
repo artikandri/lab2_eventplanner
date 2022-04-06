@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:eventplanner/theme/colors/light_colors.dart';
 
-class MyBackButton extends StatelessWidget {
+class BackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
       tag: 'backButton',
-      child: GestureDetector(
+      child: InkWell(
         onTap: () {
           Navigator.pop(context);
         },

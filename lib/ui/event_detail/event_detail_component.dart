@@ -26,6 +26,32 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(backgroundColor: AppColors.kLightYellow, body: new Center(child: new Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[])));
+    return new Scaffold(
+        backgroundColor: AppColors.kLightYellow,
+        body: new Center(
+            child: new Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+          TopContainer(
+            padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
+            width: width,
+            child: Column(
+              children: <Widget>[
+                BackButton(),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'Event detail',
+                      style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+              ],
+            ),
+          ),
+        ])));
   }
 }

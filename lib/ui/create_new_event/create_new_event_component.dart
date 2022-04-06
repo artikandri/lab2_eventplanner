@@ -46,7 +46,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
             width: width,
             child: Column(
               children: <Widget>[
-                MyBackButton(),
+                BackButton(),
                 SizedBox(
                   height: 30,
                 ),
