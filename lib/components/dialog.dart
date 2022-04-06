@@ -19,14 +19,14 @@ Future<bool> showAlertDialog(BuildContext context, String title, String descript
             child: const Text('Cancel'),
             onPressed: () {
               isConfirmed = false;
-              Navigator.of(context).pop();
+              Navigator.of(context).pop(isConfirmed);
             },
           ),
           TextButton(
             child: const Text('Approve'),
             onPressed: () {
               isConfirmed = true;
-              Navigator.of(context).pop();
+              Navigator.of(context).pop(isConfirmed);
             },
           ),
         ],
