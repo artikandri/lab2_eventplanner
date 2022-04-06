@@ -17,7 +17,9 @@ class SlidableListItem extends StatelessWidget {
         // dismissible: DismissiblePane(onDismissed: () {}),
         children: [
           SlidableAction(
-            onPressed: onMarkAsReadButtonClicked,
+            onPressed: (BuildContext context) {
+              onMarkAsReadButtonClicked(context);
+            },
             backgroundColor: Color(0xFF21B7CA),
             foregroundColor: Colors.white,
             icon: Icons.share,
