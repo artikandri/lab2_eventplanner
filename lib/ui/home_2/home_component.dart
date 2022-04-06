@@ -32,17 +32,17 @@ class _HomePageState extends State<HomePage> implements HomeView {
     _futureEvents.then((value) {
       if (value != null) {
         _events.add(value);
-        if(value['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))) {
+        if (value['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))) {
           _todayEvents.add(value);
         }
       }
     });
   }
 
-  setEventsData() {
-    _todayEvents = _events.where((_event) => .toList();
-    _todoEvents = _events.where((_event) => int.parse(_event['status']) == 0).toList();
-  }
+  // setEventsData() {
+  //   _todayEvents = _events.where((_event) => .toList();
+  //   _todoEvents = _events.where((_event) => int.parse(_event['status']) == 0).toList();
+  // }
 
   @override
   String getEventsTaglineByStatus(int eventStatus) {
