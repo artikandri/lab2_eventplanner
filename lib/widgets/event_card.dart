@@ -19,7 +19,7 @@ class EventCard extends StatelessWidget {
       padding: EdgeInsets.all(AppSpacings.defaultSpacing * 2),
       decoration: BoxDecoration(
         color: cardColor,
-        borderRadius: BorderRadius.circular(AppSpacings.defaultSpacing * 4),
+        borderRadius: BorderRadius.circular(AppSpacings.defaultSpacing),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,7 +32,7 @@ class EventCard extends StatelessWidget {
                 title,
                 style: TextStyle(
                   fontSize: AppFonts.subFontSize,
-                  color: Colors.white,
+                  color: AppColors.kDarkPurple,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -40,7 +40,7 @@ class EventCard extends StatelessWidget {
                 subtitle,
                 style: TextStyle(
                   fontSize: AppFonts.subFontSize,
-                  color: Colors.white54,
+                  color: AppColors.kDarkPurple,
                   fontWeight: FontWeight.w400,
                 ),
               ),
