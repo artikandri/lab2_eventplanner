@@ -4,7 +4,6 @@ class CreateNewEventViewModel {
   String _name = "";
   String _description = "";
   int _status;
-  bool _isRead = false;
   String _date;
   String _time;
 
