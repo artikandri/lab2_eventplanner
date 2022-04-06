@@ -113,58 +113,57 @@ class _HomePageState extends State<HomePage> implements HomeView {
                               height: 80,
                               width: double.infinity,
                               child: FutureBuilder(
-                                          future: this.widget.presenter.getEventListData(),
-                                          builder: (context, snapshot) {
-                                            switch (snapshot.connectionState) {
-                                              case ConnectionState.none:
-                                                break;
-                                              case ConnectionState.waiting:
-                                                return CircularProgressIndicator(
-                                                  strokeWidth: 2,
-                                                );
-                                              case ConnectionState.active:
-                                                break;
-                                              case ConnectionState.done:
-                                                if (_todayEvents.length > 0) {
-                                                  return Container(
-                                                      child: FutureBuilder(
-                                                          future: this.widget.presenter.getEventListData(),
-                                                          builder: (context, snapshot) {
-                                                            switch (snapshot.connectionState) {
-                                                              case ConnectionState.none:
-                                                                break;
-                                                              case ConnectionState.waiting:
-                                                                return CircularProgressIndicator(
-                                                                  strokeWidth: 2,
-                                                                );
-                                                              case ConnectionState.active:
-                                                                break;
-                                                              case ConnectionState.done:
-                                                                if (_events.length > 0) {
-                                                                  return Container(
-                                                                    child: ListView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: _todayEvents.length,
-                                  itemBuilder: (BuildContext context, int index) {
-                                    if (_todayEvents.length > 0) {
-                                      return Column(children: <Widget>[
-                                        EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                                        SizedBox(width: 15)
-                                      ]);
-                                    } else {
-                                      return Text("No events registered today");
+                                  future: this.widget.presenter.getEventListData(),
+                                  builder: (context, snapshot) {
+                                    switch (snapshot.connectionState) {
+                                      case ConnectionState.none:
+                                        break;
+                                      case ConnectionState.waiting:
+                                        return CircularProgressIndicator(
+                                          strokeWidth: 2,
+                                        );
+                                      case ConnectionState.active:
+                                        break;
+                                      case ConnectionState.done:
+                                        if (_todayEvents.length > 0) {
+                                          return Container(
+                                              child: FutureBuilder(
+                                                  future: this.widget.presenter.getEventListData(),
+                                                  builder: (context, snapshot) {
+                                                    switch (snapshot.connectionState) {
+                                                      case ConnectionState.none:
+                                                        break;
+                                                      case ConnectionState.waiting:
+                                                        return CircularProgressIndicator(
+                                                          strokeWidth: 2,
+                                                        );
+                                                      case ConnectionState.active:
+                                                        break;
+                                                      case ConnectionState.done:
+                                                        if (_events.length > 0) {
+                                                          return Container(
+                                                              child: ListView.builder(
+                                                                  scrollDirection: Axis.horizontal,
+                                                                  itemCount: _todayEvents.length,
+                                                                  itemBuilder: (BuildContext context, int index) {
+                                                                    if (_todayEvents.length > 0) {
+                                                                      return Column(children: <Widget>[
+                                                                        EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
+                                                                        SizedBox(width: 15)
+                                                                      ]);
+                                                                    } else {
+                                                                      return Text("No events registered today");
+                                                                    }
+                                                                  }));
+                                                        }
+                                                        return Container(child: Text("No events registered"));
+                                                    }
+                                                  }));
+                                        }
+                                        return Container(child: Text("No events registered"));
                                     }
-                                  }))
-                        );
-                                                                }
-                                                                return Container(child: Text("No events registered"));
-                                                            }
-                                                          }));
-                                                }
-                                                return Container(child: Text("No events registered"));
-                                            }
-                                          })),
-                                ],
+                                  })),
+                        ],
                       ),
                     ),
                     Container(
@@ -228,8 +227,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                                 onMarkAsReadButtonClicked: () {},
                                                                                 onDeleteButtonClicked: () {}),
                                                                           );
-                                                                        }
-                                                                        ),
+                                                                        }),
                                                                   );
                                                                 }
                                                                 return Container(child: Text("No events registered"));
