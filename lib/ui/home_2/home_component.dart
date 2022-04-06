@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
     _futureEvents.then((value) {
       if (value != null) {
         _events.add(value);
+        print(value['datetime']);
         if (value['datetime'].isAfter(DateTime.now().subtract(Duration(days: 1)))) {
           _todayEvents.add(value);
         }
