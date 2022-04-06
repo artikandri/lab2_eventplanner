@@ -47,6 +47,8 @@ class BasicHomePresenter implements HomePresenter {
       return e;
     }).toList();
     SharedPrefsHelper().setData("events", updatedEvents);
+    _viewModel.events = updatedEvents;
+    _view.setEventsData(updatedEvents);
     // to do: reload page
     // to do: notif
   }
@@ -55,6 +57,9 @@ class BasicHomePresenter implements HomePresenter {
   void onDeleteButtonClicked(dynamic eventData) {
     List updatedEvents = _viewModel.events.where((e) => e['id'] != eventData['id']).toList();
     SharedPrefsHelper().setData("events", updatedEvents);
+
+    _viewModel.events = updatedEvents;
+    _view.setEventsData(updatedEvents);
   }
 
   @override
