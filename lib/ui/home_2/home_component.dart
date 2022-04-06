@@ -112,7 +112,37 @@ class _HomePageState extends State<HomePage> implements HomeView {
                           Container(
                               height: 80,
                               width: double.infinity,
-                              child: ListView.builder(
+                              child: FutureBuilder(
+                                          future: this.widget.presenter.getEventListData(),
+                                          builder: (context, snapshot) {
+                                            switch (snapshot.connectionState) {
+                                              case ConnectionState.none:
+                                                break;
+                                              case ConnectionState.waiting:
+                                                return CircularProgressIndicator(
+                                                  strokeWidth: 2,
+                                                );
+                                              case ConnectionState.active:
+                                                break;
+                                              case ConnectionState.done:
+                                                if (_todayEvents.length > 0) {
+                                                  return Container(
+                                                      child: FutureBuilder(
+                                                          future: this.widget.presenter.getEventListData(),
+                                                          builder: (context, snapshot) {
+                                                            switch (snapshot.connectionState) {
+                                                              case ConnectionState.none:
+                                                                break;
+                                                              case ConnectionState.waiting:
+                                                                return CircularProgressIndicator(
+                                                                  strokeWidth: 2,
+                                                                );
+                                                              case ConnectionState.active:
+                                                                break;
+                                                              case ConnectionState.done:
+                                                                if (_events.length > 0) {
+                                                                  return Container(
+                                                                    child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
                                   itemCount: _todayEvents.length,
                                   itemBuilder: (BuildContext context, int index) {
@@ -124,8 +154,17 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                     } else {
                                       return Text("No events registered today");
                                     }
-                                  })),
-                        ],
+                                  }))
+                        );
+                                                                }
+                                                                return Container(child: Text("No events registered"));
+                                                            }
+                                                          }));
+                                                }
+                                                return Container(child: Text("No events registered"));
+                                            }
+                                          })),
+                                ],
                       ),
                     ),
                     Container(
@@ -169,7 +208,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                               case ConnectionState.active:
                                                                 break;
                                                               case ConnectionState.done:
-                                                                if (_todayEvents.length > 0) {
+                                                                if (_events.length > 0) {
                                                                   return Container(
                                                                     child: ListView.builder(
                                                                         itemCount: _events.length,
@@ -190,10 +229,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                                 onDeleteButtonClicked: () {}),
                                                                           );
                                                                         }
-
-                                                                        // children: <Widget>[
-                                                                        //   SizedBox(width: 15),
-                                                                        // ],
                                                                         ),
                                                                   );
                                                                 }
