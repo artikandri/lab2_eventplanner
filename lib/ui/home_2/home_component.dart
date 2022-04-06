@@ -127,8 +127,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                           subheading('Events Today'),
                           SizedBox(height: AppSpacings.defaultSpacing * 1.5),
                           Container(
-                              height: 80,
-                              width: width,
+                              width: double.infinity,
                               child: FutureBuilder(
                                   future: _futureEvents,
                                   builder: (context, snapshot) {
@@ -197,7 +196,6 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                           String eventSubtitle = getStatusLabelFromValue(_events[index]['status']);
                                                           double eventOpacity = _events[index]['isRead'] ? .5 : 1;
                                                           return Container(
-                                                            height: 50,
                                                             child: SlidableListItem(
                                                               child: Container(
                                                                   width: double.infinity,
