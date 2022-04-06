@@ -49,6 +49,7 @@ class EventListItem extends StatelessWidget {
         SizedBox(width: 10.0),
         Text(
           date,
+          textAlign: TextAlign.right,
           style: TextStyle(
             fontSize: 16.0,
             fontWeight: FontWeight.w500,
