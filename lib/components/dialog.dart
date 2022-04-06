@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 Future<void> showAlertDialog(BuildContext context, String title, String description, VoidCallback onApprove, VoidCallback onCancel) async {
+  bool isConfirmed = false;
   return showDialog<void>(
     context: context,
     barrierDismissible: false,
@@ -17,18 +18,14 @@ Future<void> showAlertDialog(BuildContext context, String title, String descript
           TextButton(
             child: const Text('Cancel'),
             onPressed: () {
-              if (onCancel != null) {
-                onCancel();
-              }
+              isConfirmed = false;
               Navigator.of(context).pop();
             },
           ),
           TextButton(
             child: const Text('Approve'),
             onPressed: () {
-              // if (onApprove != null) {
-              //   onApprove();
-              // }
+              isConfirmed = true;
               Navigator.of(context).pop();
             },
           ),
