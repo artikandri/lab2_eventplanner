@@ -183,10 +183,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                               case ConnectionState.active:
                                                 break;
                                               case ConnectionState.done:
-                                                if (snapshot.data != null) {
+                                                if (_events != null) {
                                                   return Container(
                                                     child: ListView.builder(
-                                                        itemCount: snapshot.data.length,
+                                                        itemCount: _events.length,
                                                         scrollDirection: Axis.vertical,
                                                         itemBuilder: (BuildContext context, int index) {
                                                           return Container(
@@ -201,10 +201,10 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                     child: EventListItem(title: "Test", date: "test", subtitle: "Test deskripsi", eventIcon: Icons.alarm),
                                                                   )),
                                                               onMarkAsReadButtonClicked: () {
-                                                                this.widget.presenter.onMarkAsReadButtonClicked(snapshot.data[index]);
+                                                                this.widget.presenter.onMarkAsReadButtonClicked(_events[index]);
                                                               },
                                                               onDeleteButtonClicked: () {
-                                                                this.widget.presenter.onDeleteButtonClicked(snapshot.data[index]);
+                                                                this.widget.presenter.onDeleteButtonClicked(_events[index]);
                                                               },
                                                             ),
                                                           );
