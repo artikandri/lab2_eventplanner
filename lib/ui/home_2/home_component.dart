@@ -17,6 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> implements HomeView {
   List _events = [];
+  List _todayEvents = [];
 
   @override
   void initState() {
@@ -28,6 +29,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
   onLoadEvents(List events) {
     setState(() {
       _events = events;
+      _todayEvents = _events.where((_event) => _event.date.isAfter(DateTime.now().subtract(Duration(days: 1)))).toList();
     });
   }
 
@@ -110,14 +112,19 @@ class _HomePageState extends State<HomePage> implements HomeView {
                           Container(
                             height: 80,
                             width: double.infinity,
-                            child: ListView(
+                            child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              children: <Widget>[
-                                SizedBox(width: 15),
+
+                                                        itemCount: _todayEvents.length,
+                                                        scrollDirection: Axis.vertical,
+                                                        itemBuilder: (BuildContext context, int index) {
+                                                          return Column(
+                                                            children: <Widget>[
                                 EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                                SizedBox(width: 15),
-                                EventCard(title: "Test", subtitle: "Test deskripsi", cardColor: AppColors.kDarkBlue),
-                              ],
+                                SizedBox(width: 15)
+                                                            ]
+                                                          )
+                                                        }
                             ),
                           ),
                         ],
