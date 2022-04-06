@@ -42,8 +42,13 @@ class BasicHomePresenter implements HomePresenter {
 
   @override
   void onMarkAsReadButtonClicked(dynamic eventData) {
-    List events = getEventListData();
-    print(events);
+    Future _futureEvents = getEventFutureListData();
+    List _events;
+    _futureEvents.then((value) {
+      _events = value;
+    });
+
+    print(_events);
     // List updatedEvents = events.map((e) => e['id'] == eventData['id'] ? e['isRead'] = true : e).toList();
 
     // SharedPrefsHelper().setData("events", updatedEvents);
