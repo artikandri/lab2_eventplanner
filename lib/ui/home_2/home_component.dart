@@ -145,7 +145,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                   itemCount: _todayEvents.length,
                                                   itemBuilder: (BuildContext context, int index) {
                                                     return Column(children: <Widget>[
-                                                      EventCard(title: _todayEvents[index]['name'], subtitle: 'due on $_todayEvents[index]['time']', cardColor: getStatusColorFromValue(_todayEvents[index]['status'])),
+                                                      EventCard(title: _todayEvents[index]['name'], subtitle: "due on $_todayEvents[index]['time']", cardColor: getStatusColorFromValue(_todayEvents[index]['status'])),
                                                     ]);
                                                   }));
                                         }
