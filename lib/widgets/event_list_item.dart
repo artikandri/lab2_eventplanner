@@ -15,7 +15,7 @@ class EventListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(AppSpacings.defaultSpacing * 2),
+        padding: EdgeInsets.all(AppSpacings.defaultSpacing),
         child: Opacity(
             opacity: opacity,
             child: Row(
@@ -30,7 +30,6 @@ class EventListItem extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(width: AppSpacings.defaultSpacing * 2),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
