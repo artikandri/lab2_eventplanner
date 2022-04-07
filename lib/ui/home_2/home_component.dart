@@ -191,6 +191,9 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                         itemBuilder: (BuildContext context, int index) {
                                                           String eventSubtitle = getStatusLabelFromValue(_events[index]['status']);
                                                           double eventOpacity = _events[index]['isRead'] ? .5 : 1;
+                                                          IconData eventIcon = getTypeDataFromValue(_events[index]['type'])['icon'];
+                                                          Color eventColor = getTypeDataFromValue(_events[index]['type'])['color'];
+
                                                           return Container(
                                                             height: 80,
                                                             child: SlidableListItem(
@@ -200,7 +203,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                     onTap: () {
                                                                       this.widget.presenter.onEventListItemTapped(context, _events[index]);
                                                                     },
-                                                                    child: EventListItem(opacity: eventOpacity, title: _events[index]['name'], date: _events[index]['date'], subtitle: eventSubtitle, eventIcon: getStatusIconFromValue(_events[index]['status']), eventColor: getStatusColorFromValue(_events[index]['status'])),
+                                                                    child: EventListItem(opacity: eventOpacity, title: _events[index]['name'], date: _events[index]['date'], subtitle: eventSubtitle, eventIcon: eventIcon, eventColor: eventColor),
                                                                   )),
                                                               onMarkAsDoneButtonClicked: () {
                                                                 this.widget.presenter.onMarkAsDoneButtonClicked(context, _events[index]);
