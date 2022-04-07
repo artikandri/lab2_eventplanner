@@ -62,7 +62,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                   height: AppSpacings.defaultSpacing * 4,
                 ),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.space_between,
+                  crossAxisAlignment: CrossAxisAlignment.spaceBetween,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
