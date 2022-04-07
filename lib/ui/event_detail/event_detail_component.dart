@@ -41,7 +41,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
     this.widget.presenter.markEventAsRead(eventData);
 
     return new Scaffold(
-        backgroundColor: AppColors.kLightYellow,
+        backgroundColor: AppColors.kWhite,
         body: new Center(
             child: new Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
           TopContainer(
@@ -57,14 +57,16 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      _eventData['name'],
-                      style: TextStyle(fontSize: AppFonts.headingFontSize, fontWeight: FontWeight.w700),
-                    ),
-                    Text(
-                      "Due on ${_eventData['datetime']}",
-                      style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
-                    ),
+                    Column(children: <Widget>[
+                      Text(
+                        _eventData['name'],
+                        style: TextStyle(fontSize: AppFonts.headingFontSize, fontWeight: FontWeight.w700),
+                      ),
+                      Text(
+                        "Due on ${_eventData['datetime']}",
+                        style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
+                      ),
+                    ])
                   ],
                 ),
                 SizedBox(height: 20),
