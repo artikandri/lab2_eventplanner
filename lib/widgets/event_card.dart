@@ -19,7 +19,7 @@ class EventCard extends StatelessWidget {
 
     return Container(
       width: width * .6,
-      margin: EdgeInsets.symmetric(vertical: AppSpacings.defaultSpacing),
+      margin: EdgeInsets.symmetric(vertical: AppSpacings.defaultSpacing, horizontal: AppSpacings.defaultSpacing),
       padding: EdgeInsets.all(AppSpacings.defaultSpacing * 2),
       decoration: BoxDecoration(
         color: cardColor,
