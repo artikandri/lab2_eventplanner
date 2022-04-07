@@ -55,6 +55,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                   height: 30,
                 ),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Column(children: <Widget>[
