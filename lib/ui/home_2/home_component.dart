@@ -127,6 +127,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                           subheading('Events Today'),
                           SizedBox(height: AppSpacings.defaultSpacing * 1.5),
                           Container(
+                              height: 100,
                               width: double.infinity,
                               child: FutureBuilder(
                                   future: _futureEvents,
