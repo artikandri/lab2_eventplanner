@@ -106,7 +106,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                 height: AppSpacings.defaultSpacing,
               ),
               Row(children: <Widget>[
-                iconContainer(Icons.calendar, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
+                iconContainer(Icons.event, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
                 Text(
                   _eventData['date'],
                   style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
@@ -116,7 +116,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                 height: AppSpacings.defaultSpacing,
               ),
               Row(children: <Widget>[
-                iconContainer(Icons.time, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
+                iconContainer(Icons.schedule, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
                 Text(
                   _eventData['time'],
                   style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
