@@ -33,7 +33,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
   }
 
   bool isEmpty(String text) {
-    return text != null && text != "";
+    return text != null || text != "";
   }
 
   @override
