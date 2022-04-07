@@ -62,7 +62,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                   height: AppSpacings.defaultSpacing * 4,
                 ),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.space_between,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
@@ -85,6 +85,8 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                         style: TextStyle(fontSize: AppFonts.subFontSize, fontWeight: FontWeight.w600),
                       ),
                     ]),
+                    Spacer(),
+                    iconContainer(getTypeDataFromValue(_eventData['type']).icon, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
                   ],
                 ),
               ],
