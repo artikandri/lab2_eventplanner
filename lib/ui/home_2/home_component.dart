@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           subheading('All events'),
-                          SizedBox(height: AppSpacings.defaultSpacing),
+                          SizedBox(height: AppSpacings.defaultSpacing * 2),
                           Container(
                               height: 400,
                               child: Column(children: <Widget>[
