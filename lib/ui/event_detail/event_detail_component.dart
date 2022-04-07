@@ -59,7 +59,11 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                   children: <Widget>[
                     Text(
                       _eventData['name'],
-                      style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
+                      style: TextStyle(fontSize: AppFonts.headingFontSize, fontWeight: FontWeight.w700),
+                    ),
+                    Text(
+                      "Due on ${_eventData['datetime']}",
+                      style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
                     ),
                   ],
                 ),
