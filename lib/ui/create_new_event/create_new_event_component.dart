@@ -115,6 +115,26 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                       ),
                       SizedBox(height: AppSpacings.defaultSpacing * 1),
                       FormBuilderDropdown(
+                        name: 'type',
+                        decoration: InputDecoration(
+                          labelText: 'Type',
+                        ),
+                        onChanged: this.widget.presenter.onTypeChanged,
+                        initialValue: 0,
+                        allowClear: true,
+                        hint: Text('Select type'),
+                        validator: FormBuilderValidators.compose([
+                          FormBuilderValidators.required(context)
+                        ]),
+                        items: typeOptions
+                            .map((TypeOption typeOption) => DropdownMenuItem(
+                                  value: typeOption.value,
+                                  child: Text(typeOption.label),
+                                ))
+                            .toList(),
+                      ),
+                      SizedBox(height: AppSpacings.defaultSpacing * 1),
+                      FormBuilderDropdown(
                         name: 'status',
                         decoration: InputDecoration(
                           labelText: 'Status',

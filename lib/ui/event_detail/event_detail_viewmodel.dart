@@ -3,12 +3,12 @@ class EventDetailViewModel {
     "id": "",
     "name": "",
     "description": "",
-    "status": "",
+    "status": 0,
+    "type": 0,
     "datetime": "",
     "date": "",
     "time": "",
     "isRead": false,
-    "isDone": false
   };
 
   Map get eventData => _eventData;

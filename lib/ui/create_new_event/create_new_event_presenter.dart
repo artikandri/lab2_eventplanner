@@ -12,6 +12,8 @@ class CreateNewEventPresenter {
   void onStatusChanged(int value) {}
   void onDateChanged(DateTime value) {}
   void onTimeChanged(DateTime value) {}
+  void onTypeChanged(int value) {}
+
   void saveData(dynamic value, BuildContext context) {}
 
   set createNewEventView(CreateNewEventView value) {}
@@ -43,6 +45,11 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
   @override
   void onStatusChanged(int value) {
     _viewModel.status = value;
+  }
+
+  @override
+  void onTypeChanged(int value) {
+    _viewModel.type = value;
   }
 
   @override

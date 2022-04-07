@@ -8,6 +8,15 @@ class StatusOption {
   StatusOption({this.value, this.label});
 }
 
+class TypeOption {
+  int value;
+  String label;
+  Color color;
+  IconData icon;
+
+  TypeOption({this.value, this.label, this.color, this.icon});
+}
+
 class TimeOption {
   int value;
   String label;
@@ -26,6 +35,17 @@ List<TimeOption> timeOptions = [
   TimeOption(value: -1, label: "Yesterday"),
   TimeOption(value: 1, label: "Tomorrow"),
 ];
+
+List<TypeOption> typeOptions = [
+  TypeOption(value: 0, label: "Meeting", color: AppColors.kLightGreen, icon: Icons.EmojiPeople),
+  TypeOption(value: 1, label: "Phone", color: AppColors.kLightOrange, icon: Icons.Phone),
+  TypeOption(value: 2, label: "Entertainment", color: AppColors.kPalePink, icon: Icons.Movie),
+  TypeOption(value: 3, label: "Other", color: AppColors.kLightYellow, icon: Icons.Surfing),
+];
+
+getTypeDataFromValue(int value) {
+  return typeOptions.where((t) => t.value == value);
+}
 
 IconData getStatusIconFromValue(int value) {
   IconData icon = Icons.alarm;

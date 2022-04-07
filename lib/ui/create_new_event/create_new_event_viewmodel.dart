@@ -4,6 +4,8 @@ class CreateNewEventViewModel {
   String _name;
   String _description;
   int _status;
+  int _type;
+
   String _date;
   String _time;
 
@@ -20,6 +22,11 @@ class CreateNewEventViewModel {
   int get status => _status;
   void set status(int newStatus) {
     _status = newStatus;
+  }
+
+  int get type => _type;
+  void set type(int newType) {
+    _type = newType;
   }
 
   String get date => _date;
