@@ -45,7 +45,7 @@ List<TypeOption> typeOptions = [
 
 getTypeDataFromValue(int value) {
   print(value);
-  print(typeOptions.where((t) => t.value == value).toList()['value']);
+  print(typeOptions.where((t) => t.value == value).toList()[0]);
   return typeOptions.where((t) => t.value == value).toList();
 }
 
