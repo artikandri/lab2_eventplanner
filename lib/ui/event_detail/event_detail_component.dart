@@ -86,7 +86,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                       ),
                     ]),
                     Spacer(),
-                    iconContainer(getTypeDataFromValue(_eventData['type']).icon, AppColors.transparent, AppColors.kDarkPurple),
+                    iconContainer(getTypeDataFromValue(_eventData['type']).icon, AppColors.transparent, AppColors.kDarkPurple, isBordered: true, borderColor: AppColors.kDarkPurple),
                   ],
                 ),
               ],
