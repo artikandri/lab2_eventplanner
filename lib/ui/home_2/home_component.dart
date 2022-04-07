@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          subheading('Events Today'),
+                          subheading('Events today'),
                           SizedBox(height: AppSpacings.defaultSpacing * 1.5),
                           Container(
                               height: 100,
