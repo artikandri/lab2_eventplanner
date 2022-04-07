@@ -49,7 +49,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                   children: <Widget>[
                     Text(
                       'Create new event',
-                      style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
+                      style: TextStyle(fontSize: AppFonts.titleFontSize, fontWeight: FontWeight.w700),
                     ),
                   ],
                 ),
@@ -78,6 +78,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         ]),
                         keyboardType: TextInputType.number,
                       ),
+                      SizedBox(height: AppSpacings.defaultSpacing * 1),
                       FormBuilderTextField(
                         name: 'description',
                         decoration: InputDecoration(
@@ -89,6 +90,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         ]),
                         keyboardType: TextInputType.number,
                       ),
+                      SizedBox(height: AppSpacings.defaultSpacing * 1),
                       FormBuilderDateTimePicker(
                         name: 'date',
                         decoration: InputDecoration(
@@ -99,6 +101,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         format: DateFormat('yyyy-MM-dd'),
                         onChanged: this.widget.presenter.onDateChanged,
                       ),
+                      SizedBox(height: AppSpacings.defaultSpacing * 1),
                       FormBuilderDateTimePicker(
                         name: 'time',
                         onChanged: this.widget.presenter.onTimeChanged,
@@ -110,6 +113,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         initialValue: DateTime.now(),
                         // enabled: true,
                       ),
+                      SizedBox(height: AppSpacings.defaultSpacing * 1),
                       FormBuilderDropdown(
                         name: 'status',
                         decoration: InputDecoration(
@@ -129,6 +133,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                                 ))
                             .toList(),
                       ),
+                      SizedBox(height: AppSpacings.defaultSpacing * 1),
                     ],
                   ),
                 ),
@@ -154,7 +159,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                   child: Container(
                     child: Text(
                       'Create Task',
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 18),
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: AppFonts.bodyFontSize),
                     ),
                     alignment: Alignment.center,
                     margin: EdgeInsets.fromLTRB(20, 10, 20, 20),
