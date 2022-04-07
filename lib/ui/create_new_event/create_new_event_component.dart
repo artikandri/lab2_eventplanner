@@ -31,7 +31,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return new Scaffold(
-        backgroundColor: AppColors.kLightYellow,
+        backgroundColor: AppColors.kWhite,
         body: SafeArea(
             child: Column(children: <Widget>[
           TopContainer(
@@ -147,7 +147,8 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                     if (_formKey.currentState.validate()) {
                       this.widget.presenter.saveData(_formKey.currentState.value, context);
                     } else {
-                      print("validation failed");
+                      var snackBar = SnackBar(content: Text('Validation failed'));
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     }
                   },
                   child: Container(
@@ -159,7 +160,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                     margin: EdgeInsets.fromLTRB(20, 10, 20, 20),
                     width: width - 40,
                     decoration: BoxDecoration(
-                      color: AppColors.kBlue,
+                      color: AppColors.kDarkPurple,
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
