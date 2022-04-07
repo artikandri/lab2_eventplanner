@@ -83,7 +83,7 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
     int _status = _viewModel.status != null ? _viewModel.status : formValue['status'];
     String _date = _viewModel.date != null ? _viewModel.date : DateFormat('yyyy-MM-dd').format(formValue['date']);
     String _time = _viewModel.time != null ? _viewModel.time : DateFormat('Hms').format(formValue['time']);
-    String _type = _viewModel.type != null ? _viewModel.type : formValue['type'];
+    int _type = _viewModel.type != null ? _viewModel.type : formValue['type'];
 
     List _previousEvents = getPreviousEvents();
     _previousEvents.add({
