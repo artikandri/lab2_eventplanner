@@ -101,7 +101,30 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                   !isEmpty(_eventData['description']) ? _eventData['description'] : "No description given",
                   style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
                 ),
-              ])
+              ]),
+              SizedBox(
+                height: AppSpacings.defaultSpacing,
+              ),
+              Row(children: <Widget>[
+                iconContainer(Icons.calendar_month, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
+                Text(
+                  _eventData['date'],
+                  style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
+                ),
+              ]),
+              SizedBox(
+                height: AppSpacings.defaultSpacing,
+              ),
+              Row(children: <Widget>[
+                iconContainer(Icons.access_time, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
+                Text(
+                  _eventData['time'],
+                  style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
+                ),
+              ]),
+              SizedBox(
+                height: AppSpacings.defaultSpacing,
+              ),
             ])
           ])
         ])));
