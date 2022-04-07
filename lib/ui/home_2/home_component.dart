@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                         break;
                                       case ConnectionState.done:
                                         if (_todayEvents.length > 0) {
-                                          return Row(children: <Widget>[
+                                          return Row(width: width * .8, children: <Widget>[
                                             Container(
                                                 child: ListView.builder(
                                                     scrollDirection: Axis.horizontal,
