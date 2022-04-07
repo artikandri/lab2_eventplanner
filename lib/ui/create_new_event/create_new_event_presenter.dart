@@ -94,6 +94,9 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
       context,
       MaterialPageRoute(builder: (context) => new HomePage(new BasicHomePresenter(), title: "Create new event")),
     );
+
+    var snackBar = SnackBar(content: Text('New event has been added'));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
   Future<List> getEventListData() async {
