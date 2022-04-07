@@ -58,7 +58,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Column(children: <Widget>[
+                    Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
                       Text(
                         _eventData['name'],
                         style: TextStyle(fontSize: AppFonts.headingFontSize, fontWeight: FontWeight.w700),
