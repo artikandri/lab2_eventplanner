@@ -37,10 +37,10 @@ List<TimeOption> timeOptions = [
 ];
 
 List<TypeOption> typeOptions = [
-  TypeOption(value: 0, label: "Meeting", color: AppColors.kLightGreen, icon: Icons.EmojiPeople),
-  TypeOption(value: 1, label: "Phone", color: AppColors.kLightOrange, icon: Icons.Phone),
-  TypeOption(value: 2, label: "Entertainment", color: AppColors.kPalePink, icon: Icons.Movie),
-  TypeOption(value: 3, label: "Other", color: AppColors.kLightYellow, icon: Icons.Surfing),
+  TypeOption(value: 0, label: "Meeting", color: AppColors.kLightGreen, icon: Icons.emoji_people),
+  TypeOption(value: 1, label: "Phone", color: AppColors.kLightOrange, icon: Icons.phone),
+  TypeOption(value: 2, label: "Entertainment", color: AppColors.kPalePink, icon: Icons.movie),
+  TypeOption(value: 3, label: "Other", color: AppColors.kLightYellow, icon: Icons.surfing),
 ];
 
 getTypeDataFromValue(int value) {
