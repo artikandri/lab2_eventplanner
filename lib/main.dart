@@ -1,19 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:eventplanner/ui/home/presenter/home_presenter.dart';
-import 'package:eventplanner/ui/home/views/home_component.dart';
+import 'package:flutter/services.dart';
+import 'package:eventplanner/theme/index.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:eventplanner/ui/home_2/home_presenter.dart';
+import 'package:eventplanner/ui/home_2/home_component.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: AppColors.kWhite,
+    statusBarColor: AppColors.kPalePurple,
+  ));
+
+  return runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Event Planner',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Poppins',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: AppColors.kDarkPurple, displayColor: AppColors.kDarkPurple, fontFamily: 'Poppins'),
       ),
-      home: new MyHomePage(new BasicHomePresenter(), title: 'Event Planner'),
+      localizationsDelegates: [
+        FormBuilderLocalizations.delegate,
+      ],
+      // routes: <String, WidgetBuilder>{
+      //   "/create_event": (BuildContext context) => new CreateEventPage(new CreateEventPresenter(), title: "Create Event"),
+      // },
+      home: new HomePage(new BasicHomePresenter(), title: 'Event Planner'),
     );
   }
 }
