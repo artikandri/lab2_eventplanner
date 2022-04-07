@@ -19,6 +19,7 @@ class EventListItem extends StatelessWidget {
         child: Opacity(
             opacity: opacity,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 CircleAvatar(
@@ -30,7 +31,7 @@ class EventListItem extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: AppSpacings.defaultSpacing),
+                SizedBox(width: AppSpacings.defaultSpacing),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -48,14 +49,14 @@ class EventListItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(width: AppSpacings.defaultSpacing * 2),
+                Spacer(),
                 Column(children: <Widget>[
                   Text(
                     subtitle,
                     textAlign: TextAlign.right,
                     style: TextStyle(
                       fontSize: AppFonts.subFontSize,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w300,
                     ),
                   )
                 ])
