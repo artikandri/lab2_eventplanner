@@ -102,31 +102,28 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                   style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
                 ),
               ]),
-              SizedBox(
-                height: AppSpacings.defaultSpacing,
-              ),
-              Row(children: <Widget>[
-                iconContainer(Icons.event, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
-                Text(
-                  _eventData['date'],
-                  style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
-                ),
-              ]),
-              SizedBox(
-                height: AppSpacings.defaultSpacing,
-              ),
-              Row(children: <Widget>[
-                iconContainer(Icons.schedule, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
-                Text(
-                  _eventData['time'],
-                  style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
-                ),
-              ]),
-              SizedBox(
-                height: AppSpacings.defaultSpacing,
-              ),
             ])
-          ])
+          ]),
+          SizedBox(
+            height: AppSpacings.defaultSpacing,
+          ),
+          Row(children: <Widget>[
+            iconContainer(Icons.event, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
+            Text(
+              _eventData['date'],
+              style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
+            ),
+          ]),
+          SizedBox(
+            height: AppSpacings.defaultSpacing,
+          ),
+          Row(children: <Widget>[
+            iconContainer(Icons.schedule, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
+            Text(
+              _eventData['time'],
+              style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
+            ),
+          ]),
         ])));
   }
 }
