@@ -32,6 +32,10 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
     });
   }
 
+  bool isEmpty(String text) {
+    return text != null && text != "";
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -79,7 +83,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
           ),
           Column(children: <Widget>[
             Text(
-              _eventData['description'] != null ? _eventData['description'] : "No description given",
+              !isEmpty(_eventData['description']) ? _eventData['description'] : "No description given",
               style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
             ),
             Text(
