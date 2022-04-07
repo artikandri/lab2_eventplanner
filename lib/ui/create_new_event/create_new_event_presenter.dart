@@ -83,6 +83,7 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
     int _status = _viewModel.status != null ? _viewModel.status : formValue['status'];
     String _date = _viewModel.date != null ? _viewModel.date : DateFormat('yyyy-MM-dd').format(formValue['date']);
     String _time = _viewModel.time != null ? _viewModel.time : DateFormat('Hms').format(formValue['time']);
+    String _type = _viewModel.type != null ? _viewModel.type : formValue['type'];
 
     List _previousEvents = getPreviousEvents();
     _previousEvents.add({
@@ -93,6 +94,7 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
       "datetime": "${_date} ${_time}",
       "date": _date,
       "time": _time,
+      "type": _type,
       "isRead": false,
     });
 
