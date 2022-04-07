@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:eventplanner/theme/colors.dart';
 
 class SlidableListItem extends StatelessWidget {
   final Widget child;
@@ -19,9 +20,9 @@ class SlidableListItem extends StatelessWidget {
             onPressed: (BuildContext context) {
               onMarkAsDoneButtonClicked();
             },
-            backgroundColor: Color(0xFF21B7CA),
+            backgroundColor: AppColors.kPalePurple,
             foregroundColor: Colors.white,
-            icon: Icons.share,
+            icon: Icons.done,
             label: 'Mark as done',
           ),
         ],
@@ -30,15 +31,13 @@ class SlidableListItem extends StatelessWidget {
         motion: ScrollMotion(),
         children: [
           SlidableAction(
-            // An action can be bigger than the others.
-            flex: 2,
             onPressed: (BuildContext context) {
               onDeleteButtonClicked();
             },
-            backgroundColor: Color(0xFF7BC043),
+            backgroundColor: AppColors.kRed,
             foregroundColor: Colors.white,
             icon: Icons.delete,
-            label: 'Remove',
+            label: 'Delete',
           ),
         ],
       ),
