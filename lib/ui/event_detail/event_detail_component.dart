@@ -86,13 +86,17 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                             getTypeDataFromValue(_eventData['type']).label,
                             style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: AppFonts.subFontSize),
                           ),
-                          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                          padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: AppColors.kDarkPurple,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(20),
                           ),
                         ),
+
+                      SizedBox(
+                        width: AppSpacings.defaultSpacing * 2,
+                      ),
                         Text(
                           getStatusLabelFromValue(_eventData['status']),
                           style: TextStyle(fontSize: AppFonts.subFontSize, fontWeight: FontWeight.w600),
