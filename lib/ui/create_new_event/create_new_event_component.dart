@@ -158,7 +158,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                   },
                   child: Container(
                     child: Text(
-                      'Create Task',
+                      'Create Event',
                       style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: AppFonts.bodyFontSize),
                     ),
                     alignment: Alignment.center,
