@@ -79,16 +79,8 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
           ),
           Column(children: <Widget>[
             Text(
-              _eventData['description'],
-              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
-            ),
-            Text(
-              _eventData['date'],
-              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
-            ),
-            Text(
-              _eventData['time'],
-              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
+              _eventData['description'] != null ? _eventData['description'] : "No description given",
+              style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
             ),
             Text(
               getStatusLabelFromValue(_eventData['status']),
