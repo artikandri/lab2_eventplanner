@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:eventplanner/theme/index.dart';
 
-CircleAvatar iconContainer(icon, backgroundColor, iconColor, {isBordered: false, borderColor: borderColor}) {
+CircleAvatar iconContainer(icon, backgroundColor, iconColor, {isBordered = false, borderColor = borderColor}) {
   return CircleAvatar(
     radius: (AppSpacings.defaultSpacing * 3) + 2,
     backgroundColor: isBordered ? borderColor : AppColors.transparent,
