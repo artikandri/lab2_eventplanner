@@ -36,24 +36,27 @@ class EventListItem extends StatelessWidget {
                   title,
                   style: TextStyle(
                     fontSize: AppFonts.bodyFontSize,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
+                SizedBox(width: AppSpacings.defaultSpacing),
                 Text(
                   subtitle,
-                  style: TextStyle(fontSize: AppFonts.subFontSize, fontWeight: FontWeight.w500, color: Colors.black45),
+                  style: TextStyle(fontSize: AppFonts.subFontSize, fontWeight: FontWeight.w300, color: Colors.black45),
                 ),
               ],
             ),
             SizedBox(width: AppSpacings.defaultSpacing * 2),
-            Text(
-              date,
-              textAlign: TextAlign.right,
-              style: TextStyle(
-                fontSize: AppFonts.subFontSize,
-                fontWeight: FontWeight.w500,
-              ),
-            )
+            Column(children: <Widget>[
+              Text(
+                date,
+                textAlign: TextAlign.right,
+                style: TextStyle(
+                  fontSize: AppFonts.subFontSize,
+                  fontWeight: FontWeight.w500,
+                ),
+              )
+            ])
           ],
         ));
   }
