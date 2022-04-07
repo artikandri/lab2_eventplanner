@@ -192,8 +192,9 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                           String eventSubtitle = getStatusLabelFromValue(_events[index]['status']);
                                                           double eventOpacity = _events[index]['isRead'] ? .5 : 1;
                                                           int iconType = _events[index]['type'];
-                                                          IconData eventIcon = getTypeDataFromValue(iconType).icon;
-                                                          Color eventColor = getTypeDataFromValue(iconType).color;
+                                                          print(getTypeDataFromValue(iconType));
+                                                          IconData eventIcon = getTypeDataFromValue(iconType)['icon'];
+                                                          Color eventColor = getTypeDataFromValue(iconType)['color'];
 
                                                           return Container(
                                                             height: 80,
