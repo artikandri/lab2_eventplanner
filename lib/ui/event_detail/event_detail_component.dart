@@ -76,6 +76,13 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                         "Due on ${_eventData['datetime']}",
                         style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
                       ),
+                      SizedBox(
+                        height: AppSpacings.defaultSpacing * 2,
+                      ),
+                      Text(
+                        getStatusLabelFromValue(_eventData['status']),
+                        style: TextStyle(fontSize: AppFonts.subFontSize, fontWeight: FontWeight.w400),
+                      ),
                     ]),
                   ],
                 ),
@@ -83,14 +90,10 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
               ],
             ),
           ),
-          Column(children: <Widget>[
+          Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
             Text(
               !isEmpty(_eventData['description']) ? _eventData['description'] : "No description given",
               style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
-            ),
-            Text(
-              getStatusLabelFromValue(_eventData['status']),
-              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w700),
             ),
           ])
         ])));
