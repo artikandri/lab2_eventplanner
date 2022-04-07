@@ -43,7 +43,7 @@ class BasicHomePresenter implements HomePresenter {
 
   markEventAsDone(eventData) {
     List updatedEvents = _viewModel.events.map((e) {
-      e['isDone'] = e['id'] == eventData['id'] ? true : e['isDone'];
+      e['status'] = e['id'] == eventData['id'] ? 2 : e['status'];
 
       return e;
     }).toList();
