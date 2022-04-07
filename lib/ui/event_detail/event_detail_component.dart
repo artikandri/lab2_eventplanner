@@ -52,7 +52,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
               children: <Widget>[
                 MyBackButton(),
                 SizedBox(
-                  height: 30,
+                  height: AppSpacings.defaultSpacing * 4,
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,11 +63,14 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                         _eventData['name'],
                         style: TextStyle(fontSize: AppFonts.headingFontSize, fontWeight: FontWeight.w700),
                       ),
+                      SizedBox(
+                        height: AppSpacings.defaultSpacing,
+                      ),
                       Text(
                         "Due on ${_eventData['datetime']}",
                         style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
                       ),
-                    ])
+                    ]),
                   ],
                 ),
                 SizedBox(height: 20),
