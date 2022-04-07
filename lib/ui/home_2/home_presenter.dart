@@ -10,7 +10,7 @@ import 'package:eventplanner/ui/event_detail/event_detail_presenter.dart';
 
 class HomePresenter {
   void onAddButtonClicked(BuildContext context) {}
-  void onMarkAsReadButtonClicked(BuildContext context, dynamic eventData) {}
+  void onMarkAsDoneButtonClicked(BuildContext context, dynamic eventData) {}
   void onDeleteButtonClicked(BuildContext context, dynamic eventData) {}
   void onEventListItemTapped(BuildContext context, dynamic eventData) {}
   Future<List> getEventFutureListData() {}
@@ -41,9 +41,9 @@ class BasicHomePresenter implements HomePresenter {
     );
   }
 
-  markEventAsRead(eventData) {
+  markEventAsDone(eventData) {
     List updatedEvents = _viewModel.events.map((e) {
-      e['isRead'] = e['id'] == eventData['id'] ? true : e['isRead'];
+      e['isDone'] = e['id'] == eventData['id'] ? true : e['isDone'];
 
       return e;
     }).toList();
@@ -61,11 +61,11 @@ class BasicHomePresenter implements HomePresenter {
   }
 
   @override
-  void onMarkAsReadButtonClicked(BuildContext context, dynamic eventData) {
-    var snackBar = SnackBar(content: Text('Event marked as read'));
-    showAlertDialog(context, "Warning", "Are you sure you want to mark this event as read?").then((value) {
+  void onMarkAsDoneButtonClicked(BuildContext context, dynamic eventData) {
+    var snackBar = SnackBar(content: Text('Event marked as done'));
+    showAlertDialog(context, "Warning", "Are you sure you want to mark this event as done?").then((value) {
       if (value) {
-        markEventAsRead(eventData);
+        markEventAsDone(eventData);
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }
     });

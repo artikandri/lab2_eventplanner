@@ -7,7 +7,8 @@ class EventDetailViewModel {
     "datetime": "",
     "date": "",
     "time": "",
-    "isRead": false
+    "isRead": false,
+    "isDone": false
   };
 
   Map get eventData => _eventData;

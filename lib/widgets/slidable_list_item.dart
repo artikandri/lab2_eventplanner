@@ -3,10 +3,10 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 
 class SlidableListItem extends StatelessWidget {
   final Widget child;
-  final VoidCallback onMarkAsReadButtonClicked;
+  final VoidCallback onMarkAsDoneButtonClicked;
   final VoidCallback onDeleteButtonClicked;
 
-  SlidableListItem({this.child, this.onMarkAsReadButtonClicked, this.onDeleteButtonClicked});
+  SlidableListItem({this.child, this.onMarkAsDoneButtonClicked, this.onDeleteButtonClicked});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +14,10 @@ class SlidableListItem extends StatelessWidget {
       key: const ValueKey(0),
       startActionPane: ActionPane(
         motion: const ScrollMotion(),
-        // dismissible: DismissiblePane(onDismissed: () {}),
         children: [
           SlidableAction(
             onPressed: (BuildContext context) {
-              onMarkAsReadButtonClicked();
+              onMarkAsDoneButtonClicked();
             },
             backgroundColor: Color(0xFF21B7CA),
             foregroundColor: Colors.white,

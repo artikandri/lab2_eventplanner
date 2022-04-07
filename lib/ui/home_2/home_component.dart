@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> implements HomeView {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          subheading('Events today'),
+                          subheading('Events due today'),
                           SizedBox(height: AppSpacings.defaultSpacing * 1.5),
                           Container(
                               height: 100,
@@ -206,8 +206,8 @@ class _HomePageState extends State<HomePage> implements HomeView {
                                                                     },
                                                                     child: EventListItem(opacity: eventOpacity, title: _events[index]['name'], date: _events[index]['date'], subtitle: eventSubtitle, eventIcon: getStatusIconFromValue(_events[index]['status']), eventColor: getStatusColorFromValue(_events[index]['status'])),
                                                                   )),
-                                                              onMarkAsReadButtonClicked: () {
-                                                                this.widget.presenter.onMarkAsReadButtonClicked(context, _events[index]);
+                                                              onMarkAsDoneButtonClicked: () {
+                                                                this.widget.presenter.onMarkAsDoneButtonClicked(context, _events[index]);
                                                               },
                                                               onDeleteButtonClicked: () {
                                                                 this.widget.presenter.onDeleteButtonClicked(context, _events[index]);

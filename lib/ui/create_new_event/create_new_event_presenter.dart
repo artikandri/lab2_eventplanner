@@ -86,7 +86,8 @@ class BasicCreateNewEventPresenter implements CreateNewEventPresenter {
       "datetime": "${_date} ${_time}",
       "date": _date,
       "time": _time,
-      "isRead": false
+      "isRead": false,
+      "isDone": false
     });
 
     SharedPrefsHelper().setData('events', _previousEvents);

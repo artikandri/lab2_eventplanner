@@ -94,7 +94,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                       FormBuilderDateTimePicker(
                         name: 'date',
                         decoration: InputDecoration(
-                          labelText: 'Appointment Date',
+                          labelText: 'Due date',
                         ),
                         inputType: InputType.date,
                         initialValue: DateTime.now(),
@@ -107,7 +107,7 @@ class _CreateNewEventPageState extends State<CreateNewEventPage> implements Crea
                         onChanged: this.widget.presenter.onTimeChanged,
                         inputType: InputType.time,
                         decoration: InputDecoration(
-                          labelText: 'Appointment Time',
+                          labelText: 'Due time',
                         ),
                         initialTime: TimeOfDay(hour: 8, minute: 0),
                         initialValue: DateTime.now(),
