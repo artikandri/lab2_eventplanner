@@ -84,8 +84,9 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                         Container(
                           child: Text(
                             getTypeDataFromValue(_eventData['type']).label,
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: AppFonts.bodyFontSize),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: AppFonts.subFontSize),
                           ),
+                          padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: AppColors.kDarkPurple,
