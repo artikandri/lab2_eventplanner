@@ -83,7 +83,7 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                       Row(children: <Widget>[
                         Container(
                           child: Text(
-                            getTypeDataFromValue(_eventData['type'].label),
+                            getTypeDataFromValue(_eventData['type']).label,
                             style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: AppFonts.bodyFontSize),
                           ),
                           alignment: Alignment.center,
