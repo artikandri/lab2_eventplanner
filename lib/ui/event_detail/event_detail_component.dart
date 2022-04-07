@@ -44,6 +44,8 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
     this.widget.presenter.setEventData(eventData);
     this.widget.presenter.markEventAsRead(eventData);
 
+    print(_eventData['description']);
+    print(isEmpty(_eventData['description']));
     return new Scaffold(
         backgroundColor: AppColors.kWhite,
         body: new Center(
