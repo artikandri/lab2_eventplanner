@@ -81,14 +81,16 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
                       ),
                       Text(
                         getStatusLabelFromValue(_eventData['status']),
-                        style: TextStyle(fontSize: AppFonts.subFontSize, fontWeight: FontWeight.w400),
+                        style: TextStyle(fontSize: AppFonts.subFontSize, fontWeight: FontWeight.w600),
                       ),
                     ]),
                   ],
                 ),
-                SizedBox(height: 20),
               ],
             ),
+          ),
+          SizedBox(
+            height: AppSpacings.defaultSpacing * 2,
           ),
           Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
             Text(
