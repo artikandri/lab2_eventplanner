@@ -44,7 +44,7 @@ List<TypeOption> typeOptions = [
 ];
 
 getTypeDataFromValue(int value) {
-  return typeOptions.where((t) => t.value == value).toList()[0];
+  return typeOptions.where((t) => t.value == value).toList();
 }
 
 IconData getStatusIconFromValue(int value) {
