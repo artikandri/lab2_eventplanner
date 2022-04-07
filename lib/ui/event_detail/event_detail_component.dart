@@ -93,10 +93,15 @@ class _EventDetailPageState extends State<EventDetailPage> implements EventDetai
             height: AppSpacings.defaultSpacing * 2,
           ),
           Row(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
-            Text(
-              !isEmpty(_eventData['description']) ? _eventData['description'] : "No description given",
-              style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
-            ),
+            Column(children: <Widget>[
+              Row(children: <Widget>[
+                iconContainer(Icons.format_align_center, AppColors.transparent, getTypeDataFromValue(_eventData['type']).color),
+                Text(
+                  !isEmpty(_eventData['description']) ? _eventData['description'] : "No description given",
+                  style: TextStyle(fontSize: AppFonts.bodyFontSize, fontWeight: FontWeight.w300),
+                ),
+              ])
+            ])
           ])
         ])));
   }
