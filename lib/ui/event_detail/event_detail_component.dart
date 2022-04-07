@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:eventplanner/ui/event_detail/event_detail_view.dart';
 import 'package:eventplanner/ui/event_detail/event_detail_presenter.dart';
 import 'package:eventplanner/theme/index.dart';
+import 'package:eventplanner/components/icon_container.dart';
 import 'package:eventplanner/widgets/index.dart';
 import 'package:eventplanner/constants.dart';
 
