@@ -30,6 +30,7 @@ class EventListItem extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
+                SizedBox(height: AppSpacings.defaultSpacing),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
